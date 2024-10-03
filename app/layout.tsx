@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import Link from 'next/link';
+import Image from 'next/image';
+import SideBarLink from '@/components/molecules/SideBarLink/SideBarLink';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -27,13 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className=" flex flex-row ">
+        {/* サイドバー */}
+        <div className=" flex flex-row p-3 ">
           <div className="flex flex-col gap-3 border-r pr-10">
-            <Link href="/">Home</Link>
-            <Link href="/teams">Teams</Link>
-            <Link href="/players">Players</Link>
-            <Link href="/news">News List</Link>
-            <Link href="/todo">Todo</Link>
+            <SideBarLink href="/">HOME</SideBarLink>
+            <SideBarLink href="/teams">Teams</SideBarLink>
+            <SideBarLink href="/players">Players</SideBarLink>
+            <SideBarLink href="/news">News List</SideBarLink>
+            <SideBarLink href="/todo">Todo</SideBarLink>
           </div>
           <div className="p-7">{children}</div>
         </div>
