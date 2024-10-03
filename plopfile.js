@@ -88,4 +88,31 @@ module.exports = function (plop) {
       },
     ],
   });
+
+  /**
+   * ページのテンプレートジェネレータ
+   * ・page.tsx
+   */
+  plop.setGenerator('page', {
+    description: 'Generate a new page',
+    prompts: [
+      {
+        type: 'input',
+        name: 'pathname',
+        message: 'Pathname please (for lower case)',
+      },
+      {
+        type: 'input',
+        name: 'name',
+        message: 'Page name please',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'app/{{pathname}}/page.tsx',
+        templateFile: 'plop-templates/page.tsx.hbs',
+      },
+    ],
+  });
 };

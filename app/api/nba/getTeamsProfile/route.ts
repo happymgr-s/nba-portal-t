@@ -29,11 +29,13 @@ export async function GET(req: NextRequest) {
     'https://api.sportsdata.io/v3/nba/scores/json/AllTeams?key=b2015ed2ef504d85a265b85b7e9ab049';
 
   try {
+    // throw new Error();
     // リクエスト上限あるのでモックデータ返す
     // const result = await axios.get<GetTeamDataListResponse>(url);
     return NextResponse.json(mockData);
   } catch (error) {
-    return NextResponse.json({ error: error, status: 500 });
+    // return NextResponse.json({ error: error, status: 500 });
+    return NextResponse.json([]);
   }
 }
 
