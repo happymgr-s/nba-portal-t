@@ -1,32 +1,11 @@
 import axios from 'axios';
 import { NextRequest, NextResponse } from 'next/server';
+import { Team } from '@/types/team';
 
-type TeamData = {
-  TeamID: number;
-  Key: string;
-  Active: boolean;
-  City: string;
-  Name: string;
-  LeagueID: number;
-  StadiumID: number | null;
-  Conference: string | null;
-  Division: string | null;
-  PrimaryColor: string | null;
-  SecondaryColor: string | null;
-  TertiaryColor: string | null;
-  QuaternaryColor: string | null;
-  WikipediaLogoUrl: string | null;
-  WikipediaWordMarkUrl: string | null;
-  GlobalTeamID: number;
-  NbaDotComTeamID: number;
-  HeadCoach: string | null;
-};
-
-export type GetTeamDataListResponse = TeamData[];
+export type GetTeamDataListResponse = Team[];
 
 export async function GET(req: NextRequest) {
-  const url =
-    'https://api.sportsdata.io/v3/nba/scores/json/AllTeams?key=b2015ed2ef504d85a265b85b7e9ab049';
+  const url = `https://api.sportsdata.io/v3/nba/scores/json/AllTeams?key=${process.env.NBA_API_KEY}`;
 
   try {
     // throw new Error();

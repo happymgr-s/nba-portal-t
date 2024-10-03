@@ -95,11 +95,52 @@ const TodoPage = () => {
 
   const newObj = { ...sample };
 
-  for (let i; i === 4; i++) {
-    if (i === 3) continue;
+  const sampleArray = [
+    {
+      title: 'お散歩',
+      description: 'お散歩します',
+    },
+    {
+      title: '帰宅',
+      description: '早く帰りたい',
+    },
+    {
+      title: '在宅',
+      description: '家で勉強したい',
+    },
+  ];
 
+  // for (初期値 ; 繰り返す条件式 ; 増減値) { 処理内容 }
+  for (let i = 0; i < sampleArray.length - 1; i++) {
     // 何らかの処理
+    console.log(sampleArray[i]);
   }
+
+  sampleArray.forEach((sample) => {
+    console.log(sample);
+  });
+
+  const test = sampleArray.map((sample) => {
+    if (sample.title === 'taguchi') {
+      sample.title = 'satou';
+      sample.description = 'rifaicjia';
+    }
+
+    return sample;
+  });
+
+  const find = sampleArray.find((sample) => {
+    return sample.title === 'taguchi';
+  });
+
+  const stringArray = ['taguchi', 'iwamura', 'yamaguchi', 'okada'];
+
+  const numberArray = [0, 2, 3, 45];
+
+  const joinedNumber = numberArray.join('sjicds');
+  const joined = stringArray.join('n');
+
+  const testArray = new Object();
 
   return (
     <>
