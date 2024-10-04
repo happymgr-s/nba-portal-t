@@ -3,21 +3,18 @@ import Image from 'next/image';
 import { axiosBase } from '@/lib/axiosBase';
 
 import { GetPlayersProfileByTeamName } from '@/app/api/nba/players/[teamName]/route';
-import { GetActiveTeamProfileListResponse } from '@/app/api/nba/teams/active/route';
+import { GetTeamProfileByTeamName } from '@/app/api/nba/teams/[teamName]/route';
 
 /**
  * チーム詳細ページ
  */
 const TeamByIdPage = async ({ params }: { params: { teamName: string } }) => {
   const { teamName } = params;
-  const getTeamsProfileUrl = '/api/nba/teams/active';
+  const getTeamsProfileUrl = `/api/nba/teams/${teamName}`;
   const getPlayersUrl = `/api/nba/players/${teamName}`;
 
-  const teams = (await axiosBase.get<GetActiveTeamProfileListResponse>(getTeamsProfileUrl)).data;
+  const teamProfile = (await axiosBase.get<GetTeamProfileByTeamName>(getTeamsProfileUrl)).data;
   const players = (await axiosBase.get<GetPlayersProfileByTeamName>(getPlayersUrl)).data;
-
-  const teamProfile = teams.find((team) => team.Key === teamName);
-  console.log(teamProfile);
 
   return (
     <>

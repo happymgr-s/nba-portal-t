@@ -10,14 +10,14 @@ export async function GET(req: NextRequest) {
   try {
     // リクエスト上限あるのでモックデータ返す
     // const result = await axios.get<GetTeamDataListResponse>(url);
-    return NextResponse.json(mockData);
+    return NextResponse.json(teamsMockData);
   } catch (error) {
     // return NextResponse.json({ error: error, status: 500 });
     return NextResponse.json([]);
   }
 }
 
-const mockData = [
+export const teamsMockData = [
   {
     TeamID: 1,
     Key: 'WAS',
