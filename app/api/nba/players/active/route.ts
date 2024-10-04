@@ -2,7 +2,7 @@ import { Player } from '@/types/player';
 import axios from 'axios';
 import { NextRequest, NextResponse } from 'next/server';
 
-export type GetPlayersProfileByTeamName = Player[];
+export type GetActivePlayersProfile = Player[];
 
 export async function GET(req: NextRequest) {
   const url = `https://api.sportsdata.io/v3/nba/scores/json/PlayersActiveBasic?key=${process.env.NBA_API_KEY}`;
