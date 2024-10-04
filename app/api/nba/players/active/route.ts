@@ -8,15 +8,15 @@ export async function GET(req: NextRequest) {
   const url = `https://api.sportsdata.io/v3/nba/scores/json/PlayersActiveBasic?key=${process.env.NBA_API_KEY}`;
 
   try {
-    const result = await axios.get(url);
-    return NextResponse.json(mockData);
+    // const result = await axios.get(url);
+    return NextResponse.json(activePlayersMockData);
   } catch (error) {
     // return NextResponse.json({ error: error, status: 500 });
     return NextResponse.json([]);
   }
 }
 
-const mockData = [
+export const activePlayersMockData = [
   {
     PlayerID: 20000441,
     SportsDataID: '',

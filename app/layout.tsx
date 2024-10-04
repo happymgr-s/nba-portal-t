@@ -37,7 +37,7 @@ export default function RootLayout({
           <div className="flex flex-col gap-3 border-r pr-10">
             <SideBarLink href="/">HOME</SideBarLink>
             <SideBarLink href="/teams">Teams</SideBarLink>
-            <SideBarLink href="/players">Players</SideBarLink>
+            <SideBarLink href="/players/active">Players</SideBarLink>
             <SideBarLink href="/news">News List</SideBarLink>
             <SideBarLink href="/todo">Todo</SideBarLink>
           </div>
