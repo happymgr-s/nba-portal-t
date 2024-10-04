@@ -33,13 +33,13 @@ export default function RootLayout({
         <Header />
 
         {/* サイドバー */}
-        <div className=" flex flex-row p-3 ">
-          <div className="flex flex-col gap-3 border-r pr-10">
+        <div className=" flex flex-row ">
+          <div className="flex flex-col gap-3 border-r pr-10 p-3">
             <SideBarLink href="/">HOME</SideBarLink>
-            <SideBarLink href="/teams">Teams</SideBarLink>
-            <SideBarLink href="/players/active">Players</SideBarLink>
-            <SideBarLink href="/news">News List</SideBarLink>
-            <SideBarLink href="/todo">Todo</SideBarLink>
+            <SideBarLink href="/teams">TEAMS</SideBarLink>
+            <SideBarLink href="/players/active">PLAYERS</SideBarLink>
+            <SideBarLink href="/news">NEWS</SideBarLink>
+            <SideBarLink href="/todo">TODO</SideBarLink>
           </div>
           <div className="p-7">{children}</div>
         </div>

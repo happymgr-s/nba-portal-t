@@ -2,15 +2,36 @@ import { axiosBase } from '@/lib/axiosBase';
 import React from 'react';
 import PlayersCard from '@/components/organisms/PlayersCard/PlayersCard';
 import { GetActivePlayersProfile } from '@/app/api/nba/players/active/route';
+import { ParsedUrlQuery } from 'querystring';
+import SearchBar from '@/components/molecules/SearchBar/SearchBar';
 
-const PlayersPage = async ({ params }: { params: { status: string } }) => {
+type PlayersProps = {
+  params: {
+    status: string;
+  };
+  searchParams: {
+    team?: string;
+    position?: string;
+  };
+};
+
+const PlayersPage = async ({ params, searchParams }: PlayersProps) => {
   const { status } = params;
+  const { team, position } = searchParams;
+
   const players = (await axiosBase.get<GetActivePlayersProfile>(`/api/nba/players/${status}`)).data;
+
+  const displayPlayers = players.filter((player) => {
+    const isTeam = team ? player.Team === team : true;
+    const isPosition = position ? player.Position === position : true;
+    return isTeam && isPosition;
+  });
 
   return (
     <div>
+      <SearchBar />
       <div className="grid grid-cols-7 gap-2">
-        {players.map((player) => {
+        {displayPlayers.map((player) => {
           const status = player.Status === 'Active' ? 'active' : 'freeAgent';
 
           return (

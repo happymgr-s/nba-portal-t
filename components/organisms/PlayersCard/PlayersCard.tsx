@@ -20,9 +20,9 @@ const PlayersCard: React.FC<PlayersCardProps> = (props) => {
   return (
     <>
       <Link {...linkProps}>
-        <div className="max-w-48 p-4 flex flex-col justify-center items-start gap-2 duration-75 cursor-pointer hover:scale-125 ">
+        <div className="max-w-48 p-4 flex flex-col justify-start items-start gap-2 duration-75 cursor-pointer hover:scale-125 ">
           {/* 画像 */}
-          <div className="w-full h-9 flex justify-center items-center">
+          <div className="w-12 h-12 flex justify-center items-center">
             <Image src={playerImageSrc} alt={playerImageAlt} width={60} height={60} />
           </div>
 
