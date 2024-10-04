@@ -1,17 +1,17 @@
+import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import './globals.css';
-import Link from 'next/link';
-import Image from 'next/image';
+
 import SideBarLink from '@/components/molecules/SideBarLink/SideBarLink';
+import Header from '@/components/organisms/Header/Header';
 
 const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
+  src: '../public/fonts/GeistVF.woff',
   variable: '--font-geist-sans',
   weight: '100 900',
 });
 const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
+  src: '../public/fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
 });
@@ -29,6 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* ヘッダー */}
+        <Header />
+
         {/* サイドバー */}
         <div className=" flex flex-row p-3 ">
           <div className="flex flex-col gap-3 border-r pr-10">
@@ -40,6 +43,8 @@ export default function RootLayout({
           </div>
           <div className="p-7">{children}</div>
         </div>
+
+        {/* フッター */}
       </body>
     </html>
   );
