@@ -1,6 +1,7 @@
-'use client';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React from 'react';
+"use client";
+import { positionNames, teamNames } from "@/lib/constants";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import React from "react";
 
 type SearchBarProps = {};
 
@@ -14,16 +15,71 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const handleChangeInput = (value: string) => {
-    // router.replace('/')
-    console.log(pathName);
-    console.log(searchParams);
-    console.log(value);
+  const searchFirstName = searchParams.get("firstname");
+  const searchLastName = searchParams.get("lasttname");
+  const searchTeam = searchParams.get("team");
+  const searchPosition = searchParams.get("position");
+
+  const handleChangeInput = (name: string, value: string) => {
+    const newParams = new URLSearchParams(searchParams.toString());
+    newParams.set(name, value);
+
+    router.replace(`${pathName}?${newParams.toString()}`);
   };
 
   return (
     <>
-      <input className="border" type="text" onChange={(e) => handleChangeInput(e.target.value)} />
+      <div className='flex gap-3'>
+        <div>
+          <label htmlFor='firstname'>firstName : </label>
+          <input
+            defaultValue={searchFirstName || ""}
+            className='border'
+            type='text'
+            name='firstname'
+            onChange={(e) => handleChangeInput(e.target.name, e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor='lastname'>lastName : </label>
+          <input
+            defaultValue={searchLastName || ""}
+            className='border'
+            type='text'
+            name='lastname'
+            onChange={(e) => handleChangeInput(e.target.name, e.target.value)}
+          />
+        </div>
+
+        <div>
+          <label htmlFor='team'>team : </label>
+          <select
+            className='border cursor-pointer p-1'
+            defaultValue={searchTeam || "ALL"}
+            onChange={(e) => handleChangeInput(e.target.name, e.target.value)}
+            name='team'
+          >
+            {teamNames.map((team) => (
+              <option value={team !== "ALL" ? team : ""}>{team}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor='position'>position : </label>
+          <select
+            className='border cursor-pointer p-1'
+            defaultValue={searchPosition || "ALL"}
+            onChange={(e) => handleChangeInput(e.target.name, e.target.value)}
+            name='position'
+            id=''
+          >
+            {positionNames.map((positionName) => (
+              <option value={positionName !== "ALL" ? positionName : ""}>{positionName}</option>
+            ))}
+          </select>
+        </div>
+      </div>
     </>
   );
 };

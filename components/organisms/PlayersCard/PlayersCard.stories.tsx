@@ -1,21 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import PlayersCard from './PlayersCard';
+import type { Meta, StoryObj } from "@storybook/react";
+import PlayersCard from "./PlayersCard";
+import { activePlayersMockData } from "@/app/api/nba/players/active/route";
 
 const meta = {
-  title: 'Organisms/PlayersCard',
+  title: "Organisms/PlayersCard",
   component: PlayersCard,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
-    href: '',
-    playerImageSrc: '/猫.png',
-    playerImageAlt: 'player_image',
-    playerName: 'neko tyan',
-    teamName: '猫猫バスターズ',
-    position: 'PG',
+    href: "",
+    playerData: activePlayersMockData[0],
   },
 } satisfies Meta<typeof PlayersCard>;
 

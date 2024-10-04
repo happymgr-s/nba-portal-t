@@ -1,9 +1,9 @@
-import { axiosBase } from '@/lib/axiosBase';
-import React from 'react';
-import PlayersCard from '@/components/organisms/PlayersCard/PlayersCard';
-import { GetActivePlayersProfile } from '@/app/api/nba/players/active/route';
-import { ParsedUrlQuery } from 'querystring';
-import SearchBar from '@/components/molecules/SearchBar/SearchBar';
+import { axiosBase } from "@/lib/axiosBase";
+import React from "react";
+import PlayersCard from "@/components/organisms/PlayersCard/PlayersCard";
+import { GetActivePlayersProfile } from "@/app/api/nba/players/active/route";
+import { ParsedUrlQuery } from "querystring";
+import SearchBar from "@/components/molecules/SearchBar/SearchBar";
 
 type PlayersProps = {
   params: {
@@ -29,20 +29,18 @@ const PlayersPage = async ({ params, searchParams }: PlayersProps) => {
 
   return (
     <div>
-      <SearchBar />
-      <div className="grid grid-cols-7 gap-2">
+      <div className='mb-6'>
+        <SearchBar />
+      </div>
+      <div className='grid grid-cols-5 gap-2'>
         {displayPlayers.map((player) => {
-          const status = player.Status === 'Active' ? 'active' : 'freeAgent';
+          const status = player.Status === "Active" ? "active" : "freeAgent";
 
           return (
             <PlayersCard
               key={player.PlayerID}
               href={`/players/${status}/${player.PlayerID}`}
-              playerImageSrc="/猫.png"
-              playerImageAlt={`${player.LastName}_image`}
-              playerName={`${player.FirstName} ${player.LastName}`}
-              teamName={player.Team}
-              position={player.Position}
+              playerData={player}
             />
           );
         })}
