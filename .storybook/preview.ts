@@ -1,5 +1,5 @@
-import type { Preview } from '@storybook/react';
-import '../app/globals.css'; // グローバルスタイルのパス
+import type { Preview } from "@storybook/react";
+import "../app/globals.css"; // グローバルスタイルのパス
 
 const preview: Preview = {
   parameters: {
@@ -8,6 +8,9 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    nextjs: {
+      appDirectory: true,
     },
   },
 };

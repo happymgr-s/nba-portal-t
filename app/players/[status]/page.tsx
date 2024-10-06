@@ -4,6 +4,7 @@ import PlayersCard from "@/components/organisms/PlayersCard/PlayersCard";
 import { GetActivePlayersProfile } from "@/app/api/nba/players/active/route";
 import { ParsedUrlQuery } from "querystring";
 import SearchBar from "@/components/molecules/SearchBar/SearchBar";
+import PlayersTemplate from "@/components/templates/PlayersTemplate/PlayersTemplate";
 
 type PlayersProps = {
   params: {
@@ -28,24 +29,9 @@ const PlayersPage = async ({ params, searchParams }: PlayersProps) => {
   });
 
   return (
-    <div>
-      <div className='mb-6'>
-        <SearchBar />
-      </div>
-      <div className='grid grid-cols-5 gap-2'>
-        {displayPlayers.map((player) => {
-          const status = player.Status === "Active" ? "active" : "freeAgent";
-
-          return (
-            <PlayersCard
-              key={player.PlayerID}
-              href={`/players/${status}/${player.PlayerID}`}
-              playerData={player}
-            />
-          );
-        })}
-      </div>
-    </div>
+    <>
+      <PlayersTemplate players={displayPlayers} />
+    </>
   );
 };
 

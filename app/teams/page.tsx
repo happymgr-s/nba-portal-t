@@ -2,7 +2,7 @@ import React from "react";
 
 import { axiosBase } from "@/lib/axiosBase";
 import { GetActiveTeamProfileListResponse } from "../api/nba/teams/active/route";
-import TeamsCard from "@/components/organisms/TeamsCard/TeamsCard";
+import TeamsTemplate from "@/components/templates/TeamsTemplate/TeamsTemplate";
 
 /**
  * チーム一覧ページ
@@ -16,17 +16,7 @@ const TeamsPage = async () => {
 
   return (
     <>
-      <div className='grid grid-cols-5 gap-2'>
-        {res.data.map((data) => (
-          <TeamsCard
-            key={data.Key}
-            href={`/teams/${data.Key}`}
-            logoUrl={data.WikipediaLogoUrl || ""}
-            logoAlt={`${data.Name}_logo`}
-            teamName={`${data.City} ${data.Name}`}
-          />
-        ))}
-      </div>
+      <TeamsTemplate teams={res.data} />
     </>
   );
 };

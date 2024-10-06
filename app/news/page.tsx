@@ -2,6 +2,8 @@ import React from "react";
 import { axiosBase } from "@/lib/axiosBase";
 import { GetNewsResponse } from "../api/nba/news/route";
 
+import NewsesTemplate from "@/components/templates/NewsesTemplate/NewsesTemplate";
+
 /**
  * ニュース一覧ページ
  */
@@ -10,17 +12,7 @@ const NewsListPage = async () => {
 
   return (
     <>
-      <div className='flex flex-col gap-4'>
-        {newses.map((news) => (
-          <div key={news.NewsID} className='border rounded-lg p-2'>
-            <h2 className='font-bold border-b-2'>{news.Title}</h2>
-            <p>{news.Content}</p>
-            <a href={news.Url} target='_blank' className='text-blue-500 hover:opacity-75'>
-              {news.Url}
-            </a>
-          </div>
-        ))}
-      </div>
+      <NewsesTemplate newses={newses} />
     </>
   );
 };

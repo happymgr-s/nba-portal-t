@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import TeamsCard from "./TeamsCard";
-import { teamsMockData } from "@/app/api/nba/teams/active/route";
+import NewsesCard from "./NewsesCard";
+import { newsMockData } from "@/app/api/nba/news/route";
 
 const meta = {
-  title: "Organisms/TeamsCard",
-  component: TeamsCard,
+  title: "Organisms/NewsesCard",
+  component: NewsesCard,
   parameters: {
     layout: "",
   },
   tags: ["autodocs"],
   argTypes: {},
   args: {
-    href: "/",
-    team: teamsMockData[0],
+    news: newsMockData[0],
   },
-} satisfies Meta<typeof TeamsCard>;
+} satisfies Meta<typeof NewsesCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
