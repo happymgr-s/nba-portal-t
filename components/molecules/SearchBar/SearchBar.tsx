@@ -1,5 +1,5 @@
 "use client";
-import { positionNames, teamNames } from "@/lib/constants";
+import { positionNames, statusNames, teamNames } from "@/lib/constants";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 
@@ -25,6 +25,12 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
     newParams.set(name, value);
 
     router.replace(`${pathName}?${newParams.toString()}`);
+  };
+
+  const handleSelectStatus = (value: string) => {
+    const newParams = new URLSearchParams(searchParams.toString());
+
+    router.replace(`/players/${value}?${newParams.toString()}`);
   };
 
   return (
@@ -60,7 +66,9 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
             name='team'
           >
             {teamNames.map((team) => (
-              <option value={team !== "ALL" ? team : ""}>{team}</option>
+              <option key={team} value={team !== "ALL" ? team : ""}>
+                {team}
+              </option>
             ))}
           </select>
         </div>
@@ -75,7 +83,25 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
             id=''
           >
             {positionNames.map((positionName) => (
-              <option value={positionName !== "ALL" ? positionName : ""}>{positionName}</option>
+              <option key={positionName} value={positionName !== "ALL" ? positionName : ""}>
+                {positionName}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor='status'>Status</label>
+          <select
+            name='status'
+            id='status'
+            className='border cursor-pointer p-1'
+            onChange={(e) => handleSelectStatus(e.target.value)}
+          >
+            {statusNames.map((status) => (
+              <option key={status} value={status}>
+                {status}
+              </option>
             ))}
           </select>
         </div>

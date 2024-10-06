@@ -20,17 +20,15 @@ const PlayersPage = async ({ params, searchParams }: PlayersProps) => {
   const { status } = params;
   const { team, position } = searchParams;
 
-  const players = (await axiosBase.get<GetActivePlayersProfile>(`/api/nba/players/${status}`)).data;
-
-  const displayPlayers = players.filter((player) => {
-    const isTeam = team ? player.Team === team : true;
-    const isPosition = position ? player.Position === position : true;
-    return isTeam && isPosition;
-  });
+  const players = (
+    await axiosBase.get<GetActivePlayersProfile>(
+      `/api/nba/players/${status}?team=${team}&position=${position}`
+    )
+  ).data;
 
   return (
     <>
-      <PlayersTemplate players={displayPlayers} />
+      <PlayersTemplate players={players} />
     </>
   );
 };
