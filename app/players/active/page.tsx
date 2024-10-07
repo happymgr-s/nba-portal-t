@@ -14,7 +14,7 @@ const PlayersPage = async ({ searchParams }: PlayersProps) => {
   const { team, position } = searchParams;
 
   try {
-    const url = `/api/nba/players/active?team=${team}&position=${position}`;
+    const url = `/api/nba/players/active?team=${team ?? ''}&position=${position ?? ''}`;
     console.log(url);
     const players = (await axiosBase.get<GetActivePlayersProfile>(url)).data;
 
