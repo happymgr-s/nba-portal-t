@@ -16,15 +16,11 @@ export async function GET(req: NextRequest) {
     // const result = await axios.get(url);
     const result = activePlayersMockData;
 
-    console.log(result);
-
     const filteredPlayers = result.filter((player) => {
       const isTeam = team ? player.Team === team : true;
       const isPosition = position ? player.Position === position : true;
       return isTeam && isPosition;
     });
-
-    console.log(filteredPlayers);
 
     return NextResponse.json(filteredPlayers);
   } catch (error) {
