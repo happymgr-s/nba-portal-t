@@ -1,3 +1,6 @@
+/**
+ * ホーム画面
+ */
 export default async function Home() {
   return (
     <>
