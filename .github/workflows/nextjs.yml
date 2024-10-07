@@ -30,4 +30,5 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--yes' # 自動で"Yes"と応答するオプション
           working-directory: ./ # プロジェクトのルートディレクトリ
