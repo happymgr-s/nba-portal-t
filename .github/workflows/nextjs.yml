@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20' # 使用するNode.jsのバージョン
 
@@ -27,7 +27,7 @@ jobs:
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v20 # 最新のバージョンを確認
         with:
-          vercel_token: ${{ secrets.VERCEL_TOKEN }} # Vercelのトークン
-          vercel_project_id: ${{ secrets.VERCEL_PROJECT_ID }} # VercelプロジェクトのIDをSecretsに追加
-          vercel_org_id: ${{ secrets.VERCEL_ORG_ID }} # Vercel組織のIDをSecretsに追加
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Vercelのトークン
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # VercelプロジェクトのIDをSecretsに追加
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # Vercel組織のIDをSecretsに追加
           working-directory: ./ # プロジェクトのルートディレクトリ
