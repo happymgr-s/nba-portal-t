@@ -13,17 +13,20 @@ type PlayersProps = {
 const PlayersPage = async ({ searchParams }: PlayersProps) => {
   const { team, position } = searchParams;
 
-  const players = (
-    await axiosBase.get<GetActivePlayersProfile>(
-      `/api/nba/players/active?team=${team}&position=${position}`
-    )
-  ).data;
+  try {
+    const url = `/api/nba/players/active?team=${team}&position=${position}`;
+    console.log(url);
+    const players = (await axiosBase.get<GetActivePlayersProfile>(url)).data;
 
-  return (
-    <>
-      <PlayersTemplate players={players} />
-    </>
-  );
+    return (
+      <>
+        <PlayersTemplate players={players} />
+      </>
+    );
+  } catch (error) {
+    console.log(error);
+    return <>データの取得に失敗しました。</>;
+  }
 };
 
 export default PlayersPage;
