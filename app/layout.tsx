@@ -39,7 +39,6 @@ export default function RootLayout({
             <SideBarLink href="/teams">TEAMS</SideBarLink>
             <SideBarLink href="/players/active">PLAYERS</SideBarLink>
             <SideBarLink href="/news">NEWS</SideBarLink>
-            <SideBarLink href="/todo">TODO</SideBarLink>
           </div>
           <div className="p-7">{children}</div>
         </div>
