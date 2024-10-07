@@ -1,7 +1,7 @@
-"use client";
-import { positionNames, statusNames, teamNames } from "@/lib/constants";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import React from "react";
+'use client';
+import { positionNames, statusNames, teamNames } from '@/lib/constants';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import React from 'react';
 
 type SearchBarProps = {};
 
@@ -15,10 +15,10 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const searchFirstName = searchParams.get("firstname");
-  const searchLastName = searchParams.get("lasttname");
-  const searchTeam = searchParams.get("team");
-  const searchPosition = searchParams.get("position");
+  const searchFirstName = searchParams.get('firstname');
+  const searchLastName = searchParams.get('lasttname');
+  const searchTeam = searchParams.get('team');
+  const searchPosition = searchParams.get('position');
 
   const handleChangeInput = (name: string, value: string) => {
     const newParams = new URLSearchParams(searchParams.toString());
@@ -35,38 +35,38 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
 
   return (
     <>
-      <div className='flex gap-3'>
+      <div className="flex gap-3">
         <div>
-          <label htmlFor='firstname'>firstName : </label>
+          <label htmlFor="firstname">firstName : </label>
           <input
-            defaultValue={searchFirstName || ""}
-            className='border'
-            type='text'
-            name='firstname'
+            defaultValue={searchFirstName || ''}
+            className="border"
+            type="text"
+            name="firstname"
             onChange={(e) => handleChangeInput(e.target.name, e.target.value)}
           />
         </div>
         <div>
-          <label htmlFor='lastname'>lastName : </label>
+          <label htmlFor="lastname">lastName : </label>
           <input
-            defaultValue={searchLastName || ""}
-            className='border'
-            type='text'
-            name='lastname'
+            defaultValue={searchLastName || ''}
+            className="border"
+            type="text"
+            name="lastname"
             onChange={(e) => handleChangeInput(e.target.name, e.target.value)}
           />
         </div>
 
         <div>
-          <label htmlFor='team'>team : </label>
+          <label htmlFor="team">team : </label>
           <select
-            className='border cursor-pointer p-1'
-            defaultValue={searchTeam || "ALL"}
+            className="border cursor-pointer p-1"
+            defaultValue={searchTeam || 'ALL'}
             onChange={(e) => handleChangeInput(e.target.name, e.target.value)}
-            name='team'
+            name="team"
           >
             {teamNames.map((team) => (
-              <option key={team} value={team !== "ALL" ? team : ""}>
+              <option key={team} value={team !== 'ALL' ? team : ''}>
                 {team}
               </option>
             ))}
@@ -74,16 +74,16 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
         </div>
 
         <div>
-          <label htmlFor='position'>position : </label>
+          <label htmlFor="position">position : </label>
           <select
-            className='border cursor-pointer p-1'
-            defaultValue={searchPosition || "ALL"}
+            className="border cursor-pointer p-1"
+            defaultValue={searchPosition || 'ALL'}
             onChange={(e) => handleChangeInput(e.target.name, e.target.value)}
-            name='position'
-            id=''
+            name="position"
+            id=""
           >
             {positionNames.map((positionName) => (
-              <option key={positionName} value={positionName !== "ALL" ? positionName : ""}>
+              <option key={positionName} value={positionName !== 'ALL' ? positionName : ''}>
                 {positionName}
               </option>
             ))}
@@ -91,11 +91,11 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
         </div>
 
         <div>
-          <label htmlFor='status'>Status</label>
+          <label htmlFor="status">Status</label>
           <select
-            name='status'
-            id='status'
-            className='border cursor-pointer p-1'
+            name="status"
+            id="status"
+            className="border cursor-pointer p-1"
             onChange={(e) => handleSelectStatus(e.target.value)}
           >
             {statusNames.map((status) => (

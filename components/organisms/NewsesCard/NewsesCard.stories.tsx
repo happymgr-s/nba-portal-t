@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import NewsesCard from "./NewsesCard";
-import { newsMockData } from "@/app/api/nba/news/route";
+import type { Meta, StoryObj } from '@storybook/react';
+import NewsesCard from './NewsesCard';
+import { newsMockData } from '@/lib/mockData/newsMockData';
 
 const meta = {
-  title: "Organisms/NewsesCard",
+  title: 'Organisms/NewsesCard',
   component: NewsesCard,
   parameters: {
-    layout: "",
+    layout: '',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {},
   args: {
     news: newsMockData[0],

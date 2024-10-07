@@ -1,24 +1,4 @@
-// import axios from 'axios';
-import { NextRequest, NextResponse } from 'next/server';
-import { Team } from '@/types/team';
-
-export type GetTeamDataListResponse = Team[];
-
-export async function GET(req: NextRequest) {
-  // const url = `https://api.sportsdata.io/v3/nba/scores/json/AllTeams?key=${process.env.NBA_API_KEY}`;
-
-  try {
-    // throw new Error();
-    // リクエスト上限あるのでモックデータ返す
-    // const result = await axios.get<GetTeamDataListResponse>(url);
-    return NextResponse.json(mockData);
-  } catch (error) {
-    // return NextResponse.json({ error: error, status: 500 });
-    return NextResponse.json([]);
-  }
-}
-
-const mockData = [
+export const teamsMockData = [
   {
     TeamID: 1,
     Key: 'WAS',
@@ -628,45 +608,5 @@ const mockData = [
     GlobalTeamID: 20000030,
     NbaDotComTeamID: 1610612758,
     HeadCoach: 'Mike Brown',
-  },
-  {
-    TeamID: 31,
-    Key: 'EAST',
-    Active: false,
-    City: 'East',
-    Name: 'All Stars',
-    LeagueID: 3,
-    StadiumID: null,
-    Conference: null,
-    Division: null,
-    PrimaryColor: null,
-    SecondaryColor: null,
-    TertiaryColor: null,
-    QuaternaryColor: null,
-    WikipediaLogoUrl: null,
-    WikipediaWordMarkUrl: null,
-    GlobalTeamID: 20000031,
-    NbaDotComTeamID: 1610616834,
-    HeadCoach: null,
-  },
-  {
-    TeamID: 32,
-    Key: 'WEST',
-    Active: false,
-    City: 'West',
-    Name: 'All Stars',
-    LeagueID: 3,
-    StadiumID: null,
-    Conference: null,
-    Division: null,
-    PrimaryColor: null,
-    SecondaryColor: null,
-    TertiaryColor: null,
-    QuaternaryColor: null,
-    WikipediaLogoUrl: null,
-    WikipediaWordMarkUrl: null,
-    GlobalTeamID: 20000032,
-    NbaDotComTeamID: 1610616834,
-    HeadCoach: null,
   },
 ];

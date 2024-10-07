@@ -1,7 +1,7 @@
-import React from "react";
-import { Team } from "@/types/team";
+import React from 'react';
+import { Team } from '@/types/team';
 
-import TeamsCard from "@/components/organisms/TeamsCard/TeamsCard";
+import TeamsCard from '@/components/organisms/TeamsCard/TeamsCard';
 
 type TeamsTemplateProps = {
   teams: Team[];
@@ -16,7 +16,7 @@ const TeamsTemplate: React.FC<TeamsTemplateProps> = (props) => {
 
   return (
     <>
-      <div className='grid grid-cols-5 gap-2'>
+      <div className="grid grid-cols-5 gap-2">
         {teams.map((team) => (
           <TeamsCard key={team.Key} href={`/teams/${team.Key}`} team={team} />
         ))}

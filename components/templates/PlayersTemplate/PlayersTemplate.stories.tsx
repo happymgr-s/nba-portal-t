@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import PlayersTemplate from "./PlayersTemplate";
-import { activePlayersMockData } from "@/app/api/nba/players/active/route";
+import type { Meta, StoryObj } from '@storybook/react';
+import PlayersTemplate from './PlayersTemplate';
+import { activePlayersMockData } from '@/lib/mockData/playersMockData';
 
 const meta = {
-  title: "Templates/PlayersTemplate",
+  title: 'Templates/PlayersTemplate',
   component: PlayersTemplate,
   parameters: {
-    layout: "",
+    layout: '',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {},
   args: {
     players: activePlayersMockData,

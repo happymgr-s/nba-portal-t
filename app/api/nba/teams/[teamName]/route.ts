@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { teamsMockData } from '../active/route';
 import { Team } from '@/types/team';
+import { teamsMockData } from '@/lib/mockData/teamsMockData';
 
 export type GetTeamProfileByTeamName = Team;
 

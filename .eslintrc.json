@@ -1,7 +1,14 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next/typescript",
-    "plugin:storybook/recommended"
-  ]
+  "extends": ["next/core-web-vitals", "next/typescript", "plugin:storybook/recommended"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all", // すべての変数に適用
+        "args": "none", // 引数は未使用でも許容
+        "ignoreRestSiblings": true // 分割代入の残り部分は許容
+      }
+    ],
+    "@typescript-eslint/no-empty-object-type": ["warn"]
+  }
 }

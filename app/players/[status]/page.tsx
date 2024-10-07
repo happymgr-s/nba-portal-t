@@ -1,10 +1,7 @@
-import { axiosBase } from "@/lib/axiosBase";
-import React from "react";
-import PlayersCard from "@/components/organisms/PlayersCard/PlayersCard";
-import { GetActivePlayersProfile } from "@/app/api/nba/players/active/route";
-import { ParsedUrlQuery } from "querystring";
-import SearchBar from "@/components/molecules/SearchBar/SearchBar";
-import PlayersTemplate from "@/components/templates/PlayersTemplate/PlayersTemplate";
+import React from 'react';
+import { axiosBase } from '@/lib/axiosBase';
+import { GetActivePlayersProfile } from '@/app/api/nba/players/active/route';
+import PlayersTemplate from '@/components/templates/PlayersTemplate/PlayersTemplate';
 
 type PlayersProps = {
   params: {
