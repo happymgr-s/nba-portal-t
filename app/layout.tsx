@@ -1,19 +1,23 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 
 import SideBarLink from '@/components/molecules/SideBarLink/SideBarLink';
 import Header from '@/components/organisms/Header/Header';
+import Head from 'next/head';
 
-const geistSans = localFont({
-  src: '../public/fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
+import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from 'next/font/google';
+import Footer from '@/components/organisms/Footer/Footer';
+
+const robotoCondensedFont = Roboto_Condensed({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-RobotoCondensed',
 });
-const geistMono = localFont({
-  src: '../public/fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+
+const zenKakuGothicFont = Zen_Kaku_Gothic_Antique({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-ZenKakuGothic',
 });
 
 export const metadata: Metadata = {
@@ -28,13 +32,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <Head>
+        <title>NBA PORTAL</title>
+      </Head>
+
+      <body
+        className={` bg-[#E0E0E0] ${robotoCondensedFont.className} ${zenKakuGothicFont.className} font-roboto antialiased`}
+      >
         {/* ヘッダー */}
         <Header />
 
         {/* サイドバー */}
         <div className=" flex flex-row ">
-          <div className="flex flex-col gap-3 border-r pr-10 p-3">
+          <div className="flex flex-col gap-3 border-r pr-10 p-3 ">
             <SideBarLink href="/">HOME</SideBarLink>
             <SideBarLink href="/teams">TEAMS</SideBarLink>
             <SideBarLink href="/players/active">PLAYERS</SideBarLink>
@@ -44,6 +54,7 @@ export default function RootLayout({
         </div>
 
         {/* フッター */}
+        <Footer />
       </body>
     </html>
   );
