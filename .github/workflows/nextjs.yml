@@ -3,7 +3,7 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - develop # またはデプロイしたいブランチ名
+      - main # またはデプロイしたいブランチ名
 
 jobs:
   deploy:
