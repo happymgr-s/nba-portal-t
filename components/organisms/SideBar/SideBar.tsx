@@ -58,7 +58,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
         <Link href="/">
           <Image
             className="fixed top-2 left-16 z-50"
-            src={'/NBA_PORTAL_LOGO.png'}
+            src={'/NBA_PORTAL_LOGO.svg'}
             alt="NBA_PORTAL_LOGO"
             width={85}
             height={85}
