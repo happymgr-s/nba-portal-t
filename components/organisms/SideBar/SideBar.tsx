@@ -1,12 +1,14 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { BarChart4, Calendar, Home, Menu, Newspaper, Trophy, User, Users, X } from 'lucide-react';
 
 import SideBarLink from '@/components/molecules/SideBarLink/SideBarLink';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useSideBar } from './useSideBar';
 
 type SideBarProps = {
   children?: React.ReactNode;
@@ -18,28 +20,8 @@ type SideBarProps = {
  */
 const SideBar: React.FC<SideBarProps> = (props) => {
   const { children } = props;
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-      if (window.innerWidth < 768) {
-        setSidebarOpen(false);
-      } else {
-        setSidebarOpen(true);
-      }
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const handleClickLink = () => {
-    if (!isMobile) return;
-    setSidebarOpen(false);
-  };
+  const { sidebarOpen, isMobile, setSidebarOpen, handleClickLink } = useSideBar();
 
   return (
     <div className="flex h-screen relative">
@@ -69,7 +51,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
       {/* サイドバー */}
       <aside
         className={`pt-10 bg-gray-100 border-r absolute inset-y-0 left-0 transform transition-all duration-300 ease-in-out ${
-          sidebarOpen ? 'w-40 translate-x-0' : isMobile ? '-translate-x-full' : 'w-16 translate-x-0'
+          sidebarOpen ? 'w-40 translate-x-0' : isMobile ? 'w-0' : 'w-16 translate-x-0'
         } md:relative`}
       >
         <ScrollArea className="h-full">
