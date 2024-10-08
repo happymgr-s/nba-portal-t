@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = (props) => {
 
   return (
     <>
-      <footer className=" static bottom-0">
+      <footer className="w-full mt-auto">
         <div className=" text-white flex flex-col p-4 gap-4 w-full bg-[url('/footer_bg.png')] bg-repeat">
           {/* ロゴ */}
           <div className="flex justify-center items-center">
@@ -53,10 +53,9 @@ const Footer: React.FC<FooterProps> = (props) => {
             </Link>
           </div>
         </div>
-
         {/* コピーライト */}
         <div className=" bg-white w-full h-8 flex justify-center items-center">
-          <p className="leading-none">© Taguchi. Inc. 2024</p>
+          <p className="leading-none font-sans">© 2024 Taguchi Inc.</p>
         </div>
       </footer>
     </>
