@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import SideBarLink from './SideBarLink';
+import { Home } from 'lucide-react';
 
 const meta = {
   title: 'Molecules/SideBarLink',
@@ -11,7 +12,10 @@ const meta = {
   argTypes: {},
   args: {
     href: '/',
-    children: 'HOME',
+    children: 'ホーム',
+    icon: <Home className="w-4 h-4" />,
+    sidebarOpen: true,
+    handleClickLink: () => {},
   },
 } satisfies Meta<typeof SideBarLink>;
 
