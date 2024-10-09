@@ -2,7 +2,6 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 import Header from '@/components/organisms/Header/Header';
-import Head from 'next/head';
 
 import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from 'next/font/google';
 import Footer from '@/components/organisms/Footer/Footer';
@@ -32,11 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <Head>
-        <title>NBA PORTAL</title>
-      </Head>
-
+    <html lang="ja">
       <body
         className={` bg-[#eaeaea] ${robotoCondensedFont.className} ${zenKakuGothicFont.className} font-roboto antialiased`}
       >

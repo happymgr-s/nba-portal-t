@@ -18,8 +18,8 @@ const ParamsClearButton: React.FC<ParamsClearButtonProps> = (props) => {
         className="flex items-center gap-2 hover:opacity-80 active:scale-95"
         onClick={handleClickReset}
       >
-        <span className="text-sm text-gray-500">検索条件をクリア</span>
-        <ReloadIcon className=" text-gray-500 w-4 h-4" />
+        <span className="text-sm font-roboto font-bold text-gray-500">検索条件をクリア</span>
+        <ReloadIcon className="text-gray-500 w-4 h-4" />
       </button>
     </>
   );
