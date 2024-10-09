@@ -5,10 +5,12 @@ const tabList = [
   {
     label: 'ACTIVE',
     value: 'active',
+    href: '/',
   },
   {
     label: 'FA',
     value: 'freeAgent',
+    href: '/',
   },
 ];
 
@@ -22,7 +24,7 @@ const meta = {
   argTypes: {},
   args: {
     tabList,
-    handleClickTabs: () => {},
+    defaultSelected: 'active',
   },
 } satisfies Meta<typeof Tabs>;
 
