@@ -1,4 +1,3 @@
-import SearchBar from '@/components/molecules/SearchBar/SearchBar';
 import PlayersCard from '@/components/organisms/PlayersCard/PlayersCard';
 import PlayersSearchBar from '@/components/organisms/PlayersSearchBar/PlayersSearchBar';
 import { Player } from '@/types/player';
