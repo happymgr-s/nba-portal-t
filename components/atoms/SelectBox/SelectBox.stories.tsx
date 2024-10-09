@@ -26,6 +26,7 @@ const meta = {
   argTypes: {},
   args: {
     selectOptions: mockSelectOptions,
+    defaultValue: mockSelectOptions[0].value,
   },
 } satisfies Meta<typeof SelectBox>;
 
