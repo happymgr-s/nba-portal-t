@@ -60,7 +60,7 @@ const config: Config = {
     fontFamily: {
       roboto: ['var(--font-RobotoCondensed)'],
       gothic: ['var(--font-ZenKakuGothic)'],
-      hiragino: ['Hiragino Kaku Gothic"', 'sans-serif'],
+      hiragino: ['Hiragino Kaku Gothic', 'sans-serif'],
     },
   },
   plugins: [require('tailwindcss-animate')],
