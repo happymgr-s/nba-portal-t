@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
     const result = freeAgentPlayersMockData;
 
     const filteredPlayers = result.filter((player) => {
-      const isPosition = position ? player.Position === position : true;
+      const isPosition = position && position !== 'ALL' ? player.Position === position : true;
       return isPosition;
     });
 
