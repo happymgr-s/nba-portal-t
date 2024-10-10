@@ -1,10 +1,14 @@
-import React from "react";
-import Image from "next/image";
-import Link, { LinkProps } from "next/link";
-import { Player } from "@/types/player";
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import Link, { LinkProps } from 'next/link';
+import { Player } from '@/types/player';
+import { usePathname } from 'next/navigation';
 
 type PlayersCardProps = LinkProps & {
   playerData: Player;
+  teamLogoUrl?: string | null;
+  teamColor?: string | null;
 };
 
 /**
@@ -12,25 +16,47 @@ type PlayersCardProps = LinkProps & {
  * @param props
  */
 const PlayersCard: React.FC<PlayersCardProps> = (props) => {
-  const { playerData, ...linkProps } = props;
+  const { playerData, teamLogoUrl, teamColor = '000000', ...linkProps } = props;
+
+  const pathName = usePathname();
 
   return (
     <>
-      <Link {...linkProps}>
-        <div className='max-w-80 p-4 flex flex-col justify-start items-start gap-2 duration-75 cursor-pointer hover:scale-125 '>
-          {/* 画像 */}
-          <div className='w-12 h-12 flex justify-center items-center'>
-            <Image src={"/猫.png"} alt={`${playerData.LastName}_image`} width={60} height={60} />
+      <Link {...linkProps} className="w-full">
+        <div className="w-full h-32 md:w-full  rounded-2xl shadow-sm duration-200 overflow-hidden cursor-pointer hover:shadow-lg">
+          {/* 選手画像 */}
+          <div
+            className="w-full h-2/3 relative -z-10"
+            style={{
+              background: `linear-gradient(140deg, #cccccc 45%, #${teamColor} 45%)`,
+            }}
+          >
+            <Image
+              className="absolute top-2 left-2 "
+              src={teamLogoUrl || ''}
+              alt="logo"
+              width={30}
+              height={30}
+            />
+            <div className="h-full flex justify-center items-end">
+              <Image src={'/curry_headshot_sample.png'} alt="logo" width={100} height={100} />
+            </div>
           </div>
 
-          <div>
-            {/* 選手名 */}
-            <div className='font-bold'>
-              {playerData.FirstName} {playerData.LastName} #{playerData.Jersey}
+          {/* プレイヤー情報 */}
+          <div className="text-xs flex flex-col justify-between p-1 h-full bg-white">
+            <div className="flex flex-col items-center">
+              <h2 className="font-semibold text-nowrap ">
+                {playerData.FirstName} {playerData.LastName}
+              </h2>
+              {pathName.includes('active') ? (
+                <p>
+                  {playerData.Team} / {playerData.Position} #{playerData.Jersey}
+                </p>
+              ) : (
+                <p>{playerData.Position}</p>
+              )}
             </div>
-            {/* 所属チーム */}
-            <div className=''>team: {playerData.Team}</div>
-            <div className=''>position: {playerData.Position}</div>
           </div>
         </div>
       </Link>

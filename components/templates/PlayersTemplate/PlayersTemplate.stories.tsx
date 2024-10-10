@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import PlayersTemplate from './PlayersTemplate';
 import { activePlayersMockData } from '@/lib/mockData/playersMockData';
+import { teamsMockData } from '@/lib/mockData/teamsMockData';
 
 const meta = {
   title: 'Templates/PlayersTemplate',
@@ -12,6 +13,7 @@ const meta = {
   argTypes: {},
   args: {
     players: activePlayersMockData,
+    teams: teamsMockData,
   },
 } satisfies Meta<typeof PlayersTemplate>;
 
