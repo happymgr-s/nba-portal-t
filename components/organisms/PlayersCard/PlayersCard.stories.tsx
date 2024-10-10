@@ -13,6 +13,7 @@ const meta = {
   args: {
     href: '',
     playerData: activePlayersMockData[0],
+    teamLogoUrl: '/猫.png',
   },
 } satisfies Meta<typeof PlayersCard>;
 

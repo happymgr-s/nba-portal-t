@@ -17,8 +17,14 @@ const PlayersPage = async ({ searchParams }: PlayersProps) => {
   try {
     const GET_PLAYERS_URL = `/api/nba/players/active?team=${team ?? ''}&position=${position ?? ''}`;
     const GET_TEAMS_URL = 'api/nba/teams';
-    const players = (await axiosBase.get<GetActivePlayersProfile>(GET_PLAYERS_URL)).data;
-    const teams = (await axiosBase.get<GetTeamDataListResponse>(GET_TEAMS_URL)).data;
+
+    const response = await Promise.all([
+      axiosBase.get<GetActivePlayersProfile>(GET_PLAYERS_URL),
+      axiosBase.get<GetTeamDataListResponse>(GET_TEAMS_URL),
+    ]);
+
+    const players = response[0].data;
+    const teams = response[1].data;
 
     return (
       <>

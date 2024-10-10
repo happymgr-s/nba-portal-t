@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 
 type PlayersCardProps = LinkProps & {
   playerData: Player;
+  teamLogoUrl?: string | null;
   teamColor?: string | null;
 };
 
@@ -15,14 +16,14 @@ type PlayersCardProps = LinkProps & {
  * @param props
  */
 const PlayersCard: React.FC<PlayersCardProps> = (props) => {
-  const { playerData, teamColor = '000000', ...linkProps } = props;
+  const { playerData, teamLogoUrl, teamColor = '000000', ...linkProps } = props;
 
   const pathName = usePathname();
 
   return (
     <>
-      <Link {...linkProps}>
-        <div className="w-28 h-32 md:w-40 rounded-2xl shadow-sm duration-200 overflow-hidden cursor-pointer hover:shadow-lg">
+      <Link {...linkProps} className="w-full">
+        <div className="w-full h-32 md:w-full  rounded-2xl shadow-sm duration-200 overflow-hidden cursor-pointer hover:shadow-lg">
           {/* 選手画像 */}
           <div
             className="w-full h-2/3 relative -z-10"
@@ -31,19 +32,15 @@ const PlayersCard: React.FC<PlayersCardProps> = (props) => {
             }}
           >
             <Image
-              className="absolute top-2 left-2 w-4 h-4 bg-gray-600 rounded-full"
-              src={'/猫.png'}
+              className="absolute top-2 left-2 "
+              src={teamLogoUrl || ''}
               alt="logo"
-              width={20}
-              height={20}
+              width={30}
+              height={30}
             />
-            <Image
-              className="absolute  bottom-0 left-1 md:left-7"
-              src={'/curry_headshot_sample.png'}
-              alt="logo"
-              width={100}
-              height={100}
-            />
+            <div className="h-full flex justify-center items-end">
+              <Image src={'/curry_headshot_sample.png'} alt="logo" width={100} height={100} />
+            </div>
           </div>
 
           {/* プレイヤー情報 */}
