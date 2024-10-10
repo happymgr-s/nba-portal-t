@@ -2,10 +2,12 @@
 import PlayersCard from '@/components/organisms/PlayersCard/PlayersCard';
 import PlayersSearchBar from '@/components/organisms/PlayersSearchBar/PlayersSearchBar';
 import { Player } from '@/types/player';
+import { Team } from '@/types/team';
 import React, { useState } from 'react';
 
 type PlayersTemplateProps = {
   players: Player[];
+  teams?: Team[];
 };
 
 /**
@@ -13,7 +15,7 @@ type PlayersTemplateProps = {
  * @param props
  */
 const PlayersTemplate: React.FC<PlayersTemplateProps> = (props) => {
-  const { players } = props;
+  const { players, teams } = props;
 
   const [displayLimit, setDisplayLimit] = useState(30);
 
@@ -26,6 +28,7 @@ const PlayersTemplate: React.FC<PlayersTemplateProps> = (props) => {
       <div className="grid grid-cols-5 gap-2">
         {players.map((player, count) => {
           const status = player.Status === 'Active' ? 'active' : 'freeAgent';
+          const playersTeam = teams?.find((team) => team.TeamID === player.TeamID);
 
           return (
             displayLimit > count && (
@@ -33,6 +36,7 @@ const PlayersTemplate: React.FC<PlayersTemplateProps> = (props) => {
                 key={player.PlayerID}
                 href={`/players/${status}/${player.PlayerID}`}
                 playerData={player}
+                teamColor={playersTeam?.PrimaryColor}
               />
             )
           );
