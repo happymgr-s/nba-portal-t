@@ -2,6 +2,7 @@ import React from 'react';
 import { axiosBase } from '@/lib/axiosBase';
 import { GetActivePlayersProfile } from '@/app/api/nba/players/active/route';
 import PlayersTemplate from '@/components/templates/PlayersTemplate/PlayersTemplate';
+import { GetTeamDataListResponse } from '@/app/api/nba/teams/route';
 
 type PlayersProps = {
   searchParams: {
@@ -14,12 +15,14 @@ const PlayersPage = async ({ searchParams }: PlayersProps) => {
   const { team, position } = searchParams;
 
   try {
-    const url = `/api/nba/players/active?team=${team ?? ''}&position=${position ?? ''}`;
-    const players = (await axiosBase.get<GetActivePlayersProfile>(url)).data;
+    const GET_PLAYERS_URL = `/api/nba/players/active?team=${team ?? ''}&position=${position ?? ''}`;
+    const GET_TEAMS_URL = 'api/nba/teams';
+    const players = (await axiosBase.get<GetActivePlayersProfile>(GET_PLAYERS_URL)).data;
+    const teams = (await axiosBase.get<GetTeamDataListResponse>(GET_TEAMS_URL)).data;
 
     return (
       <>
-        <PlayersTemplate players={players} />
+        <PlayersTemplate players={players} teams={teams} />
       </>
     );
   } catch (error) {
