@@ -76,7 +76,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               </SideBarLink>
 
               <SideBarLink
-                href={`/players/active`}
+                href={`/players/active?team=ALL&position=ALL`}
                 icon={<User className="w-5 h-5" />}
                 sidebarOpen={sidebarOpen}
                 handleClickLink={handleClickLink}

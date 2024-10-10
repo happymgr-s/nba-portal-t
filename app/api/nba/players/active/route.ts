@@ -17,8 +17,8 @@ export async function GET(req: NextRequest) {
     const result = activePlayersMockData;
 
     const filteredPlayers = result.filter((player) => {
-      const isTeam = team ? player.Team === team : true;
-      const isPosition = position ? player.Position === position : true;
+      const isTeam = team && team !== 'ALL' ? player.Team === team : true;
+      const isPosition = position && position !== 'ALL' ? player.Position === position : true;
       return isTeam && isPosition;
     });
 
