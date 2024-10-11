@@ -1,5 +1,5 @@
-import type { Preview } from "@storybook/react";
-import "../app/globals.css"; // グローバルスタイルのパス
+import type { Preview } from '@storybook/react';
+import '../app/globals.css'; // グローバルスタイルのパス
 
 const preview: Preview = {
   parameters: {
