@@ -36,7 +36,6 @@ const actionNBABold = localFont({
 export const metadata: Metadata = {
   title: 'NBA PORTAL',
   description: 'NBA PORTAL for japanese',
-  icons: '/basketballIcon.png',
 };
 
 export default function RootLayout({
