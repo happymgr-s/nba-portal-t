@@ -16,7 +16,9 @@ const ConferenceTitle: React.FC<ConferenceTitleProps> = (props) => {
 
   return (
     <>
-      <h1 className={`text-center text-4xl text-[${textColor}] font-actionNBABold`}>{title}</h1>
+      <h1 className="text-center text-4xl font-actionNBABold" style={{ color: textColor }}>
+        {title}
+      </h1>
     </>
   );
 };
