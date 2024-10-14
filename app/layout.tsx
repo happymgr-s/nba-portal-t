@@ -7,6 +7,7 @@ import Header from '@/components/organisms/Header/Header';
 import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from 'next/font/google';
 import Footer from '@/components/organisms/Footer/Footer';
 import SideBar from '@/components/organisms/SideBar/SideBar';
+import { Analytics } from '@vercel/analytics/next';
 
 const robotoCondensedFont = Roboto_Condensed({
   weight: '400',
@@ -53,7 +54,10 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen">
             {/* ヘッダー */}
             <Header />
-            <div className="p-2 md:p-6">{children}</div>
+            <div className="p-2 md:p-6">
+              {children}
+              <Analytics />
+            </div>
             {/* フッター */}
             <Footer />
           </div>
