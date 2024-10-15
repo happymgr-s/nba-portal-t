@@ -2,7 +2,18 @@ export type Schedule = {
   GameID: number; // The unique ID of this game
   Season: number; // The NBA season of the game
   SeasonType: number; // The type of season (1=Regular, 2=Preseason, 3=Playoffs)
-  Status?: string; // Game status (Scheduled, InProgress, Final, etc.)
+  Status:
+    | 'Scheduled'
+    | 'InProgress'
+    | 'Final'
+    | 'F/OT'
+    | 'Suspended'
+    | 'Postponed'
+    | 'Delayed'
+    | 'Canceled'
+    | 'Forfeit'
+    | 'NotNecessary'
+    | null; // Game status (Scheduled, InProgress, Final, etc.)
   Day?: string; // The date of the game
   DateTime?: string; // The date and time of the game
   AwayTeam: string; // Abbreviation of the Away Team

@@ -14,7 +14,7 @@ const CenterLogo: React.FC<CenterLogoProps> = (props) => {
 
   return (
     <>
-      <div className="flex justify-center items-center w-28 h-28">
+      <div className="flex justify-center items-center w-24 h-24 lg:w-28 lg:h-28">
         <Image src={src} alt="home_team_logo" width={70} height={70} />
       </div>
     </>

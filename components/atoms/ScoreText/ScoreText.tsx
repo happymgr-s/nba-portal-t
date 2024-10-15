@@ -13,7 +13,9 @@ const ScoreText: React.FC<ScoreTextProps> = (props) => {
 
   return (
     <>
-      <p className="font-actionNBAMedium text-3xl">{children}</p>
+      <p className="font-actionNBAMedium min-w-6 lg:min-w-11 text-center text-4xl lg:text-6xl">
+        {children}
+      </p>
     </>
   );
 };
