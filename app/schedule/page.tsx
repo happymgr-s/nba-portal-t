@@ -10,6 +10,10 @@ type ScheduleProps = {
   };
 };
 
+/**
+ * 日程一覧ページ
+ * @param season 2025 2025PRE 2025POST 2025STAR etc...
+ */
 const SchedulePage = async ({ searchParams }: ScheduleProps) => {
   const { season } = searchParams;
   try {
