@@ -4,7 +4,14 @@ import { GetScheduleBasicResponse } from '../api/nba/schedule/basic/route';
 import { GetActiveTeamProfileListResponse } from '../api/nba/teams/active/route';
 import ScheduleTemplate from '@/components/templates/ScheduleTemplate/ScheduleTemplate';
 
-const SchedulePage = async () => {
+type ScheduleProps = {
+  searchParams: {
+    season: string;
+  };
+};
+
+const SchedulePage = async ({ searchParams }: ScheduleProps) => {
+  const { season } = searchParams;
   try {
     const response = await Promise.all([
       axiosBase.get<GetScheduleBasicResponse>(`/api/nba/schedule/basic?season=2024`),
