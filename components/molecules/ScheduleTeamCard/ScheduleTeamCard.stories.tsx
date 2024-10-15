@@ -1,15 +1,20 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import ScheduleTeamCard from "./ScheduleTeamCard";
+import type { Meta, StoryObj } from '@storybook/react';
+import ScheduleTeamCard from './ScheduleTeamCard';
+import { scheduleBasicMockData } from '@/lib/mockData/scheduleMockData';
 
 const meta = {
-  title: "Molecules/ScheduleTeamCard",
+  title: 'Molecules/ScheduleTeamCard',
   component: ScheduleTeamCard,
   parameters: {
-    layout: "",
+    layout: '',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {},
-  args: {},
+  args: {
+    schedule: scheduleBasicMockData[0],
+    logoSrc: '/猫.png',
+    side: 'HOME',
+  },
 } satisfies Meta<typeof ScheduleTeamCard>;
 
 export default meta;
