@@ -8,6 +8,8 @@ import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from 'next/font/google';
 import Footer from '@/components/organisms/Footer/Footer';
 import SideBar from '@/components/organisms/SideBar/SideBar';
 import { Analytics } from '@vercel/analytics/next';
+import { axiosBase } from '@/lib/axiosBase';
+import { GetCurrentSeasonResponse } from './api/nba/season/route';
 
 const robotoCondensedFont = Roboto_Condensed({
   weight: '400',
@@ -39,18 +41,19 @@ export const metadata: Metadata = {
   description: 'NBA PORTAL for japanese',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const currentSeason = (await axiosBase.get<GetCurrentSeasonResponse>('/api/nba/season')).data;
   return (
     <html lang="ja">
       <body
         className={`bg-[#eaeaea] ${robotoCondensedFont.className} ${zenKakuGothicFont.className} ${actionNBALight.variable} ${actionNBAMedium.variable} ${actionNBABold.variable} font-roboto antialiased`}
       >
         {/* サイドバー */}
-        <SideBar>
+        <SideBar currentSeason={currentSeason.ApiSeason}>
           <div className="flex flex-col min-h-screen">
             {/* ヘッダー */}
             <Header />
