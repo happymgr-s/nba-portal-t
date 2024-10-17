@@ -1,12 +1,7 @@
 import axios from 'axios';
 import { NextRequest, NextResponse } from 'next/server';
 import { Schedule } from '@/types/schedule';
-import {
-  preScheduleMockData,
-  scheduleBasicMockData,
-  scheduleMockData,
-} from '@/lib/mockData/scheduleMockData';
-import { toJapaneseISOString } from '@/lib/convert';
+import { preScheduleMockData, scheduleBasicMockData } from '@/lib/mockData/scheduleMockData';
 import { JapaneseDate } from '@/lib/japaneseDate';
 
 export type GetScheduleBasicResponse = Schedule[];
@@ -17,7 +12,6 @@ export type GetScheduleBasicResponse = Schedule[];
  */
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
-  console.log(searchParams.toString());
   const season = searchParams.get('season');
   const date = searchParams.get('date');
   const month = searchParams.get('month');
