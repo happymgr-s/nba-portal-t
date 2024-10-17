@@ -1,11 +1,12 @@
 'use client';
 import React from 'react';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { CalendarIcon, ChevronLeftCircle, ChevronRightCircle } from 'lucide-react';
-import { Calendar } from '@/components/ui/calendar';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { toJapaneseISOString } from '@/lib/convert';
 import { ja } from 'date-fns/locale';
+import { CalendarIcon, ChevronLeftCircle, ChevronRightCircle } from 'lucide-react';
+
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Calendar } from '@/components/ui/calendar';
 import MonthCalendar from '../MonthCalendar/MonthCalendar';
 
 type ScheduleDatePickerProps = {};
@@ -34,12 +35,34 @@ const ScheduleDatePicker: React.FC<ScheduleDatePickerProps> = (props) => {
     router.replace(`${pathName}?${newSearchParams.toString()}`);
   };
 
+  const handleClickArrow = (number: 1 | -1) => {
+    const newSearchParams = new URLSearchParams(searchParams.toString());
+
+    if (isMonthDisplay) {
+      displayDate.setMonth(displayDate.getMonth() + number);
+      newSearchParams.set(
+        'month',
+        displayDate.toLocaleDateString().split('/')[0] +
+          '-' +
+          displayDate.toLocaleDateString().split('/')[1].padStart(2, '0')
+      );
+
+      router.replace(`${pathName}?${newSearchParams.toString()}`);
+      return;
+    }
+
+    displayDate.setDate(displayDate.getDate() + number);
+    newSearchParams.set('date', toJapaneseISOString(displayDate).split('T')[0]);
+
+    router.replace(`${pathName}?${newSearchParams.toString()}`);
+  };
+
   return (
     <>
       <div className="flex justify-center items-center gap-4">
         <Popover>
           <PopoverTrigger>
-            <div className="flex justify-center items-center w-10 h-10 rounded-full bg-gray-300 hover:bg-gray-400 duration-200">
+            <div className="flex justify-center items-center w-10 h-10 rounded-full bg-gray-300 hover:bg-gray-400 active:opacity-75 duration-200">
               <CalendarIcon />
             </div>
           </PopoverTrigger>
@@ -58,7 +81,9 @@ const ScheduleDatePicker: React.FC<ScheduleDatePickerProps> = (props) => {
         </Popover>
 
         <div className="flex justify-center items-center gap-2">
-          <ChevronLeftCircle />
+          <div className="w-7 h-7 bg-gray-300 rounded-full flex justify-center items-center hover:bg-gray-400 duration-200 active:opacity-75 cursor-pointer">
+            <ChevronLeftCircle onClick={() => handleClickArrow(-1)} />
+          </div>
           <p className="font-bold text-3xl">
             {isMonthDisplay
               ? displayDate.toLocaleDateString().split('/')[0] +
@@ -66,7 +91,9 @@ const ScheduleDatePicker: React.FC<ScheduleDatePickerProps> = (props) => {
                 displayDate.toLocaleDateString().split('/')[1].padStart(2, '0')
               : displayDate.toLocaleDateString()}
           </p>
-          <ChevronRightCircle />
+          <div className="w-7 h-7 bg-gray-300 rounded-full flex justify-center items-center hover:bg-gray-400 duration-200 active:opacity-75 cursor-pointer">
+            <ChevronRightCircle onClick={() => handleClickArrow(1)} />
+          </div>
         </div>
       </div>
     </>
