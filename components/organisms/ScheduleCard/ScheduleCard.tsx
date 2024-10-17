@@ -5,6 +5,7 @@ import { Team } from '@/types/team';
 
 import ScoreText from '@/components/atoms/ScoreText/ScoreText';
 import ScheduleTeamCard from '@/components/molecules/ScheduleTeamCard/ScheduleTeamCard';
+import { JapaneseDate } from '@/lib/japaneseDate';
 
 type ScheduleCardProps = {
   schedule: Schedule;
@@ -19,23 +20,30 @@ type ScheduleCardProps = {
 const ScheduleCard: React.FC<ScheduleCardProps> = (props) => {
   const { schedule, homeTeam, awayTeam } = props;
 
-  const scheduleDate = new Date(schedule.DateTime || '');
+  const scheduleDate = new JapaneseDate(
+    schedule.DateTimeUTC === null ? schedule.Day || '' : schedule.DateTimeUTC || '',
+    'UTC'
+  );
 
   const displayStatus = (() => {
     if (schedule.IsClosed) return 'CLOSED';
     if (schedule.Status === 'InProgress') return 'LIVE';
+    if (schedule.Status === 'Postponed') return '延期';
+    if (schedule.Status === 'Canceled') return 'CANCELED';
     return '';
   })();
 
   const tagColor = (() => {
     if (schedule.IsClosed) return '#EC7E7E';
     if (schedule.Status === 'InProgress') return '#B5EC7E';
+    if (schedule.Status === 'Postponed') return '#333333';
+    if (schedule.Status === 'Canceled') return '#000000';
     return '';
   })();
 
   return (
     <>
-      <div className="p-2 border mb-4 bg-white relative z-0">
+      <div className="p-2 border bg-white relative z-0">
         {/* タグ */}
         {displayStatus !== '' && (
           <div
@@ -49,9 +57,7 @@ const ScheduleCard: React.FC<ScheduleCardProps> = (props) => {
         )}
 
         <div className="w-full h-full">
-          <p className="text-center font-bold text-xl">
-            {displayTime(scheduleDate.toLocaleTimeString())}~
-          </p>
+          <p className="text-center font-bold text-xl">{scheduleDate.toDisplayTimeString()}~</p>
 
           {/* チーム */}
           <div className="flex justify-center items-center gap-2 lg:gap-6">
@@ -89,8 +95,3 @@ const ScheduleCard: React.FC<ScheduleCardProps> = (props) => {
 };
 
 export default ScheduleCard;
-
-function displayTime(time: string) {
-  const timeSplit = time.split(':');
-  return timeSplit[0] + ':' + timeSplit[1];
-}

@@ -1,12 +1,12 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from 'next/font/google';
 
 import Header from '@/components/organisms/Header/Header';
-
-import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from 'next/font/google';
 import Footer from '@/components/organisms/Footer/Footer';
-import SideBar from '@/components/organisms/SideBar/SideBar';
+import SSRSideBar from '@/components/organisms/SideBar/server/SSRSideBar';
+
 import { Analytics } from '@vercel/analytics/next';
 
 const robotoCondensedFont = Roboto_Condensed({
@@ -50,7 +50,7 @@ export default function RootLayout({
         className={`bg-[#eaeaea] ${robotoCondensedFont.className} ${zenKakuGothicFont.className} ${actionNBALight.variable} ${actionNBAMedium.variable} ${actionNBABold.variable} font-roboto antialiased`}
       >
         {/* サイドバー */}
-        <SideBar>
+        <SSRSideBar>
           <div className="flex flex-col min-h-screen">
             {/* ヘッダー */}
             <Header />
@@ -61,7 +61,7 @@ export default function RootLayout({
             {/* フッター */}
             <Footer />
           </div>
-        </SideBar>
+        </SSRSideBar>
       </body>
     </html>
   );
