@@ -1,15 +1,17 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import SideBar from "./SideBar";
+import type { Meta, StoryObj } from '@storybook/react';
+import SideBar from './SideBar';
 
 const meta = {
-  title: "Organisms/SideBar",
+  title: 'Organisms/SideBar',
   component: SideBar,
   parameters: {
-    layout: "",
+    layout: '',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {},
-  args: {},
+  args: {
+    currentSeason: '2025',
+  },
 } satisfies Meta<typeof SideBar>;
 
 export default meta;
