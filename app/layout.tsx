@@ -1,15 +1,13 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from 'next/font/google';
 
 import Header from '@/components/organisms/Header/Header';
-
-import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from 'next/font/google';
 import Footer from '@/components/organisms/Footer/Footer';
-import SideBar from '@/components/organisms/SideBar/SideBar';
+import SSRSideBar from '@/components/organisms/SideBar/server/SSRSideBar';
+
 import { Analytics } from '@vercel/analytics/next';
-import { axiosBase } from '@/lib/axiosBase';
-import { GetCurrentSeasonResponse } from './api/nba/season/route';
 
 const robotoCondensedFont = Roboto_Condensed({
   weight: '400',
@@ -41,19 +39,18 @@ export const metadata: Metadata = {
   description: 'NBA PORTAL for japanese',
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const currentSeason = (await axiosBase.get<GetCurrentSeasonResponse>('/api/nba/season')).data;
   return (
     <html lang="ja">
       <body
         className={`bg-[#eaeaea] ${robotoCondensedFont.className} ${zenKakuGothicFont.className} ${actionNBALight.variable} ${actionNBAMedium.variable} ${actionNBABold.variable} font-roboto antialiased`}
       >
         {/* サイドバー */}
-        <SideBar currentSeason={currentSeason.ApiSeason}>
+        <SSRSideBar>
           <div className="flex flex-col min-h-screen">
             {/* ヘッダー */}
             <Header />
@@ -64,7 +61,7 @@ export default async function RootLayout({
             {/* フッター */}
             <Footer />
           </div>
-        </SideBar>
+        </SSRSideBar>
       </body>
     </html>
   );
