@@ -14,8 +14,8 @@ export type Schedule = {
     | 'Forfeit'
     | 'NotNecessary'
     | null; // Game status (Scheduled, InProgress, Final, etc.)
-  Day?: string; // The date of the game
-  DateTime?: string; // The date and time of the game
+  Day?: string | null; // The date of the game
+  DateTime?: string | null; // The date and time of the game
   AwayTeam: string; // Abbreviation of the Away Team
   HomeTeam: string; // Abbreviation of the Home Team
   AwayTeamID: number; // Unique ID of the away team
@@ -28,8 +28,8 @@ export type Schedule = {
   GlobalAwayTeamID: number; // Globally unique ID for the away team
   GlobalHomeTeamID: number; // Globally unique ID for the home team
   IsClosed: boolean; // Whether the game is over and finalized
-  NeutralVenue?: boolean; // Whether the game is played at a neutral venue
-  DateTimeUTC?: string; // Game date and time in UTC
+  NeutralVenue?: boolean | null; // Whether the game is played at a neutral venue
+  DateTimeUTC?: string | null; // Game date and time in UTC
 };
 
 export type Game = {

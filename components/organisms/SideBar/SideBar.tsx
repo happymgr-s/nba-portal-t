@@ -11,6 +11,7 @@ import SideBarLink from '@/components/molecules/SideBarLink/SideBarLink';
 import { useSideBar } from './useSideBar';
 
 type SideBarProps = {
+  currentSeason: string;
   children?: React.ReactNode;
 };
 
@@ -19,7 +20,7 @@ type SideBarProps = {
  * @param props
  */
 const SideBar: React.FC<SideBarProps> = (props) => {
-  const { children } = props;
+  const { currentSeason, children } = props;
 
   const { sidebarOpen, isMobile, setSidebarOpen, handleClickLink } = useSideBar();
 
@@ -52,7 +53,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
       <aside
         className={`pt-10 bg-gray-100 border-r absolute inset-y-0 left-0 transform transition-all duration-300 ease-in-out ${
           sidebarOpen ? 'w-40 translate-x-0' : isMobile ? 'w-0' : 'w-16 translate-x-0'
-        } md:relative z-10`}
+        } md:relative z-20`}
       >
         <ScrollArea className="h-full">
           <div className="py-4">
@@ -67,7 +68,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               </SideBarLink>
 
               <SideBarLink
-                href={`/schedule`}
+                href={`/schedule?season=${currentSeason}`}
                 icon={<Calendar className="w-5 h-5" />}
                 sidebarOpen={sidebarOpen}
                 handleClickLink={handleClickLink}

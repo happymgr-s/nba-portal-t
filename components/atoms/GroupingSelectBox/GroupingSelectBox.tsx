@@ -24,7 +24,8 @@ type GroupingSelectBoxProps = SelectProps & {
 
 /**
  * セレクトボックスコンポーネント（グルーピングつき）
- * @param props
+ * @param selectOptions {label:string , value:string , group: string}[]
+ * @param groups グループ
  */
 const GroupingSelectBox: React.FC<GroupingSelectBoxProps> = (props) => {
   const { selectOptions, groups, ...rest } = props;
@@ -32,7 +33,7 @@ const GroupingSelectBox: React.FC<GroupingSelectBoxProps> = (props) => {
   return (
     <>
       <Select {...rest}>
-        <SelectTrigger className="w-full md:w-60 rounded-full bg-white">
+        <SelectTrigger className="w-full lg:w-72 rounded-full bg-white">
           <SelectValue />
         </SelectTrigger>
 
