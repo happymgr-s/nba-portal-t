@@ -95,7 +95,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               </SideBarLink>
 
               <SideBarLink
-                href={`/`}
+                href={`/ranking`}
                 icon={<Trophy className="w-5 h-5" />}
                 sidebarOpen={sidebarOpen}
                 handleClickLink={handleClickLink}
