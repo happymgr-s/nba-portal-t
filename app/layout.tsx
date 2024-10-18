@@ -8,6 +8,7 @@ import Footer from '@/components/organisms/Footer/Footer';
 import SSRSideBar from '@/components/organisms/SideBar/server/SSRSideBar';
 
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const robotoCondensedFont = Roboto_Condensed({
   weight: '400',
@@ -57,6 +58,7 @@ export default function RootLayout({
             <div className="p-2 md:p-6">
               {children}
               <Analytics />
+              <SpeedInsights />
             </div>
             {/* フッター */}
             <Footer />
