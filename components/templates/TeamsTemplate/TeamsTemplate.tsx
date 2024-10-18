@@ -23,7 +23,7 @@ const TeamsTemplate: React.FC<TeamsTemplateProps> = (props) => {
   const southwestTeams = teams.filter((team) => team.Division === 'Southwest');
 
   return (
-    <>
+    <div className="p-1 pb-4 md:p-4">
       <div className="flex flex-col gap-4 lg:gap-8">
         <div className="flex flex-col gap-2 lg:gap-4">
           <ConferenceTitle conference="Eastern" />
@@ -41,7 +41,7 @@ const TeamsTemplate: React.FC<TeamsTemplateProps> = (props) => {
           <TeamsCardsTemplate division="SOUTHWEST" teams={southwestTeams} />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
