@@ -49,7 +49,7 @@ const StandingsTable: React.FC<StandingsTableProps> = (props) => {
               return (
                 <tr key={standing.TeamID} className="border-2">
                   <td className="px-2 py-1 border-1 text-center sticky left-0 z-10 bg-gray-200">
-                    {standing.ConferenceRank.toString().padStart(2, '0')}
+                    {standing.ConferenceRank?.toString().padStart(2, '0')}
                   </td>
                   <td className="sticky left-12 z-10 bg-gray-200">
                     <Link href={`/teams/${teamProfile?.Key}`} className="flex items-center gap-2">

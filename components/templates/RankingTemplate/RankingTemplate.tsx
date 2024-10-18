@@ -21,10 +21,10 @@ const RankingTemplate: React.FC<RankingTemplateProps> = (props) => {
   const westernStandings = standings.filter((standing) => standing.Conference === 'Western');
 
   const sortedEasternStandings = [...easternStandings].sort(
-    (a, b) => a.ConferenceRank - b.ConferenceRank
+    (a, b) => (a.ConferenceRank || 0) - (b.ConferenceRank || 0)
   );
   const sortedWesternStandings = [...westernStandings].sort(
-    (a, b) => a.ConferenceRank - b.ConferenceRank
+    (a, b) => (a.ConferenceRank || 0) - (b.ConferenceRank || 0)
   );
 
   return (

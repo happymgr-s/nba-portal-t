@@ -26,6 +26,6 @@ export type Standing = {
   GamesBack: number; // リーダーとのゲーム差
   StreakDescription: string; // 連勝または連敗の概要 (例: W5, L1)
   GlobalTeamID: number; // グローバルなチームのユニークID
-  ConferenceRank: number; // 会議内でのランク
-  DivisionRank: number; // ディビジョン内でのランク
+  ConferenceRank: number | null; // 会議内でのランク
+  DivisionRank: number | null; // ディビジョン内でのランク
 };
