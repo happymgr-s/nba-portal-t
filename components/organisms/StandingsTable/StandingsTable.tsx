@@ -47,7 +47,7 @@ const StandingsTable: React.FC<StandingsTableProps> = (props) => {
             {standings.map((standing) => {
               const teamProfile = teams.find((team) => team.Key === standing.Key);
               return (
-                <tr className="border-2">
+                <tr key={standing.TeamID} className="border-2">
                   <td className="px-2 py-1 border-1 text-center sticky left-0 z-10 bg-gray-200">
                     {standing.ConferenceRank.toString().padStart(2, '0')}
                   </td>
