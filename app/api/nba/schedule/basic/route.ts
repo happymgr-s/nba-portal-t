@@ -19,19 +19,41 @@ export async function GET(req: NextRequest) {
   const closedDisplay = searchParams.get('closed_display') === 'true';
   const team = searchParams.get('team');
 
-  const url = `https://api.sportsdata.io/v3/nba/scores/json/SchedulesBasic/${season}?key=${process.env.NBA_API_KEY}`;
-
-  try {
-    // const result = await axios.get<GetScheduleBasicResponse>(url);
-    // return NextResponse.json(result.data);
-
-    const result = (() => {
+  if (process.env.NODE_ENV !== 'production') {
+    const mockData = (() => {
       if (season === '2025') return scheduleBasicMockData;
       if (season === '2025PRE') return preScheduleMockData;
       return [];
     })();
+    const filteredSchedule = mockData.filter((schedule) => {
+      const scheduleDateForJapanese = new JapaneseDate(schedule.DateTimeUTC || '', 'UTC');
 
-    const filteredSchedule = result.filter((schedule) => {
+      const isClosed = closedDisplay ? true : !schedule.IsClosed;
+      const isDate =
+        date && !monthDisplay
+          ? scheduleDateForJapanese.toDateTimeString().split('T')[0].includes(date)
+          : true;
+
+      const isMonth =
+        month && monthDisplay
+          ? scheduleDateForJapanese.toDateTimeString().split('T')[0].includes(month)
+          : true;
+      const isTeam =
+        team && team !== 'ALL' && monthDisplay
+          ? schedule.HomeTeam === team || schedule.AwayTeam === team
+          : true;
+
+      return isDate && isMonth && isClosed && isTeam;
+    });
+    return NextResponse.json(filteredSchedule);
+  }
+
+  const url = `https://api.sportsdata.io/v3/nba/scores/json/SchedulesBasic/${season}?key=${process.env.NBA_API_KEY}`;
+
+  try {
+    const result = await axios.get<GetScheduleBasicResponse>(url);
+
+    const filteredSchedule = result.data.filter((schedule) => {
       const scheduleDateForJapanese = new JapaneseDate(schedule.DateTimeUTC || '', 'UTC');
 
       const isClosed = closedDisplay ? true : !schedule.IsClosed;
