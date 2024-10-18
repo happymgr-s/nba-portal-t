@@ -11,7 +11,7 @@ const RankingPage = async ({ searchParams }: RankingPageSearchParams) => {
   const { season } = searchParams;
   try {
     const response = await Promise.all([
-      axiosBase.get(`/api/nba/standings?${season}`),
+      axiosBase.get(`/api/nba/standings?season=${season}`),
       axiosBase.get('/api/nba/teams/active'),
     ]);
 
