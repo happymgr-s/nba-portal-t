@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from 'axios';
 import { NextRequest, NextResponse } from 'next/server';
 
 type Player = {
@@ -25,11 +25,13 @@ export type GetPlayersProfileByTeamName = Player[];
 
 export async function GET(req: NextRequest, { params }: { params: { teamName: string } }) {
   const { teamName } = params;
-  // const url = `https://api.sportsdata.io/v3/nba/scores/json/PlayersBasic/${teamName}?key=${process.env.NBA_API_KEY}`;
+
+  if (process.env.NODE_ENV !== 'production') return NextResponse.json(mockData);
+  const url = `https://api.sportsdata.io/v3/nba/scores/json/PlayersBasic/${teamName}?key=${process.env.NBA_API_KEY}`;
 
   try {
-    // const result = await axios.get(url);
-    return NextResponse.json(mockData);
+    const result = await axios.get(url);
+    return NextResponse.json(result.data);
   } catch (error) {
     // return NextResponse.json({ error: error, status: 500 });
     return NextResponse.json([]);
