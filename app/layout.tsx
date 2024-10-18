@@ -9,6 +9,7 @@ import SSRSideBar from '@/components/organisms/SideBar/server/SSRSideBar';
 
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import Head from 'next/head';
 
 const robotoCondensedFont = Roboto_Condensed({
   weight: '400',
@@ -48,6 +49,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="nqC9VyESC0lqQqxhaIc1-3p05cOQaIj_3phmWnHPcA4"
+        />
+      </Head>
       <body
         className={`bg-[#eaeaea] ${robotoCondensedFont.className} ${zenKakuGothicFont.className} ${actionNBALight.variable} ${actionNBAMedium.variable} ${actionNBABold.variable} font-roboto antialiased`}
       >
