@@ -39,7 +39,16 @@ const PlayersCard: React.FC<PlayersCardProps> = (props) => {
               height={30}
             />
             <div className="h-full flex justify-center items-end">
-              <Image src={'/curry_headshot_sample.png'} alt="logo" width={100} height={100} />
+              <Image
+                src={
+                  playerData.PlayerID === 20000485
+                    ? '/curry_headshot_sample.png'
+                    : '/sample_headshot.png'
+                }
+                alt="logo"
+                width={playerData.PlayerID === 20000485 ? 100 : 70}
+                height={playerData.PlayerID === 20000485 ? 100 : 70}
+              />
             </div>
           </div>
 
