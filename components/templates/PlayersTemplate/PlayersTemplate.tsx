@@ -20,7 +20,7 @@ const PlayersTemplate: React.FC<PlayersTemplateProps> = (props) => {
   const [displayLimit, setDisplayLimit] = useState(30);
 
   return (
-    <>
+    <div className="p-1 md:p-4">
       <div className="mb-6">
         <PlayersSearchBar />
       </div>
@@ -55,7 +55,7 @@ const PlayersTemplate: React.FC<PlayersTemplateProps> = (props) => {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

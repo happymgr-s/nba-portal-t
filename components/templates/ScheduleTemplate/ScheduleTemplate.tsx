@@ -30,8 +30,8 @@ const ScheduleTemplate: React.FC<ScheduleTemplateProps> = (props) => {
   const groupedSchedules = groupSchedulesByDate(schedules);
 
   return (
-    <>
-      <div className="sticky top-[58px] md:top-0 z-10 flex flex-col items-center gap-2 bg-[#eaeaea] mb-4">
+    <div className="pb-6">
+      <div className=" py-2 px-1 lg:p-4 sticky top-[58px] md:top-0 z-10 flex flex-col items-center gap-2 bg-[#eaeaea] mb-4">
         <ScheduleDatePicker />
 
         <DisplayTypeSwitch />
@@ -83,7 +83,7 @@ const ScheduleTemplate: React.FC<ScheduleTemplateProps> = (props) => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 
