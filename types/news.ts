@@ -18,3 +18,19 @@ export type NewsItem = {
   OriginalSource: string;
   OriginalSourceUrl: string;
 };
+
+export type Article = {
+  source: Source;
+  author: string | null;
+  title: string;
+  description: string;
+  url: string;
+  urlToImage: string | null;
+  publishedAt: string;
+  content: string;
+};
+
+interface Source {
+  id: string | null;
+  name: string;
+}
