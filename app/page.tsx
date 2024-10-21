@@ -17,21 +17,25 @@ export default async function Home() {
     '-' +
     today.getDate().toString().padStart(2, '0');
 
-  const response = await Promise.all([
-    axiosBase.get<GetScheduleBasicResponse>(
-      `/api/nba/schedule/basic?season=2025&date=${searchDate}&month_display=false`
-    ),
-    axiosBase.get<GetActiveTeamProfileListResponse>('/api/nba/teams/active'),
-    axiosBase.get<GetStandingsResponse>('/api/nba/standings?season=2025'),
-  ]);
+  try {
+    const response = await Promise.all([
+      axiosBase.get<GetScheduleBasicResponse>(
+        `/api/nba/schedule/basic?season=2025&date=${searchDate}&month_display=false`
+      ),
+      axiosBase.get<GetActiveTeamProfileListResponse>('/api/nba/teams/active'),
+      axiosBase.get<GetStandingsResponse>('/api/nba/standings?season=2025'),
+    ]);
 
-  const schedules = response[0].data;
-  const teams = response[1].data;
-  const standings = response[2].data;
+    const schedules = response[0].data;
+    const teams = response[1].data;
+    const standings = response[2].data;
 
-  return (
-    <>
-      <HomeTemplate schedules={schedules} teams={teams} standings={standings} />
-    </>
-  );
+    return (
+      <>
+        <HomeTemplate schedules={schedules} teams={teams} standings={standings} />
+      </>
+    );
+  } catch (error) {
+    <>データの取得に失敗しました。</>;
+  }
 }
