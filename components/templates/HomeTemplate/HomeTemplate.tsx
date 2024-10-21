@@ -64,7 +64,7 @@ const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
           {/* 順位 */}
           <div className="mt-4">
             <p className="border-b border-b-gray-400 font-semibold text-lg mb-2">順位</p>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="md:grid md:grid-cols-2 md:gap-2">
               <div className="flex flex-col items-center">
                 <ConferenceTitle conference="Eastern" />
                 <StandingsTable standings={sortedEasternStandings} teams={teams} />
