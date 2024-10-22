@@ -2,7 +2,7 @@ import React from 'react';
 import { axiosBase } from '@/lib/axiosBase';
 import { Season } from '@/types/season';
 import SideBar from '../SideBar';
-import { seasonMockData } from '@/app/api/nba/season/route';
+import { seasonMockData } from '@/lib/mockData/seaseonMockData';
 
 type SSRSideBarProps = {
   children: React.ReactNode;
