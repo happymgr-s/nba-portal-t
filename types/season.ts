@@ -1,7 +1,7 @@
 export type Season = {
-  Season: string;
-  StartYear: string;
-  EndYear: string;
+  Season: number;
+  StartYear: number;
+  EndYear: number;
   Description: string;
   RegularSeasonStartDate: string;
   PostSeasonStartDate: string;

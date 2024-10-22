@@ -9,9 +9,10 @@ import { BarChart4, Calendar, Home, Menu, Newspaper, Trophy, User, Users, X } fr
 
 import SideBarLink from '@/components/molecules/SideBarLink/SideBarLink';
 import { useSideBar } from './useSideBar';
+import { Season } from '@/types/season';
 
 type SideBarProps = {
-  currentSeason: string;
+  currentSeason: Season;
   children?: React.ReactNode;
 };
 
@@ -23,6 +24,11 @@ const SideBar: React.FC<SideBarProps> = (props) => {
   const { currentSeason, children } = props;
 
   const { sidebarOpen, isMobile, setSidebarOpen, handleClickLink } = useSideBar();
+
+  const defaultSeason = (() => {
+    if (currentSeason.SeasonType === 'REG') return currentSeason.Season;
+    return currentSeason.ApiSeason;
+  })();
 
   return (
     <div className="flex h-screen relative z-10">
@@ -68,7 +74,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               </SideBarLink>
 
               <SideBarLink
-                href={`/schedule?season=${currentSeason}`}
+                href={`/schedule?season=${defaultSeason}`}
                 icon={<Calendar className="w-5 h-5" />}
                 sidebarOpen={sidebarOpen}
                 handleClickLink={handleClickLink}
@@ -95,7 +101,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               </SideBarLink>
 
               <SideBarLink
-                href={`/ranking?season=${currentSeason}`}
+                href={`/ranking?season=${currentSeason.Season.toString()}`}
                 icon={<Trophy className="w-5 h-5" />}
                 sidebarOpen={sidebarOpen}
                 handleClickLink={handleClickLink}

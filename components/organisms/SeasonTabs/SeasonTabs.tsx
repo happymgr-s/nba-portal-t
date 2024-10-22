@@ -45,7 +45,7 @@ const SeasonTabs: React.FC<SeasonTabsProps> = (props) => {
   return (
     <>
       <div className="text-center">
-        <Tabs tabList={tabList} defaultSelected={searchParams.get('season') || 'regular'} />
+        <Tabs tabList={tabList} defaultSelected={searchParams.get('season') || '2025REG'} />
       </div>
     </>
   );
