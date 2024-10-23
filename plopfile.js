@@ -118,7 +118,7 @@ module.exports = function (plop) {
 
   /**
    * nextAPIのテンプレートジェネレータ
-   * ・route.tsx
+   * ・route.ts
    */
   plop.setGenerator('nextAPI', {
     description: 'Generate a new nextAPI route',
@@ -138,7 +138,7 @@ module.exports = function (plop) {
     actions: [
       {
         type: 'add',
-        path: 'app/api/nba/{{dir}}/route.tsx',
+        path: 'app/api/nba/{{dir}}/route.ts',
         templateFile: 'plop-templates/nextAPI.ts.hbs',
       },
     ],
