@@ -22,6 +22,9 @@ const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
   const { schedules, teams, standings } = props;
 
   const today = new Date();
+  const formattedDate = `${today.getFullYear()}/${(today.getMonth() + 1)
+    .toString()
+    .padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}`;
 
   const easternStandings = standings.filter((standing) => standing.Conference === 'Eastern');
   const westernStandings = standings.filter((standing) => standing.Conference === 'Western');
@@ -43,7 +46,7 @@ const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
           {/* 本日の日程 */}
           <div className="mt-4">
             <p className="border-b border-b-gray-400 font-semibold text-lg mb-2">
-              本日の日程 {today.toLocaleDateString()}
+              本日の日程 {formattedDate}
             </p>
             {schedules.length !== 0 ? (
               schedules.map((schedule) => {
