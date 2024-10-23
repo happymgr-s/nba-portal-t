@@ -115,4 +115,32 @@ module.exports = function (plop) {
       },
     ],
   });
+
+  /**
+   * nextAPIのテンプレートジェネレータ
+   * ・route.tsx
+   */
+  plop.setGenerator('nextAPI', {
+    description: 'Generate a new nextAPI route',
+    prompts: [
+      {
+        type: 'input',
+        name: 'dir',
+        message: 'Please api route path after [api/nba/]',
+      },
+      {
+        type: 'list',
+        name: 'method',
+        choices: ['GET', 'POST', 'PUT', 'DELETE'],
+        message: 'Select a method',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'app/api/nba/{{dir}}/route.tsx',
+        templateFile: 'plop-templates/nextAPI.ts.hbs',
+      },
+    ],
+  });
 };
