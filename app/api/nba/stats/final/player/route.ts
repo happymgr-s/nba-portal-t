@@ -1,3 +1,4 @@
+import { playerSeasonStatsMockData } from '@/lib/mockData/statsMockData';
 import { NextRequest, NextResponse } from 'next/server';
 
 /**
@@ -6,9 +7,9 @@ import { NextRequest, NextResponse } from 'next/server';
  * @returns スタッツ
  */
 export async function GET(req: NextRequest) {
-  //   if (process.env.NODE_ENV !== 'production') {
-  //     return;
-  //   }
+  if (process.env.NODE_ENV !== 'production') {
+    return NextResponse.json(playerSeasonStatsMockData);
+  }
   const searchParams = req.nextUrl.searchParams;
   const season = searchParams.get('season');
 
