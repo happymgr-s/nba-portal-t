@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
     });
     return NextResponse.json(filteredPlayers);
   }
-  const url = `https://api.sportsdata.io/v3/nba/scores/json/PlayersByFreeAgent?key=${process.env.NBA_API_KEY}`;
+  const url = `https://api.sportsdata.io/v3/nba/scores/json/PlayersByFreeAgents?key=${process.env.NBA_API_KEY}`;
 
   try {
     const result = await axios.get<Player[]>(url);
