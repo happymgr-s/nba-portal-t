@@ -1,24 +1,29 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import StatsCard from './StatsCard';
+import StatsGridTemplate from './StatsGridTemplate';
 import { playerSeasonStatsMockData } from '@/lib/mockData/statsMockData';
 import { teamsMockData } from '@/lib/mockData/teamsMockData';
 
+const pointsLeaders = playerSeasonStatsMockData
+  .filter((stat) => stat.Points !== null)
+  .sort((a, b) => b.Points - a.Points)
+  .slice(0, 5);
+
 const meta = {
-  title: 'Organisms/StatsCard',
-  component: StatsCard,
+  title: 'Templates/StatsGridTemplate',
+  component: StatsGridTemplate,
   parameters: {
     layout: '',
   },
   tags: ['autodocs'],
   argTypes: {},
   args: {
-    stat: playerSeasonStatsMockData[0],
-    team: teamsMockData[0],
-    rank: 0,
-    leader: 'Points',
+    title: '総得点',
+    leaderKey: 'Points',
+    leaders: pointsLeaders,
     leaderLabel: 'pts',
+    teams: teamsMockData,
   },
-} satisfies Meta<typeof StatsCard>;
+} satisfies Meta<typeof StatsGridTemplate>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

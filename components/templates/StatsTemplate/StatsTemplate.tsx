@@ -1,7 +1,9 @@
-import StatsCard from '@/components/organisms/StatsCard/StatsCard';
+import React from 'react';
 import { Stat } from '@/types/stat';
 import { Team } from '@/types/team';
-import React from 'react';
+import { getTopAverageLeaders } from '@/lib/getLeagueLeader';
+
+import StatsGridTemplate from '../StatsGridTemplate/StatsGridTemplate';
 
 type StatsTemplateProps = {
   playerStats: Stat[];
@@ -15,39 +17,73 @@ type StatsTemplateProps = {
 const StatsTemplate: React.FC<StatsTemplateProps> = (props) => {
   const { playerStats, teams } = props;
 
-  // 得点リーダーの抽出（得点でソートし、上位5名を取得）
-  const pointsLeaders = getTopLeaders(playerStats, 'Points', 5);
+  const pointsLeaders = getTopAverageLeaders(playerStats, 'Points');
 
-  // アシストリーダーの抽出（アシストでソートし、上位5名を取得）
-  const assistsLeaders = getTopLeaders(playerStats, 'Assists', 5);
+  const assistsLeaders = getTopAverageLeaders(playerStats, 'Assists');
+
+  const reboundLeaders = getTopAverageLeaders(playerStats, 'Rebounds');
+
+  const blockedLeaders = getTopAverageLeaders(playerStats, 'BlockedShots');
+
+  const stealLeaders = getTopAverageLeaders(playerStats, 'Steals');
+
+  const turnOverLeaders = getTopAverageLeaders(playerStats, 'Turnovers');
+
+  const personalFoulLeaders = getTopAverageLeaders(playerStats, 'PersonalFouls');
 
   return (
     <>
       <div className="p-1 lg:p-2">
-        <p>得点ランキング</p>
-        {/* 得点ランキング */}
-        <div className="grid gap-2 grid-cols-2">
-          {pointsLeaders.map((stat, index) => {
-            const team = teams.find((team) => team.TeamID === stat.TeamID);
-            return (
-              <div key={stat.StatID} className={index === 0 ? 'col-span-full' : ''}>
-                <StatsCard stat={stat} team={team} rank={index} leaderLabel="pts" />
-              </div>
-            );
-          })}
-        </div>
-
-        <p className="mt-4">アシストランキング</p>
-        {/* アシストランキング */}
-        <div className="grid gap-2 grid-cols-2">
-          {assistsLeaders.map((stat, index) => {
-            const team = teams.find((team) => team.TeamID === stat.TeamID);
-            return (
-              <div key={stat.StatID} className={index === 0 ? 'col-span-full' : ''}>
-                <StatsCard stat={stat} team={team} rank={index} leaderLabel="ast" />
-              </div>
-            );
-          })}
+        <div className="flex flex-col gap-3">
+          <StatsGridTemplate
+            title="平均得点"
+            leaderKey="Points"
+            leaders={pointsLeaders}
+            leaderLabel="pts"
+            teams={teams}
+          />
+          <StatsGridTemplate
+            title="平均アシスト"
+            leaderKey="Assists"
+            leaders={assistsLeaders}
+            leaderLabel="ast"
+            teams={teams}
+          />
+          <StatsGridTemplate
+            title="平均リバウンド"
+            leaderKey="Rebounds"
+            leaders={reboundLeaders}
+            leaderLabel="reb"
+            teams={teams}
+          />
+          <StatsGridTemplate
+            title="平均ブロック"
+            leaderKey="BlockedShots"
+            leaders={blockedLeaders}
+            leaderLabel="blk"
+            teams={teams}
+          />
+          <StatsGridTemplate
+            title="平均スチール数"
+            leaderKey="Steals"
+            leaders={stealLeaders}
+            leaderLabel="stl"
+            teams={teams}
+          />
+          <StatsGridTemplate
+            title="平均ターンオーバー数"
+            leaderKey="Turnovers"
+            leaders={turnOverLeaders}
+            leaderLabel="to"
+            teams={teams}
+          />
+          <StatsGridTemplate
+            title="平均ファウル数"
+            leaderKey="PersonalFouls"
+            leaders={personalFoulLeaders}
+            leaderLabel="pf"
+            teams={teams}
+          />
         </div>
       </div>
     </>
@@ -55,16 +91,3 @@ const StatsTemplate: React.FC<StatsTemplateProps> = (props) => {
 };
 
 export default StatsTemplate;
-
-/**
- * 任意の統計項目でリーダーを抽出する汎用関数
- * @param stats - プレイヤーの統計データ
- * @param key - 抽出したい統計項目 (例: 'Points', 'Assists')
- * @param topN - 上位何件を抽出するか
- */
-function getTopLeaders<T extends keyof Stat>(stats: Stat[], key: T, topN: number): Stat[] {
-  return [...stats]
-    .filter((stat) => stat[key] !== null) // nullを除外
-    .sort((a, b) => (b[key]! as number) - (a[key]! as number)) // 指定した項目で降順にソート
-    .slice(0, topN); // 上位N名を抽出
-}
