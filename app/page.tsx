@@ -22,7 +22,7 @@ export default async function Home() {
   try {
     const response = await Promise.all([
       axiosBase.get<GetScheduleBasicResponse>(
-        `/api/nba/schedule/basic?season=2025&date=${searchDate}&month_display=false`
+        `/api/nba/schedule/basic?season=2025&date=${searchDate}&month_display=false&closed_display=true`
       ),
       axiosBase.get<GetActiveTeamProfileListResponse>('/api/nba/teams/active'),
       axiosBase.get<GetStandingsResponse>('/api/nba/standings?season=2025'),
