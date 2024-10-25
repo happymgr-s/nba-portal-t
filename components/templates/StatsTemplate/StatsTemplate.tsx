@@ -34,6 +34,9 @@ const StatsTemplate: React.FC<StatsTemplateProps> = (props) => {
   return (
     <>
       <div className="p-1 lg:p-2">
+        <p className="text-center font-gothic text-gray-400">
+          ※統計情報はスクランブルデータのため、実際の数値より5%~20%ほど上下しています。
+        </p>
         <div className="flex flex-col gap-3">
           <StatsGridTemplate
             title="平均得点"
