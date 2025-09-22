@@ -1,14 +1,14 @@
 version: 2
 updates:
-  - package-ecosystem: npm
+  - package-ecosystem: "npm"
     directory: /
     schedule:
       interval: daily
       timezone: Asia/Tokyo
-      time: 09:00
+      time: "09:00"
     target-branch: develop
     pull-request-branch-name:
-      pattern: dependabot/{{dependency-name}}@{{version}}
+      separator: "-"
     commit-message:
-      prefix: chore(deps): update {{dependency-name}} to {{new-version}}
-      prefix-development: chore(deps): update {{dependency-name}} to {{new-version}}
+      prefix: "chore(deps): update"
+      prefix-development: "chore(deps-dev): update"
