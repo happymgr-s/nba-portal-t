@@ -1,6 +1,9 @@
-import React from 'react';
-import { axiosBase } from '@/lib/axiosBase';
-import { GetPlayerProfileById } from '@/app/api/nba/players/active/[id]/route';
+import React from "react";
+import { axiosBase } from "@/lib/axiosBase";
+import { GetPlayerProfileById } from "@/app/api/nba/players/active/[id]/route";
+
+// ビルド時のスタティック生成を無効化
+export const dynamic = "force-dynamic";
 
 /**
  * 選手詳細ページ
@@ -9,8 +12,11 @@ const PlayerByIdPage = async ({ params }: { params: { id: string } }) => {
   const { id } = params;
 
   try {
-    const profile = (await axiosBase.get<GetPlayerProfileById>(`/api/nba/players/freeAgent/${id}`))
-      .data;
+    const profile = (
+      await axiosBase.get<GetPlayerProfileById>(
+        `/api/nba/players/freeAgent/${id}`
+      )
+    ).data;
     return (
       <>
         <div>
