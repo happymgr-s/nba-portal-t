@@ -1,9 +1,12 @@
-import React from 'react';
-import { axiosBase } from '@/lib/axiosBase';
-import { GetScheduleBasicResponse } from '../api/nba/schedule/basic/route';
-import { GetActiveTeamProfileListResponse } from '../api/nba/teams/active/route';
-import ScheduleTemplate from '@/components/templates/ScheduleTemplate/ScheduleTemplate';
-import { toJapaneseISOString } from '@/lib/convert';
+import React from "react";
+import { axiosBase } from "@/lib/axiosBase";
+import { GetScheduleBasicResponse } from "../api/nba/schedule/basic/route";
+import { GetActiveTeamProfileListResponse } from "../api/nba/teams/active/route";
+import ScheduleTemplate from "@/components/templates/ScheduleTemplate/ScheduleTemplate";
+import { toJapaneseISOString } from "@/lib/convert";
+
+// ビルド時のスタティック生成を無効化
+export const dynamic = "force-dynamic";
 
 type ScheduleProps = {
   searchParams: {
@@ -23,11 +26,11 @@ type ScheduleProps = {
 const SchedulePage = async ({ searchParams }: ScheduleProps) => {
   const {
     season,
-    date = toJapaneseISOString(new Date()).split('T')[0],
+    date = toJapaneseISOString(new Date()).split("T")[0],
     month,
-    team = 'ALL',
-    month_display = 'false',
-    closed_display = 'true',
+    team = "ALL",
+    month_display = "false",
+    closed_display = "true",
   } = searchParams;
 
   try {
@@ -35,7 +38,7 @@ const SchedulePage = async ({ searchParams }: ScheduleProps) => {
       axiosBase.get<GetScheduleBasicResponse>(
         `/api/nba/schedule/basic?season=${season}&date=${date}&month=${month}&month_display=${month_display}&team=${team}&closed_display=${closed_display}`
       ),
-      axiosBase.get<GetActiveTeamProfileListResponse>('/api/nba/teams/active'),
+      axiosBase.get<GetActiveTeamProfileListResponse>("/api/nba/teams/active"),
     ]);
 
     const schedules = response[0].data;

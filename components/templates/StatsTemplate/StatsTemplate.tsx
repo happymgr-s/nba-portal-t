@@ -1,9 +1,9 @@
-import React from 'react';
-import { Stat } from '@/types/stat';
-import { Team } from '@/types/team';
-import { getTopAverageLeaders } from '@/lib/getLeagueLeader';
+import React from "react";
+import { Stat } from "@/types/stat";
+import { Team } from "@/types/team";
+import { getTopAverageLeaders } from "@/lib/getLeagueLeader";
 
-import StatsGridTemplate from '../StatsGridTemplate/StatsGridTemplate';
+import StatsGridTemplate from "../StatsGridTemplate/StatsGridTemplate";
 
 type StatsTemplateProps = {
   playerStats: Stat[];
@@ -17,19 +17,22 @@ type StatsTemplateProps = {
 const StatsTemplate: React.FC<StatsTemplateProps> = (props) => {
   const { playerStats, teams } = props;
 
-  const pointsLeaders = getTopAverageLeaders(playerStats, 'Points');
+  const pointsLeaders = getTopAverageLeaders(playerStats, "Points");
 
-  const assistsLeaders = getTopAverageLeaders(playerStats, 'Assists');
+  const assistsLeaders = getTopAverageLeaders(playerStats, "Assists");
 
-  const reboundLeaders = getTopAverageLeaders(playerStats, 'Rebounds');
+  const reboundLeaders = getTopAverageLeaders(playerStats, "Rebounds");
 
-  const blockedLeaders = getTopAverageLeaders(playerStats, 'BlockedShots');
+  const blockedLeaders = getTopAverageLeaders(playerStats, "BlockedShots");
 
-  const stealLeaders = getTopAverageLeaders(playerStats, 'Steals');
+  const stealLeaders = getTopAverageLeaders(playerStats, "Steals");
 
-  const turnOverLeaders = getTopAverageLeaders(playerStats, 'Turnovers');
+  const turnOverLeaders = getTopAverageLeaders(playerStats, "Turnovers");
 
-  const personalFoulLeaders = getTopAverageLeaders(playerStats, 'PersonalFouls');
+  const personalFoulLeaders = getTopAverageLeaders(
+    playerStats,
+    "PersonalFouls"
+  );
 
   return (
     <>
