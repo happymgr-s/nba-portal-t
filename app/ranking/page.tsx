@@ -1,5 +1,8 @@
-import RankingTemplate from '@/components/templates/RankingTemplate/RankingTemplate';
-import { axiosBase } from '@/lib/axiosBase';
+import RankingTemplate from "@/components/templates/RankingTemplate/RankingTemplate";
+import { axiosBase } from "@/lib/axiosBase";
+
+// ビルド時のスタティック生成を無効化
+export const dynamic = "force-dynamic";
 
 type RankingPageSearchParams = {
   searchParams: {
@@ -12,7 +15,7 @@ const RankingPage = async ({ searchParams }: RankingPageSearchParams) => {
   try {
     const response = await Promise.all([
       axiosBase.get(`/api/nba/standings?season=${season}`),
-      axiosBase.get('/api/nba/teams/active'),
+      axiosBase.get("/api/nba/teams/active"),
     ]);
 
     const standings = response[0].data;

@@ -1,15 +1,25 @@
-'use client';
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
-import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { BarChart4, Calendar, Home, Menu, Newspaper, Trophy, User, Users, X } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import {
+  BarChart4,
+  Calendar,
+  Home,
+  Menu,
+  Newspaper,
+  Trophy,
+  User,
+  Users,
+  X,
+} from "lucide-react";
 
-import SideBarLink from '@/components/molecules/SideBarLink/SideBarLink';
-import { useSideBar } from './useSideBar';
-import { Season } from '@/types/season';
+import SideBarLink from "@/components/molecules/SideBarLink/SideBarLink";
+import { useSideBar } from "./useSideBar";
+import { Season } from "@/types/season";
 
 type SideBarProps = {
   currentSeason: Season;
@@ -23,10 +33,11 @@ type SideBarProps = {
 const SideBar: React.FC<SideBarProps> = (props) => {
   const { currentSeason, children } = props;
 
-  const { sidebarOpen, isMobile, setSidebarOpen, handleClickLink } = useSideBar();
+  const { sidebarOpen, isMobile, setSidebarOpen, handleClickLink } =
+    useSideBar();
 
   const defaultSeason = (() => {
-    if (currentSeason.SeasonType === 'REG') return currentSeason.Season;
+    if (currentSeason.SeasonType === "REG") return currentSeason.Season;
     return currentSeason.ApiSeason;
   })();
 
@@ -47,7 +58,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
         <Link href="/">
           <Image
             className="fixed top-2 left-16 z-50"
-            src={'/NBA_PORTAL_LOGO.svg'}
+            src={"/NBA_PORTAL_LOGO.svg"}
             alt="NBA_PORTAL_LOGO"
             width={85}
             height={85}
@@ -58,7 +69,11 @@ const SideBar: React.FC<SideBarProps> = (props) => {
       {/* サイドバー */}
       <aside
         className={`pt-10 bg-gray-100 border-r absolute inset-y-0 left-0 transform transition-all duration-300 ease-in-out ${
-          sidebarOpen ? 'w-40 translate-x-0' : isMobile ? 'w-0' : 'w-16 translate-x-0'
+          sidebarOpen
+            ? "w-40 translate-x-0"
+            : isMobile
+            ? "w-0"
+            : "w-16 translate-x-0"
         } md:relative z-20`}
       >
         <ScrollArea className="h-full">
@@ -101,7 +116,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               </SideBarLink>
 
               <SideBarLink
-                href={`/ranking?season=${currentSeason.Season.toString()}`}
+                href={`/ranking?season=${currentSeason.Season}`}
                 icon={<Trophy className="w-5 h-5" />}
                 sidebarOpen={sidebarOpen}
                 handleClickLink={handleClickLink}
