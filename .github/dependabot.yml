@@ -11,4 +11,4 @@ updates:
       pattern: dependabot/{{dependency-name}}@{{version}}
     commit-message:
       prefix: chore(deps): update {{dependency-name}} to {{new-version}}
-      prefix-development: chore(deps): update {{dependency-name}} to {{new-version}}
+      prefix-development: chore(deps-dev): update {{dependency-name}} to {{new-version}}
