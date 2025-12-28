@@ -23,8 +23,8 @@ type Player = {
 
 export type GetPlayersProfileByTeamName = Player[];
 
-export async function GET(req: NextRequest, { params }: { params: { teamName: string } }) {
-  const { teamName } = params;
+export async function GET(req: NextRequest, { params }: { params: Promise<{ teamName: string }> }) {
+  const { teamName } = await params;
 
   if (process.env.NODE_ENV !== 'production') return NextResponse.json(mockData);
   const url = `https://api.sportsdata.io/v3/nba/scores/json/PlayersBasic/${teamName}?key=${process.env.NBA_API_KEY}`;
