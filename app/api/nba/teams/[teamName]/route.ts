@@ -5,8 +5,8 @@ import axios from 'axios';
 
 export type GetTeamProfileByTeamName = Team;
 
-export async function GET(req: NextRequest, { params }: { params: { teamName: string } }) {
-  const { teamName } = params;
+export async function GET(req: NextRequest, { params }: { params: Promise<{ teamName: string }> }) {
+  const { teamName } = await params;
 
   if (process.env.NODE_ENV !== 'production') {
     const teamProfile = teamsMockData.find((team) => team.Key === teamName);

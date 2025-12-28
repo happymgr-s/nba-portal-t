@@ -1,0 +1,62 @@
+name: Create Release PR
+
+on:
+  release:
+    types: [published] # GitHubでリリースを公開した時
+
+jobs:
+  create-release-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 全履歴を取得
+
+      - name: Get tag info
+        id: tag
+        run: |
+          # pushイベントの場合はGITHUB_REFから、releaseイベントの場合はeventから取得
+          if [ "${{ github.event_name }}" = "release" ]; then
+            TAG_NAME="${{ github.event.release.tag_name }}"
+          else
+            TAG_NAME=${GITHUB_REF#refs/tags/}
+          fi
+          echo "TAG_NAME=$TAG_NAME" >> $GITHUB_OUTPUT
+          # タグがついているコミットのハッシュを取得
+          TAG_COMMIT=$(git rev-list -n 1 $TAG_NAME)
+          echo "TAG_COMMIT=$TAG_COMMIT" >> $GITHUB_OUTPUT
+          # そのコミットを含むブランチを取得（developを優先）
+          SOURCE_BRANCH=$(git branch -r --contains $TAG_COMMIT | grep -E 'origin/(develop|dev)' | head -1 | sed 's/.*origin\///' || echo "develop")
+          echo "SOURCE_BRANCH=$SOURCE_BRANCH" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # PRが既に存在するかチェック
+          EXISTING_PR=$(gh pr list --base main --head ${{ steps.tag.outputs.SOURCE_BRANCH }} --json number --jq '.[0].number' || echo "")
+
+          if [ -n "$EXISTING_PR" ]; then
+            echo "PR #$EXISTING_PR already exists"
+            exit 0
+          fi
+
+          # PRを作成
+          gh pr create \
+            --base main \
+            --head ${{ steps.tag.outputs.SOURCE_BRANCH }} \
+            --title "🚀 Release ${{ steps.tag.outputs.TAG_NAME }}" \
+            --body "## Release ${{ steps.tag.outputs.TAG_NAME }}
+
+          このPRはリリースタグ \`${{ steps.tag.outputs.TAG_NAME }}\` のプッシュにより自動作成されました。
+
+          ### チェックリスト
+          - [ ] ビルドが成功している
+          - [ ] 変更内容を確認した
+
+          マージするとVercelへ自動デプロイされます。"
