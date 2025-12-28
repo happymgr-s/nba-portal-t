@@ -5,8 +5,8 @@ import { freeAgentPlayersMockData } from '@/lib/mockData/playersMockData';
 
 export type GetPlayerProfileById = Player;
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
-  const { id } = params;
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
   if (process.env.NODE_ENV !== 'production') {
     const playerProfile = freeAgentPlayersMockData.find((player) => player.PlayerID === Number(id));
