@@ -33,10 +33,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ### ブランチ構成
 
-| ブランチ | 用途 |
-|---------|------|
-| `main` | 本番環境用（リリースブランチ） |
-| `develop` | 開発用ブランチ |
+| ブランチ  | 用途                           |
+| --------- | ------------------------------ |
+| `main`    | 本番環境用（リリースブランチ） |
+| `develop` | 開発用ブランチ                 |
 
 ### 開発フロー
 
@@ -54,16 +54,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ### 1. ビルドチェック（`checkBuild.yml`）
 
-**トリガー**: `develop`ブランチへのPR作成時
+**トリガー**: `develop`ブランチへの PR 作成時
 
 - ビルドが通るかチェック
-- PRマージ前の品質担保
+- PR マージ前の品質担保
 
-### 2. リリースPR自動作成（`release-pr.yml`）
+### 2. リリース PR 自動作成（`release-pr.yml`）
 
-**トリガー**: `v*`パターンのタグがプッシュされた時（例：`v1.0.0`, `v2.1.0`）
+**トリガー**:
 
-- `develop` → `main` へのPRを自動作成
+- `v*`パターンのタグがプッシュされた時（例：`v1.0.0`, `v2.1.0`）
+- GitHub でリリースを公開した時
+
+- `develop` → `main` への PR を自動作成
 - リリースノート用のテンプレート付き
 
 #### リリース手順
@@ -81,12 +84,12 @@ git push origin v2.1.0
 # 4. PRをマージ → 自動デプロイ
 ```
 
-### 3. Vercelデプロイ（`nextjs.yml`）
+### 3. Vercel デプロイ（`nextjs.yml`）
 
-**トリガー**: `main`ブランチへのpush時
+**トリガー**: `main`ブランチへの push 時
 
-- Vercelへ自動デプロイ
-- 必要なSecrets:
+- Vercel へ自動デプロイ
+- 必要な Secrets:
   - `VERCEL_ORG_ID`
   - `VERCEL_TOKEN`
   - `VERCEL_PROJECT_ID`
@@ -95,6 +98,6 @@ git push origin v2.1.0
 
 ## Deploy on Vercel
 
-本プロジェクトはVercelにホスティングされています。`main`ブランチへのマージで自動デプロイされます。
+本プロジェクトは Vercel にホスティングされています。`main`ブランチへのマージで自動デプロイされます。
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
