@@ -11,6 +11,25 @@
 3. **パフォーマンス最適化** - PPR（Partial Pre-Rendering）対応
 4. **テスト基盤の構築** - テスト環境のセットアップ
 
+### 現状（重要な前提）
+
+- **現状のデータ取得**: `app/*` から `axiosBase -> /api/nba/* (Route Handlers) -> sportsdata.io` を呼び出している
+- **openapi-fetch は導入済み**: `lib/api-client/server-api-client.ts` が存在（サーバーサイド専用、キーは `process.env.NBA_API_KEY`）
+- **開発時モック**: Route Handlers が `NODE_ENV !== 'production'` の場合にモックデータを返している（レート制限回避含む）
+- **PPRの前提**: 多くのページで `export const dynamic = 'force-dynamic'` を指定している場合、PPRの効果が出にくい
+
+### 事前に決めること（計画を破綻させないための決定事項）
+
+Phase 2/3 開始前に、以下をチームで決定する。
+
+1. **BFF（Route Handlers）方針**
+   - A: **完全廃止**（サーバーコンポーネント/サーバーアクションで直叩きに統一）
+   - B: **部分的に残す**（クライアントコンポーネントからの取得、開発時モック、レート制限回避のため）
+2. **開発時モックの方式**
+   - 例: 環境変数で切替（`USE_MOCK=true`）、または MSW、または Storybook のみ
+3. **キャッシュ/再検証方針**
+   - 例: `fetch`/RSC のキャッシュ、`revalidate`、ページの `dynamic` 指定の見直し方針
+
 ---
 
 ## Phase 1: テスト環境セットアップ
@@ -217,6 +236,10 @@ nba-portal-t/
 - [ ] `lib/` → `src/lib/` に移動
 - [ ] `types/` → `src/types/` に移動
 - [ ] `tsconfig.json` のパス更新（`@/*` → `src/*`）
+- [ ] `tailwind.config.ts` の `content` 更新（`./app`/`./components` → `./src/app`/`./src/...`）
+- [ ] Storybook の `stories` glob 更新（`../components/**` → `../src/**` など）
+- [ ] shadcn の `components.json` 更新（`tailwind.css`, `aliases` の参照先）
+- [ ] Plop テンプレート/生成先の更新（該当があれば）
 - [ ] `next.config.mjs` の確認（必要に応じて更新）
 - [ ] ビルド確認
 
@@ -275,6 +298,11 @@ nba-portal-t/
 
 既存の axios + Route Handlers 構成から、openapi-fetch による型安全な API 呼び出しに移行する。
 
+### 進め方（修正版：共存→置換→削除）
+
+**いきなり Route Handlers を全削除しない。**
+現状は `app/*` が `axiosBase -> /api/nba/*` に依存しているため、先に呼び出し側の置換を完了させてから削除する。
+
 ### 現状のアーキテクチャ
 
 ```
@@ -312,9 +340,9 @@ nba-portal-t/
 
 ### 削除対象
 
-- [ ] `lib/axiosBase.ts`
-- [ ] `app/api/nba/` 配下の Route Handlers（すべて）
-- [ ] axios パッケージ（package.json から削除）
+- [ ] `lib/axiosBase.ts`（置換完了後）
+- [ ] `app/api/nba/` 配下の Route Handlers（方針Aの場合は全削除、方針Bの場合は必要最小限を残す）
+- [ ] axios パッケージ（Route Handlers/axiosBase で未使用になった後に削除）
 
 ### データ取得パターン
 
@@ -395,11 +423,28 @@ type Standing = components["schemas"]["Standing"];
 2. **環境変数でモック切り替え**
 3. **Storybook でのみモック使用**
 
+※現状は Route Handlers が `NODE_ENV !== 'production'` の場合にモックを返しているため、
+方針A（Route Handlers完全廃止）の場合はこの仕組みの置換が必須。
+
+### 移行ステップ（推奨）
+
+#### Phase 3A: サーバー直叩き（openapi-fetch）への置換
+
+- [ ] `app/*` のデータ取得を `scoresApi` / `statsApi` に置換（内部 `/api/nba/*` 依存を外す）
+- [ ] 型を `types/generated/*` に寄せ、既存 `types/*.ts` は段階的に廃止
+- [ ] 既存のモック/フォールバック（空配列返却等）を置換先にも実装
+
+#### Phase 3B: Route Handlers/axios の整理
+
+- [ ] 方針A: `app/api/nba/*` を削除し、`axiosBase.ts` と `axios` を削除
+- [ ] 方針B: クライアント用途/モック用途など「残す理由」を明文化し、残すAPIのみ最小化
+- [ ] 残存APIの責務を明確化（キャッシュ、レート制限、キー秘匿、モック、フォーマット変換）
+
 ### 完了条件
 
-- [ ] すべての Route Handlers が削除されている
-- [ ] axiosBase.ts が削除されている
-- [ ] axios が package.json から削除されている
+- [ ] 方針に応じて Route Handlers が削除/最小化されている
+- [ ] axiosBase.ts が削除されている（方針Bで必要なら残す理由を記載）
+- [ ] axios が package.json から削除されている（未使用であること）
 - [ ] すべての API 呼び出しが openapi-fetch 経由
 - [ ] ビルドが通る
 - [ ] 全ページが正常にデータを取得・表示できる
@@ -414,9 +459,14 @@ Next.js 15 の PPR（Partial Pre-Rendering）に対応し、ページの一部�
 
 ### 前提条件
 
-- Next.js 15 以上
+- Next.js の PPR 対応状況を確認（バージョン依存が大きい）
 - Phase 3（API 移行）が完了していること
 - 各コンポーネントが独自にデータ取得を行う構成になっていること
+
+### 注意（現状とのギャップ）
+
+- `export const dynamic = 'force-dynamic'` が多用されている場合、PPRの恩恵が出にくい。
+  PPRを狙うページは「静的シェル」と「動的部分」の境界設計に合わせて `dynamic` / `revalidate` / `fetch` キャッシュを見直す。
 
 ### PPR の仕組み
 
