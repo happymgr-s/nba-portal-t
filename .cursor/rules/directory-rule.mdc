@@ -1,0 +1,23 @@
+## ディレクトリ構造のルール
+
+### 目的駆動構造
+アトミックデザインのような技術的区分で分けるのではなく、目的（ドメイン）単位でディレクトリを分ける
+依存関係がディレクトリ構造からわかりやすくなるうえ、ファイルの検索性が向上する
+
+ex) 
+nba-portal-t/
+├── src/
+│   ├── app/
+│   │   ├── (home)/
+│   │   │   ├── page.tsx
+│   │   │   ├── loading.tsx
+│   │   │   └── _components/
+│   │   │       ├── home-template/
+│   │   │       │   ├── index.tsx
+│   │   │       │   ├── home-template.tsx
+│   │   │       │   └── home-template.test.tsx
+│   │   │       ├── news-slider/
+│   │   │       │   ├── index.tsx
+│   │   │       │   ├── news-slider.server.tsx
+│   │   │       │   ├── news-slider.client.tsx
+│   │   │       │   ├── news-slider.test.tsx
