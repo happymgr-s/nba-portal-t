@@ -1,8 +1,8 @@
 import { axiosBase } from '@/lib/axiosBase';
-import { GetScheduleBasicResponse } from './api/nba/schedule/basic/route';
-import { GetActiveTeamProfileListResponse } from './api/nba/teams/active/route';
-import { GetStandingsResponse } from './api/nba/standings/route';
-import HomeTemplate from '@/components/templates/HomeTemplate/HomeTemplate';
+import { GetScheduleBasicResponse } from '../api/nba/schedule/basic/route';
+import { GetActiveTeamProfileListResponse } from '../api/nba/teams/active/route';
+import { GetStandingsResponse } from '../api/nba/standings/route';
+import { HomeTemplate } from './_components/HomeTemplate';
 
 // 動的レンダリングを強制
 export const dynamic = 'force-dynamic';

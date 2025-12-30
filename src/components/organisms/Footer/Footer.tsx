@@ -2,8 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import '../../../public/footer_bg.png';
-
 type FooterProps = {};
 
 /**
@@ -11,7 +9,7 @@ type FooterProps = {};
  * @param props
  */
 const Footer: React.FC<FooterProps> = (props) => {
-  const {} = props;
+  const { } = props;
 
   return (
     <>

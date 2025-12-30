@@ -7,7 +7,6 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Image from 'next/image';
 
 type NewsListSliderProps = {
   newses?: NewsItem[];
@@ -35,8 +34,8 @@ const sampleNewsList = [
  * ニュース一覧表示スライダー ※スライド数が少ないと、loopつけた時に正しく表示されない
  * @param props
  */
-const NewsListSlider: React.FC<NewsListSliderProps> = (props) => {
-  const {} = props;
+export const NewsListSlider: React.FC<NewsListSliderProps> = (props) => {
+  const { } = props;
 
   return (
     <>
@@ -74,4 +73,3 @@ const NewsListSlider: React.FC<NewsListSliderProps> = (props) => {
   );
 };
 
-export default NewsListSlider;

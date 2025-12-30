@@ -4,9 +4,9 @@ import { Standing } from '@/types/standing';
 import { Team } from '@/types/team';
 
 import ConferenceTitle from '@/components/atoms/ConferenceTitle/ConferenceTitle';
-import NewsListSlider from '@/components/organisms/NewsListSlider/NewsListSlider';
 import ScheduleCard from '@/components/organisms/ScheduleCard/ScheduleCard';
 import StandingsTable from '@/components/organisms/StandingsTable/StandingsTable';
+import { NewsListSlider } from '../NewsListSlider';
 
 type HomeTemplateProps = {
   schedules: Schedule[];
@@ -18,7 +18,7 @@ type HomeTemplateProps = {
  * ホームページテンプレート
  * @param props
  */
-const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
+export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
   const { schedules, teams, standings } = props;
 
   const today = new Date();
@@ -86,4 +86,3 @@ const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
   );
 };
 
-export default HomeTemplate;
