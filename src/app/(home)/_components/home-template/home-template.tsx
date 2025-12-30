@@ -6,7 +6,7 @@ import { Team } from '@/types/team';
 import ConferenceTitle from '@/components/atoms/ConferenceTitle/ConferenceTitle';
 import ScheduleCard from '@/components/organisms/ScheduleCard/ScheduleCard';
 import StandingsTable from '@/components/organisms/StandingsTable/StandingsTable';
-import { NewsListSlider } from '../NewsListSlider';
+import { NewsListSlider } from '../news-list-slider';
 
 type HomeTemplateProps = {
   schedules: Schedule[];

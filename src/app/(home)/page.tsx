@@ -2,7 +2,7 @@ import { axiosBase } from '@/lib/axiosBase';
 import { GetScheduleBasicResponse } from '../api/nba/schedule/basic/route';
 import { GetActiveTeamProfileListResponse } from '../api/nba/teams/active/route';
 import { GetStandingsResponse } from '../api/nba/standings/route';
-import { HomeTemplate } from './_components/HomeTemplate';
+import { HomeTemplate } from './_components/home-template';
 
 // 動的レンダリングを強制
 export const dynamic = 'force-dynamic';
