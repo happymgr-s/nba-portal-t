@@ -24,15 +24,15 @@ const zenKakuGothicFont = Zen_Kaku_Gothic_Antique({
 });
 
 const actionNBALight = localFont({
-  src: '../public/fonts/ActionNBACondWeb-Light.woff2',
+  src: '../../public/fonts/ActionNBACondWeb-Light.woff2',
   variable: '--font-actionNBALight',
 });
 const actionNBAMedium = localFont({
-  src: '../public/fonts/ActionNBACondWeb-Medium.woff2',
+  src: '../../public/fonts/ActionNBACondWeb-Medium.woff2',
   variable: '--font-actionNBAMedium',
 });
 const actionNBABold = localFont({
-  src: '../public/fonts/ActionNBACondWeb-Bold.woff2',
+  src: '../../public/fonts/ActionNBACondWeb-Bold.woff2',
   variable: '--font-actionNBABold',
 });
 

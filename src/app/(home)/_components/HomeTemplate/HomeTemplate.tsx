@@ -18,7 +18,7 @@ type HomeTemplateProps = {
  * ホームページテンプレート
  * @param props
  */
-const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
+export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
   const { schedules, teams, standings } = props;
 
   const today = new Date();
@@ -86,4 +86,3 @@ const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
   );
 };
 
-export default HomeTemplate;
