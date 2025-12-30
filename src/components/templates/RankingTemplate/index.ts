@@ -1,1 +1,1 @@
-export * from './RankingTemplate'
+export { default as RankingTemplate } from './RankingTemplate';
