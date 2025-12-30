@@ -1,1 +1,0 @@
-export { NewsListSlider } from './NewsListSlider'
