@@ -2,7 +2,7 @@ import React from "react";
 import { axiosBase } from "@/lib/axiosBase";
 import { GetScheduleBasicResponse } from "../api/nba/schedule/basic/route";
 import { GetActiveTeamProfileListResponse } from "../api/nba/teams/active/route";
-import ScheduleTemplate from "@/components/templates/ScheduleTemplate/ScheduleTemplate";
+import { ScheduleTemplate } from "./_components/schedule-template";
 import { toJapaneseISOString } from "@/lib/convert";
 
 // ビルド時のスタティック生成を無効化
