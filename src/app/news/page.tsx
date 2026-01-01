@@ -2,7 +2,7 @@ import React from "react";
 import { axiosBase } from "@/lib/axiosBase";
 import { GetNewsResponse } from "../api/nba/news/route";
 
-import NewsesTemplate from "@/components/templates/NewsesTemplate/NewsesTemplate";
+import { NewsesTemplate } from "./_components/newses-template";
 
 // ビルド時のスタティック生成を無効化
 export const dynamic = "force-dynamic";
