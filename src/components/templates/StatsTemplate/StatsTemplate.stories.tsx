@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import StatsTemplate from './StatsTemplate';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
-import { playerSeasonStatsMockData } from '@/lib/mockData/statsMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import StatsTemplate from "./StatsTemplate";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
+import { playerSeasonStatsMockData } from "@/lib/mockData/statsMockData";
 
 const meta = {
-  title: 'Templates/StatsTemplate',
+  title: "Templates/StatsTemplate",
   component: StatsTemplate,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     playerStats: playerSeasonStatsMockData,

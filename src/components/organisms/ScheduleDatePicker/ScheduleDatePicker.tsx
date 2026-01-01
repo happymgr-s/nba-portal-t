@@ -1,13 +1,21 @@
-'use client';
-import React from 'react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { toJapaneseISOString } from '@/lib/convert';
-import { ja } from 'date-fns/locale';
-import { CalendarIcon, ChevronLeftCircle, ChevronRightCircle } from 'lucide-react';
+"use client";
+import React from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { toJapaneseISOString } from "@/lib/convert";
+import { ja } from "date-fns/locale";
+import {
+  CalendarIcon,
+  ChevronLeftCircle,
+  ChevronRightCircle,
+} from "lucide-react";
 
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Calendar } from '@/components/ui/calendar';
-import MonthCalendar from '../MonthCalendar/MonthCalendar';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Calendar } from "@/components/ui/calendar";
+import MonthCalendar from "../MonthCalendar/MonthCalendar";
 
 type ScheduleDatePickerProps = {};
 
@@ -22,15 +30,16 @@ const ScheduleDatePicker: React.FC<ScheduleDatePickerProps> = (props) => {
   const pathName = usePathname();
   const searchParams = useSearchParams();
 
-  const searchDate = searchParams.get('date') || new Date().toISOString().split('T')[0];
-  const searchMonth = searchParams.get('month');
-  const isMonthDisplay = searchParams.get('month_display') === 'true';
+  const searchDate =
+    searchParams.get("date") || new Date().toISOString().split("T")[0];
+  const searchMonth = searchParams.get("month");
+  const isMonthDisplay = searchParams.get("month_display") === "true";
 
-  const displayDate = new Date(isMonthDisplay ? searchMonth || '' : searchDate);
+  const displayDate = new Date(isMonthDisplay ? searchMonth || "" : searchDate);
 
   const handleSelectDate = (date?: Date) => {
     const newSearchParams = new URLSearchParams(searchParams.toString());
-    newSearchParams.set('date', toJapaneseISOString(date).split('T')[0]);
+    newSearchParams.set("date", toJapaneseISOString(date).split("T")[0]);
 
     router.replace(`${pathName}?${newSearchParams.toString()}`);
   };
@@ -41,10 +50,10 @@ const ScheduleDatePicker: React.FC<ScheduleDatePickerProps> = (props) => {
     if (isMonthDisplay) {
       displayDate.setMonth(displayDate.getMonth() + number);
       newSearchParams.set(
-        'month',
-        displayDate.toLocaleDateString().split('/')[0] +
-          '-' +
-          displayDate.toLocaleDateString().split('/')[1].padStart(2, '0')
+        "month",
+        displayDate.toLocaleDateString().split("/")[0] +
+          "-" +
+          displayDate.toLocaleDateString().split("/")[1].padStart(2, "0"),
       );
 
       router.replace(`${pathName}?${newSearchParams.toString()}`);
@@ -52,7 +61,7 @@ const ScheduleDatePicker: React.FC<ScheduleDatePickerProps> = (props) => {
     }
 
     displayDate.setDate(displayDate.getDate() + number);
-    newSearchParams.set('date', toJapaneseISOString(displayDate).split('T')[0]);
+    newSearchParams.set("date", toJapaneseISOString(displayDate).split("T")[0]);
 
     router.replace(`${pathName}?${newSearchParams.toString()}`);
   };
@@ -86,9 +95,9 @@ const ScheduleDatePicker: React.FC<ScheduleDatePickerProps> = (props) => {
           </div>
           <p className="font-bold text-3xl">
             {isMonthDisplay
-              ? displayDate.toLocaleDateString().split('/')[0] +
-                '/' +
-                displayDate.toLocaleDateString().split('/')[1].padStart(2, '0')
+              ? displayDate.toLocaleDateString().split("/")[0] +
+                "/" +
+                displayDate.toLocaleDateString().split("/")[1].padStart(2, "0")
               : displayDate.toLocaleDateString()}
           </p>
           <div className="w-7 h-7 bg-gray-300 rounded-full flex justify-center items-center hover:bg-gray-400 duration-200 active:opacity-75 cursor-pointer">

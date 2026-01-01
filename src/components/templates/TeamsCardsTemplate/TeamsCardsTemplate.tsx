@@ -1,9 +1,15 @@
-import TeamsCard from '@/components/organisms/TeamsCard/TeamsCard';
-import { Team } from '@/types/team';
-import React from 'react';
+import TeamsCard from "@/components/organisms/TeamsCard/TeamsCard";
+import { Team } from "@/types/team";
+import React from "react";
 
 type TeamsCardsTemplateProps = {
-  division: 'ATLANTIC' | 'CENTRAL' | 'SOUTHEAST' | 'NORTHWEST' | 'PACIFIC' | 'SOUTHWEST';
+  division:
+    | "ATLANTIC"
+    | "CENTRAL"
+    | "SOUTHEAST"
+    | "NORTHWEST"
+    | "PACIFIC"
+    | "SOUTHWEST";
   teams: Team[];
 };
 

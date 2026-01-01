@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import ConferenceTitle from './ConferenceTitle';
+import type { Meta, StoryObj } from "@storybook/react";
+import ConferenceTitle from "./ConferenceTitle";
 
 const meta = {
-  title: 'Atoms/ConferenceTitle',
+  title: "Atoms/ConferenceTitle",
   component: ConferenceTitle,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
-    conference: 'Eastern',
+    conference: "Eastern",
   },
 } satisfies Meta<typeof ConferenceTitle>;
 

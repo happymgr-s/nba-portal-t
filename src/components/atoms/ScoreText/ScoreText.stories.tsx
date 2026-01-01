@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import ScoreText from './ScoreText';
+import type { Meta, StoryObj } from "@storybook/react";
+import ScoreText from "./ScoreText";
 
 const meta = {
-  title: 'Atoms/ScoreText',
+  title: "Atoms/ScoreText",
   component: ScoreText,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
-    children: '103',
+    children: "103",
   },
 } satisfies Meta<typeof ScoreText>;
 

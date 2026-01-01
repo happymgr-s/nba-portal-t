@@ -11,7 +11,11 @@ export const dynamic = "force-dynamic";
 /**
  * チーム詳細ページ
  */
-const TeamByIdPage = async ({ params }: { params: Promise<{ teamName: string }> }) => {
+const TeamByIdPage = async ({
+  params,
+}: {
+  params: Promise<{ teamName: string }>;
+}) => {
   const { teamName } = await params;
   const getTeamsProfileUrl = `/api/nba/teams/${teamName}`;
   const getPlayersUrl = `/api/nba/players/${teamName}`;

@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import ScheduleTemplate from './ScheduleTemplate';
-import { scheduleBasicMockData } from '@/lib/mockData/scheduleMockData';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import ScheduleTemplate from "./ScheduleTemplate";
+import { scheduleBasicMockData } from "@/lib/mockData/scheduleMockData";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
 
 const meta = {
-  title: 'Templates/ScheduleTemplate',
+  title: "Templates/ScheduleTemplate",
   component: ScheduleTemplate,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     schedules: scheduleBasicMockData,

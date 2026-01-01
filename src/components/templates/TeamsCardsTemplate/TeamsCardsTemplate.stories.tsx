@@ -1,19 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import TeamsCardsTemplate from './TeamsCardsTemplate';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import TeamsCardsTemplate from "./TeamsCardsTemplate";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
 
-const atlanticTeams = teamsMockData.filter((team) => team.Division === 'Atlantic');
+const atlanticTeams = teamsMockData.filter(
+  (team) => team.Division === "Atlantic",
+);
 
 const meta = {
-  title: 'Templates/TeamsCardsTemplate',
+  title: "Templates/TeamsCardsTemplate",
   component: TeamsCardsTemplate,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
-    division: 'ATLANTIC',
+    division: "ATLANTIC",
     teams: atlanticTeams,
   },
 } satisfies Meta<typeof TeamsCardsTemplate>;

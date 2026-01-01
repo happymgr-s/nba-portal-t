@@ -1,1 +1,1 @@
-export * from './TeamsCardsTemplate'
+export * from "./TeamsCardsTemplate";

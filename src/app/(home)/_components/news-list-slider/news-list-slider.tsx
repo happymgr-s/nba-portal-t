@@ -1,12 +1,12 @@
-'use client';
-import { NewsItem } from '@/types/news';
-import React from 'react';
+"use client";
+import { NewsItem } from "@/types/news";
+import React from "react";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 type NewsListSliderProps = {
   newses?: NewsItem[];
@@ -14,19 +14,19 @@ type NewsListSliderProps = {
 
 const sampleNewsList = [
   {
-    title: 'NBA 2024シーズン開幕！注目の選手は？',
+    title: "NBA 2024シーズン開幕！注目の選手は？",
   },
   {
-    title: 'レブロン・ジェームズがキャリア通算40000得点を達成！',
+    title: "レブロン・ジェームズがキャリア通算40000得点を達成！",
   },
   {
-    title: 'ウォリアーズ、スティーブ・カー監督が新戦術を発表',
+    title: "ウォリアーズ、スティーブ・カー監督が新戦術を発表",
   },
   {
-    title: 'ドラフト1位選手がデビュー戦でトリプルダブルを記録',
+    title: "ドラフト1位選手がデビュー戦でトリプルダブルを記録",
   },
   {
-    title: 'ネッツ、新アリーナ建設計画を発表',
+    title: "ネッツ、新アリーナ建設計画を発表",
   },
 ];
 
@@ -35,7 +35,7 @@ const sampleNewsList = [
  * @param props
  */
 export const NewsListSlider: React.FC<NewsListSliderProps> = (props) => {
-  const { } = props;
+  const {} = props;
 
   return (
     <>
@@ -72,4 +72,3 @@ export const NewsListSlider: React.FC<NewsListSliderProps> = (props) => {
     </>
   );
 };
-

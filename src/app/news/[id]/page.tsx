@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 /**
-* ページ
-*/
+ * ページ
+ */
 const NewsByIdPage = () => {
   return (
     <>

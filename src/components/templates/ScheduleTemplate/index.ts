@@ -1,1 +1,1 @@
-export * from './ScheduleTemplate'
+export * from "./ScheduleTemplate";

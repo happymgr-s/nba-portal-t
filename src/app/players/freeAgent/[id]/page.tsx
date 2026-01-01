@@ -8,13 +8,17 @@ export const dynamic = "force-dynamic";
 /**
  * 選手詳細ページ
  */
-const PlayerByIdPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+const PlayerByIdPage = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
   const { id } = await params;
 
   try {
     const profile = (
       await axiosBase.get<GetPlayerProfileById>(
-        `/api/nba/players/freeAgent/${id}`
+        `/api/nba/players/freeAgent/${id}`,
       )
     ).data;
     return (

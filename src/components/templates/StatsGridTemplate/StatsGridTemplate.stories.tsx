@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import StatsGridTemplate from './StatsGridTemplate';
-import { playerSeasonStatsMockData } from '@/lib/mockData/statsMockData';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import StatsGridTemplate from "./StatsGridTemplate";
+import { playerSeasonStatsMockData } from "@/lib/mockData/statsMockData";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
 
 const pointsLeaders = playerSeasonStatsMockData
   .filter((stat) => stat.Points !== null)
@@ -9,18 +9,18 @@ const pointsLeaders = playerSeasonStatsMockData
   .slice(0, 5);
 
 const meta = {
-  title: 'Templates/StatsGridTemplate',
+  title: "Templates/StatsGridTemplate",
   component: StatsGridTemplate,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
-    title: '総得点',
-    leaderKey: 'Points',
+    title: "総得点",
+    leaderKey: "Points",
     leaders: pointsLeaders,
-    leaderLabel: 'pts',
+    leaderLabel: "pts",
     teams: teamsMockData,
   },
 } satisfies Meta<typeof StatsGridTemplate>;

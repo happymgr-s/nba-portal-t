@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import RankingTemplate from './RankingTemplate';
-import { closedSeasonStandingsMockData } from '@/lib/mockData/standingsMockData';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import RankingTemplate from "./RankingTemplate";
+import { closedSeasonStandingsMockData } from "@/lib/mockData/standingsMockData";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
 
 const meta = {
-  title: 'Templates/RankingTemplate',
+  title: "Templates/RankingTemplate",
   component: RankingTemplate,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     standings: closedSeasonStandingsMockData,

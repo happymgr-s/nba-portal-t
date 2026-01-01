@@ -1,8 +1,8 @@
-import React from 'react';
-import { Stat } from '@/types/stat';
-import { Team } from '@/types/team';
-import StatsCard from '@/components/organisms/StatsCard/StatsCard';
-import { getLeader } from '@/lib/getLeagueLeader';
+import React from "react";
+import { Stat } from "@/types/stat";
+import { Team } from "@/types/team";
+import StatsCard from "@/components/organisms/StatsCard/StatsCard";
+import { getLeader } from "@/lib/getLeagueLeader";
 
 type StatsGridTemplateProps = {
   title: string;
@@ -32,10 +32,10 @@ const StatsGridTemplate: React.FC<StatsGridTemplateProps> = (props) => {
                 key={stat.StatID}
                 className={
                   index === 0
-                    ? 'col-span-full lg:row-span-full lg:col-span-1'
+                    ? "col-span-full lg:row-span-full lg:col-span-1"
                     : index === 1 || index === 2
-                    ? 'lg:row-span-full lg:col-span-1'
-                    : ''
+                      ? "lg:row-span-full lg:col-span-1"
+                      : ""
                 }
               >
                 <StatsCard

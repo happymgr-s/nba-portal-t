@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 /**
  * 指定したシーズンにおける特定の選手の直近n試合のスタッツを取得
@@ -12,17 +12,20 @@ export async function GET(req: NextRequest) {
   //     return;
   //   }
   const searchParams = req.nextUrl.searchParams;
-  const season = searchParams.get('season');
-  const id = searchParams.get('id');
-  const numberOfGames = searchParams.get('numberOfGames') || 'all';
+  const season = searchParams.get("season");
+  const id = searchParams.get("id");
+  const numberOfGames = searchParams.get("numberOfGames") || "all";
 
-  if (!season || !id || season === 'undefined' || id === 'undefined') {
-    return NextResponse.json({ status: 400, message: 'required [season],[id] search params' });
+  if (!season || !id || season === "undefined" || id === "undefined") {
+    return NextResponse.json({
+      status: 400,
+      message: "required [season],[id] search params",
+    });
   }
 
   const GET_PLAYER_STATS_URL = `https://api.sportsdata.io/v3/nba/stats/json/PlayerGameStatsBySeason/${season}/${id}/${numberOfGames}?key=${process.env.NBA_API_KEY}`;
   try {
-    const response = await fetch(GET_PLAYER_STATS_URL, { cache: 'no-store' });
+    const response = await fetch(GET_PLAYER_STATS_URL, { cache: "no-store" });
     const json = await response.json();
 
     return NextResponse.json(json);

@@ -1,1 +1,1 @@
-export * from './PlayersTemplate'
+export * from "./PlayersTemplate";

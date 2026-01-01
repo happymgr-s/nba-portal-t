@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { Schedule } from '@/types/schedule';
-import { Team } from '@/types/team';
+import { Schedule } from "@/types/schedule";
+import { Team } from "@/types/team";
 
-import ScoreText from '@/components/atoms/ScoreText/ScoreText';
-import ScheduleTeamCard from '@/components/molecules/ScheduleTeamCard/ScheduleTeamCard';
-import { JapaneseDate } from '@/lib/japaneseDate';
+import ScoreText from "@/components/atoms/ScoreText/ScoreText";
+import ScheduleTeamCard from "@/components/molecules/ScheduleTeamCard/ScheduleTeamCard";
+import { JapaneseDate } from "@/lib/japaneseDate";
 
 type ScheduleCardProps = {
   schedule: Schedule;
@@ -21,43 +21,49 @@ const ScheduleCard: React.FC<ScheduleCardProps> = (props) => {
   const { schedule, homeTeam, awayTeam } = props;
 
   const scheduleDate = new JapaneseDate(
-    schedule.DateTimeUTC === null ? schedule.Day || '' : schedule.DateTimeUTC || '',
-    'UTC'
+    schedule.DateTimeUTC === null
+      ? schedule.Day || ""
+      : schedule.DateTimeUTC || "",
+    "UTC",
   );
 
   const displayStatus = (() => {
-    if (schedule.IsClosed) return 'CLOSED';
-    if (schedule.Status === 'InProgress') return 'LIVE';
-    if (schedule.Status === 'Postponed') return '延期';
-    if (schedule.Status === 'Canceled') return 'CANCELED';
-    return '';
+    if (schedule.IsClosed) return "CLOSED";
+    if (schedule.Status === "InProgress") return "LIVE";
+    if (schedule.Status === "Postponed") return "延期";
+    if (schedule.Status === "Canceled") return "CANCELED";
+    return "";
   })();
 
   const tagColor = (() => {
-    if (schedule.IsClosed) return '#EC7E7E';
-    if (schedule.Status === 'InProgress') return '#B5EC7E';
-    if (schedule.Status === 'Postponed') return '#333333';
-    if (schedule.Status === 'Canceled') return '#000000';
-    return '';
+    if (schedule.IsClosed) return "#EC7E7E";
+    if (schedule.Status === "InProgress") return "#B5EC7E";
+    if (schedule.Status === "Postponed") return "#333333";
+    if (schedule.Status === "Canceled") return "#000000";
+    return "";
   })();
 
   return (
     <>
       <div className="p-2 border bg-white relative z-0">
         {/* タグ */}
-        {displayStatus !== '' && (
+        {displayStatus !== "" && (
           <div
             className="absolute top-0 left-0 w-28 h-6 lg:w-40 lg:h-12"
             style={{ backgroundColor: tagColor }}
           >
             <div className="h-full flex justify-center items-center">
-              <span className="text-white font-bold text-sm lg:text-xl">{displayStatus}</span>
+              <span className="text-white font-bold text-sm lg:text-xl">
+                {displayStatus}
+              </span>
             </div>
           </div>
         )}
 
         <div className="w-full h-full">
-          <p className="text-center font-bold text-xl">{scheduleDate.toDisplayTimeString()}~</p>
+          <p className="text-center font-bold text-xl">
+            {scheduleDate.toDisplayTimeString()}~
+          </p>
 
           {/* チーム */}
           <div className="flex justify-center items-center gap-2 lg:gap-6">
@@ -66,7 +72,7 @@ const ScheduleCard: React.FC<ScheduleCardProps> = (props) => {
               <p className="text-center font-bold">HOME</p>
               <ScheduleTeamCard
                 schedule={schedule}
-                logoSrc={homeTeam?.WikipediaLogoUrl || ''}
+                logoSrc={homeTeam?.WikipediaLogoUrl || ""}
                 side="HOME"
               />
             </div>
@@ -83,7 +89,7 @@ const ScheduleCard: React.FC<ScheduleCardProps> = (props) => {
               <p className="text-center font-bold">AWAY</p>
               <ScheduleTeamCard
                 schedule={schedule}
-                logoSrc={awayTeam?.WikipediaLogoUrl || ''}
+                logoSrc={awayTeam?.WikipediaLogoUrl || ""}
                 side="AWAY"
               />
             </div>

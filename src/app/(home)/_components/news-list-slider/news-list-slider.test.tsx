@@ -3,8 +3,6 @@
 
 import { describe, it } from "vitest";
 
-describe('ニュース一覧（スライダー）', () => {
-  it('仮テスト', () => {
-
-  })
-})
+describe("ニュース一覧（スライダー）", () => {
+  it("仮テスト", () => {});
+});

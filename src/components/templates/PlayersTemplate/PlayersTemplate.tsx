@@ -1,9 +1,9 @@
-'use client';
-import PlayersCard from '@/components/organisms/PlayersCard/PlayersCard';
-import PlayersSearchBar from '@/components/organisms/PlayersSearchBar/PlayersSearchBar';
-import { Player } from '@/types/player';
-import { Team } from '@/types/team';
-import React, { useState } from 'react';
+"use client";
+import PlayersCard from "@/components/organisms/PlayersCard/PlayersCard";
+import PlayersSearchBar from "@/components/organisms/PlayersSearchBar/PlayersSearchBar";
+import { Player } from "@/types/player";
+import { Team } from "@/types/team";
+import React, { useState } from "react";
 
 type PlayersTemplateProps = {
   players: Player[];
@@ -27,8 +27,10 @@ const PlayersTemplate: React.FC<PlayersTemplateProps> = (props) => {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-col-6 gap-2 md:gap-6">
         {players.map((player, count) => {
-          const status = player.Status === 'Active' ? 'active' : 'freeAgent';
-          const playersTeam = teams?.find((team) => team.TeamID === player.TeamID);
+          const status = player.Status === "Active" ? "active" : "freeAgent";
+          const playersTeam = teams?.find(
+            (team) => team.TeamID === player.TeamID,
+          );
 
           return (
             displayLimit > count && (
