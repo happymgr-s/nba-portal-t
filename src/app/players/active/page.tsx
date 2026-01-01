@@ -8,14 +8,14 @@ import { GetTeamDataListResponse } from "@/app/api/nba/teams/route";
 export const dynamic = "force-dynamic";
 
 type PlayersProps = {
-  searchParams: {
+  searchParams: Promise<{
     team?: string;
     position?: string;
-  };
+  }>;
 };
 
 const PlayersPage = async ({ searchParams }: PlayersProps) => {
-  const { team, position } = searchParams;
+  const { team, position } = await searchParams;
 
   try {
     const GET_PLAYERS_URL = `/api/nba/players/active?team=${

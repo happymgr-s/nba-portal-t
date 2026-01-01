@@ -9,14 +9,14 @@ import { toJapaneseISOString } from "@/lib/convert";
 export const dynamic = "force-dynamic";
 
 type ScheduleProps = {
-  searchParams: {
+  searchParams: Promise<{
     season: string;
     date: string;
     month: string;
     team: string;
     month_display: string;
     closed_display: string;
-  };
+  }>;
 };
 
 /**
@@ -31,7 +31,7 @@ const SchedulePage = async ({ searchParams }: ScheduleProps) => {
     team = "ALL",
     month_display = "false",
     closed_display = "true",
-  } = searchParams;
+  } = await searchParams;
 
   try {
     const response = await Promise.all([

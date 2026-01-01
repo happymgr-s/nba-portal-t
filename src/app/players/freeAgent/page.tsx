@@ -7,14 +7,14 @@ import { GetFreeAgentPlayersProfile } from "@/app/api/nba/players/freeAgent/rout
 export const dynamic = "force-dynamic";
 
 type PlayersProps = {
-  searchParams: {
+  searchParams: Promise<{
     team?: string;
     position?: string;
-  };
+  }>;
 };
 
 const PlayersPage = async ({ searchParams }: PlayersProps) => {
-  const { team, position } = searchParams;
+  const { team, position } = await searchParams;
 
   const players = (
     await axiosBase.get<GetFreeAgentPlayersProfile>(
