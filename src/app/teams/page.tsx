@@ -2,7 +2,7 @@ import React from "react";
 
 import { axiosBase } from "@/lib/axiosBase";
 import { GetActiveTeamProfileListResponse } from "../api/nba/teams/active/route";
-import TeamsTemplate from "@/components/templates/TeamsTemplate/TeamsTemplate";
+import { TeamsTemplate } from "./_components/teams-template";
 
 // ビルド時のスタティック生成を無効化
 export const dynamic = "force-dynamic";
