@@ -1,16 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import RoundedButton from './RoundedButton';
+import type { Meta, StoryObj } from "@storybook/react";
+import RoundedButton from "./RoundedButton";
 
 const meta = {
-  title: 'Atoms/RoundedButton',
+  title: "Atoms/RoundedButton",
   component: RoundedButton,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
-    children: 'Button',
+    children: "Button",
   },
 } satisfies Meta<typeof RoundedButton>;
 

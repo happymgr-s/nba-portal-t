@@ -1,8 +1,8 @@
-import React from 'react';
-import { Team } from '@/types/team';
+import React from "react";
+import { Team } from "@/types/team";
 
-import ConferenceTitle from '@/components/atoms/ConferenceTitle/ConferenceTitle';
-import TeamsCardsTemplate from '../TeamsCardsTemplate/TeamsCardsTemplate';
+import ConferenceTitle from "@/components/atoms/ConferenceTitle/ConferenceTitle";
+import TeamsCardsTemplate from "../TeamsCardsTemplate/TeamsCardsTemplate";
 
 type TeamsTemplateProps = {
   teams: Team[];
@@ -15,12 +15,12 @@ type TeamsTemplateProps = {
 const TeamsTemplate: React.FC<TeamsTemplateProps> = (props) => {
   const { teams } = props;
 
-  const atlanticTeams = teams.filter((team) => team.Division === 'Atlantic');
-  const centralTeams = teams.filter((team) => team.Division === 'Central');
-  const southeastTeams = teams.filter((team) => team.Division === 'Southeast');
-  const northwestTeams = teams.filter((team) => team.Division === 'Northwest');
-  const pacificTeams = teams.filter((team) => team.Division === 'Pacific');
-  const southwestTeams = teams.filter((team) => team.Division === 'Southwest');
+  const atlanticTeams = teams.filter((team) => team.Division === "Atlantic");
+  const centralTeams = teams.filter((team) => team.Division === "Central");
+  const southeastTeams = teams.filter((team) => team.Division === "Southeast");
+  const northwestTeams = teams.filter((team) => team.Division === "Northwest");
+  const pacificTeams = teams.filter((team) => team.Division === "Pacific");
+  const southwestTeams = teams.filter((team) => team.Division === "Southwest");
 
   return (
     <div className="p-1 pb-4 md:p-4">

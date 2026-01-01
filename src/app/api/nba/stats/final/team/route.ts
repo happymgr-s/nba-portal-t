@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 /**
  * 全チームのシーズン成績(シーズン合計)を取得
@@ -11,15 +11,18 @@ export async function GET(req: NextRequest) {
   //  }
 
   const searchParams = req.nextUrl.searchParams;
-  const season = searchParams.get('season');
+  const season = searchParams.get("season");
 
-  if (!season || season === 'undefined') {
-    return NextResponse.json({ status: 400, message: 'required search params [season]' });
+  if (!season || season === "undefined") {
+    return NextResponse.json({
+      status: 400,
+      message: "required search params [season]",
+    });
   }
 
   const URL = `https://api.sportsdata.io/v3/nba/scores/json/TeamSeasonStats/${season}?key=${process.env.NBA_API_KEY}`;
   try {
-    const response = await fetch(URL, { cache: 'no-store' });
+    const response = await fetch(URL, { cache: "no-store" });
     const json = await response.json();
 
     return NextResponse.json(json);

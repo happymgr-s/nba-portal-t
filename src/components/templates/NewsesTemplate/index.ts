@@ -1,1 +1,1 @@
-export * from './NewsesTemplate'
+export * from "./NewsesTemplate";

@@ -1,17 +1,18 @@
-import axios from 'axios';
-import { Player } from '@/types/player';
-import { NextRequest, NextResponse } from 'next/server';
-import { freeAgentPlayersMockData } from '@/lib/mockData/playersMockData';
+import axios from "axios";
+import { Player } from "@/types/player";
+import { NextRequest, NextResponse } from "next/server";
+import { freeAgentPlayersMockData } from "@/lib/mockData/playersMockData";
 
 export type GetFreeAgentPlayersProfile = Player[];
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
-  const position = searchParams.get('position');
+  const position = searchParams.get("position");
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== "production") {
     const filteredPlayers = freeAgentPlayersMockData.filter((player) => {
-      const isPosition = position && position !== 'ALL' ? player.Position === position : true;
+      const isPosition =
+        position && position !== "ALL" ? player.Position === position : true;
       return isPosition;
     });
     return NextResponse.json(filteredPlayers);
@@ -22,7 +23,8 @@ export async function GET(req: NextRequest) {
     const result = await axios.get<Player[]>(url);
 
     const filteredPlayers = result.data.filter((player) => {
-      const isPosition = position && position !== 'ALL' ? player.Position === position : true;
+      const isPosition =
+        position && position !== "ALL" ? player.Position === position : true;
       return isPosition;
     });
 

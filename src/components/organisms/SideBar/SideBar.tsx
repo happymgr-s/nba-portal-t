@@ -72,8 +72,8 @@ const SideBar: React.FC<SideBarProps> = (props) => {
           sidebarOpen
             ? "w-40 translate-x-0"
             : isMobile
-            ? "w-0"
-            : "w-16 translate-x-0"
+              ? "w-0"
+              : "w-16 translate-x-0"
         } md:relative z-20`}
       >
         <ScrollArea className="h-full">

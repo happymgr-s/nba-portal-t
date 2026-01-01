@@ -1,1 +1,1 @@
-export { NewsListSlider } from './news-list-slider'
+export { NewsListSlider } from "./news-list-slider";

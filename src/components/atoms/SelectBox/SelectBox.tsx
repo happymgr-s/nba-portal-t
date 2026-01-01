@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   Select,
@@ -6,8 +6,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { SelectProps } from '@radix-ui/react-select';
+} from "@/components/ui/select";
+import { SelectProps } from "@radix-ui/react-select";
 
 type selectItem = {
   label: string;

@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import Link, { LinkProps } from 'next/link';
-import React from 'react';
+import { Button } from "@/components/ui/button";
+import Link, { LinkProps } from "next/link";
+import React from "react";
 
 type SideBarLinkProps = LinkProps & {
   icon: React.ReactNode;
@@ -25,7 +25,7 @@ const SideBarLink: React.FC<SideBarLinkProps> = (props) => {
       >
         <Link
           {...rest}
-          className={`flex justify-start items-center gap-2  ${sidebarOpen && 'w-full'}`}
+          className={`flex justify-start items-center gap-2  ${sidebarOpen && "w-full"}`}
         >
           {icon}
           <span>{sidebarOpen && children}</span>

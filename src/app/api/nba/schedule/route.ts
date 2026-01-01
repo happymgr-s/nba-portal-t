@@ -1,7 +1,7 @@
-import axios from 'axios';
-import { NextRequest, NextResponse } from 'next/server';
-import { Game } from '@/types/schedule';
-import { scheduleMockData } from '@/lib/mockData/scheduleMockData';
+import axios from "axios";
+import { NextRequest, NextResponse } from "next/server";
+import { Game } from "@/types/schedule";
+import { scheduleMockData } from "@/lib/mockData/scheduleMockData";
 
 export type GetSchedulesResponse = Game[];
 
@@ -11,9 +11,10 @@ export type GetSchedulesResponse = Game[];
  */
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
-  const season = searchParams.get('season');
+  const season = searchParams.get("season");
 
-  if (process.env.NODE_ENV !== 'production') return NextResponse.json(scheduleMockData);
+  if (process.env.NODE_ENV !== "production")
+    return NextResponse.json(scheduleMockData);
 
   const url = `https://api.sportsdata.io/v3/nba/scores/json/Games/${season}?key=${process.env.NBA_API_KEY}`;
 

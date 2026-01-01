@@ -1,22 +1,22 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import StatsCard from './StatsCard';
-import { playerSeasonStatsMockData } from '@/lib/mockData/statsMockData';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import StatsCard from "./StatsCard";
+import { playerSeasonStatsMockData } from "@/lib/mockData/statsMockData";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
 
 const meta = {
-  title: 'Organisms/StatsCard',
+  title: "Organisms/StatsCard",
   component: StatsCard,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     stat: playerSeasonStatsMockData[0],
     team: teamsMockData[0],
     rank: 0,
-    leader: 'Points',
-    leaderLabel: 'pts',
+    leader: "Points",
+    leaderLabel: "pts",
   },
 } satisfies Meta<typeof StatsCard>;
 

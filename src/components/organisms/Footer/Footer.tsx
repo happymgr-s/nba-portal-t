@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 type FooterProps = {};
 
@@ -9,7 +9,7 @@ type FooterProps = {};
  * @param props
  */
 const Footer: React.FC<FooterProps> = (props) => {
-  const { } = props;
+  const {} = props;
 
   return (
     <>
@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = (props) => {
             <div className="flex items-end gap-2">
               <Image
                 className="rounded-lg md:w-16 md:h-16"
-                src={'/nba.svg'}
+                src={"/nba.svg"}
                 alt="nba_logo"
                 width={40}
                 height={40}
@@ -34,19 +34,19 @@ const Footer: React.FC<FooterProps> = (props) => {
 
           {/* リンク */}
           <div className="flex flex-col gap-4 justify-start items-start font-hiragino md:hidden">
-            <Link href={'/'} className=" font-medium text-white text-left">
+            <Link href={"/"} className=" font-medium text-white text-left">
               ホーム
             </Link>
-            <Link href={'/'} className=" font-medium text-white text-left">
+            <Link href={"/"} className=" font-medium text-white text-left">
               日程・結果
             </Link>
-            <Link href={'/'} className=" font-medium text-white text-left">
+            <Link href={"/"} className=" font-medium text-white text-left">
               選手
             </Link>
-            <Link href={'/'} className=" font-medium text-white text-left">
+            <Link href={"/"} className=" font-medium text-white text-left">
               チーム
             </Link>
-            <Link href={'/'} className=" font-medium text-white text-left">
+            <Link href={"/"} className=" font-medium text-white text-left">
               順位・スタッツ
             </Link>
           </div>

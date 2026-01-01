@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import GroupingSelectBox from './GroupingSelectBox';
-import { teamNameOptions } from '@/lib/constants';
+import type { Meta, StoryObj } from "@storybook/react";
+import GroupingSelectBox from "./GroupingSelectBox";
+import { teamNameOptions } from "@/lib/constants";
 
 const meta = {
-  title: 'Atoms/GroupingSelectBox',
+  title: "Atoms/GroupingSelectBox",
   component: GroupingSelectBox,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     selectOptions: teamNameOptions,
-    groups: ['', 'Eastern', 'Western'],
+    groups: ["", "Eastern", "Western"],
     defaultValue: teamNameOptions[0].value,
   },
 } satisfies Meta<typeof GroupingSelectBox>;

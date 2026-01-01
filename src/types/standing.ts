@@ -5,7 +5,7 @@ export type Standing = {
   Key: string; // チームのアクティブ状態
   City: string; // チームの都市名
   Name: string; // チームのフルネーム
-  Conference: 'Eastern' | 'Western'; // 会議 (Eastern または Western)
+  Conference: "Eastern" | "Western"; // 会議 (Eastern または Western)
   Division: string; // ディビジョン (例: Atlantic, Central, Southeastなど)
   Wins: number; // レギュラーシーズン勝利数
   Losses: number; // レギュラーシーズン敗北数

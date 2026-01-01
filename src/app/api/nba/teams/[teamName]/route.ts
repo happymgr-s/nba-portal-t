@@ -1,14 +1,17 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { Team } from '@/types/team';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
-import axios from 'axios';
+import { NextRequest, NextResponse } from "next/server";
+import { Team } from "@/types/team";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
+import axios from "axios";
 
 export type GetTeamProfileByTeamName = Team;
 
-export async function GET(req: NextRequest, { params }: { params: Promise<{ teamName: string }> }) {
+export async function GET(
+  req: NextRequest,
+  { params }: { params: Promise<{ teamName: string }> },
+) {
   const { teamName } = await params;
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== "production") {
     const teamProfile = teamsMockData.find((team) => team.Key === teamName);
     return NextResponse.json(teamProfile);
   }

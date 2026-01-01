@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 type ScoreTextProps = {
   children: string | number | null;

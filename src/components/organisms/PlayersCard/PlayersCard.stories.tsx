@@ -1,19 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import PlayersCard from './PlayersCard';
-import { activePlayersMockData } from '@/lib/mockData/playersMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import PlayersCard from "./PlayersCard";
+import { activePlayersMockData } from "@/lib/mockData/playersMockData";
 
 const meta = {
-  title: 'Organisms/PlayersCard',
+  title: "Organisms/PlayersCard",
   component: PlayersCard,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
-    href: '',
+    href: "",
     playerData: activePlayersMockData[0],
-    teamLogoUrl: '/猫.png',
+    teamLogoUrl: "/猫.png",
   },
 } satisfies Meta<typeof PlayersCard>;
 

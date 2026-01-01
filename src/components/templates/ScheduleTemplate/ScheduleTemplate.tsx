@@ -1,14 +1,14 @@
-'use client';
-import React from 'react';
-import { Schedule } from '@/types/schedule';
-import { Team } from '@/types/team';
+"use client";
+import React from "react";
+import { Schedule } from "@/types/schedule";
+import { Team } from "@/types/team";
 
-import ScheduleCard from '@/components/organisms/ScheduleCard/ScheduleCard';
-import SeasonTabs from '@/components/organisms/SeasonTabs/SeasonTabs';
-import DisplayTypeSwitch from '@/components/organisms/DisplayTypeSwitch/DisplayTypeSwitch';
-import ScheduleDatePicker from '@/components/organisms/ScheduleDatePicker/ScheduleDatePicker';
-import { useSearchParams } from 'next/navigation';
-import { groupSchedulesByDate } from '@/lib/groupSchedule';
+import ScheduleCard from "@/components/organisms/ScheduleCard/ScheduleCard";
+import SeasonTabs from "@/components/organisms/SeasonTabs/SeasonTabs";
+import DisplayTypeSwitch from "@/components/organisms/DisplayTypeSwitch/DisplayTypeSwitch";
+import ScheduleDatePicker from "@/components/organisms/ScheduleDatePicker/ScheduleDatePicker";
+import { useSearchParams } from "next/navigation";
+import { groupSchedulesByDate } from "@/lib/groupSchedule";
 
 type ScheduleTemplateProps = {
   schedules: Schedule[];
@@ -25,7 +25,7 @@ const ScheduleTemplate: React.FC<ScheduleTemplateProps> = (props) => {
 
   const searchParams = useSearchParams();
 
-  const isMonthDisplay = searchParams.get('month_display') === 'true';
+  const isMonthDisplay = searchParams.get("month_display") === "true";
 
   const groupedSchedules = groupSchedulesByDate(schedules);
 
@@ -43,11 +43,17 @@ const ScheduleTemplate: React.FC<ScheduleTemplateProps> = (props) => {
         <>表示できる日程がありません。</>
       ) : !isMonthDisplay ? (
         <>
-          <p className="text-sm text-gray-500 text-center mb-2">※時間は日本時間です</p>
+          <p className="text-sm text-gray-500 text-center mb-2">
+            ※時間は日本時間です
+          </p>
           <div className="flex flex-col gap-4">
             {schedules.map((schedule) => {
-              const homeTeam = teams.find((team) => team.TeamID === schedule.HomeTeamID);
-              const awayTeam = teams.find((team) => team.TeamID === schedule.AwayTeamID);
+              const homeTeam = teams.find(
+                (team) => team.TeamID === schedule.HomeTeamID,
+              );
+              const awayTeam = teams.find(
+                (team) => team.TeamID === schedule.AwayTeamID,
+              );
               return (
                 <ScheduleCard
                   key={schedule.GameID}
@@ -61,14 +67,22 @@ const ScheduleTemplate: React.FC<ScheduleTemplateProps> = (props) => {
         </>
       ) : (
         <>
-          <p className="text-sm text-gray-500 text-center mb-2">※時間は日本時間です</p>
+          <p className="text-sm text-gray-500 text-center mb-2">
+            ※時間は日本時間です
+          </p>
           <div className="flex flex-col gap-4">
             {Object.entries(groupedSchedules).map(([date, games]) => (
               <div key={date} className="">
-                <h2 className="text-center text-gray-500 font-semibold text-lg">{date}</h2>
+                <h2 className="text-center text-gray-500 font-semibold text-lg">
+                  {date}
+                </h2>
                 {games.map((game) => {
-                  const homeTeam = teams.find((team) => team.TeamID === game.HomeTeamID);
-                  const awayTeam = teams.find((team) => team.TeamID === game.AwayTeamID);
+                  const homeTeam = teams.find(
+                    (team) => team.TeamID === game.HomeTeamID,
+                  );
+                  const awayTeam = teams.find(
+                    (team) => team.TeamID === game.AwayTeamID,
+                  );
                   return (
                     <ScheduleCard
                       key={game.GameID}

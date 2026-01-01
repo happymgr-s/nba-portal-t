@@ -1,8 +1,8 @@
-import { Stat } from '@/types/stat';
-import { Team } from '@/types/team';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { Stat } from "@/types/stat";
+import { Team } from "@/types/team";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 type StatsCardProps = {
   stat: Stat;
@@ -31,7 +31,9 @@ const StatsCard: React.FC<StatsCardProps> = (props) => {
             background: `linear-gradient(135deg, ${checkedRank.color}  45% ,#ffffff 45%)`,
           }}
         >
-          <span className="font-actionNBAMedium text-2xl">{checkedRank.label}</span>
+          <span className="font-actionNBAMedium text-2xl">
+            {checkedRank.label}
+          </span>
         </div>
 
         {/* 名前 */}
@@ -40,7 +42,7 @@ const StatsCard: React.FC<StatsCardProps> = (props) => {
             <div className="flex items-center gap-2">
               <Link href={`/teams/${stat.Team}`} className="hover:opacity-75">
                 <Image
-                  src={team?.WikipediaLogoUrl || ''}
+                  src={team?.WikipediaLogoUrl || ""}
                   alt={`team_logo`}
                   width={30}
                   height={30}
@@ -61,12 +63,15 @@ const StatsCard: React.FC<StatsCardProps> = (props) => {
         <div
           className={`flex justify-center items-end gap-4 sm:gap-12 lg:gap-2 ${
             rank === 3 || rank === 4
-              ? ''
-              : 'lg:flex-col lg:items-center lg:justify-between lg:h-auto'
+              ? ""
+              : "lg:flex-col lg:items-center lg:justify-between lg:h-auto"
           }`}
         >
           {/* ヘッドショット */}
-          <Link href={`/players/active/${stat.PlayerID}`} className="hover:opacity-75">
+          <Link
+            href={`/players/active/${stat.PlayerID}`}
+            className="hover:opacity-75"
+          >
             <Image
               // className={`absolute bottom-0 ${rank === 0 ? 'left-12' : 'left-0'}`}
               className="pt-4"
@@ -88,7 +93,12 @@ const StatsCard: React.FC<StatsCardProps> = (props) => {
 
             <div className={`${checkedRank.image}`}>
               <p className="text-center text-sm">ハイライト</p>
-              <Image src={'/video_mock.png'} alt={'動画（仮）'} width={120} height={60} />
+              <Image
+                src={"/video_mock.png"}
+                alt={"動画（仮）"}
+                width={120}
+                height={60}
+              />
             </div>
           </div>
         </div>
@@ -102,16 +112,16 @@ export default StatsCard;
 function checkRank(rank: number) {
   switch (rank) {
     case 0:
-      return { label: '1st', color: '#FFD700', image: 'block' };
+      return { label: "1st", color: "#FFD700", image: "block" };
     case 1:
-      return { label: '2nd', color: '#C0C0C0', image: 'hidden lg:block' };
+      return { label: "2nd", color: "#C0C0C0", image: "hidden lg:block" };
     case 2:
-      return { label: '3rd', color: '#CD7F32', image: 'hidden lg:block' };
+      return { label: "3rd", color: "#CD7F32", image: "hidden lg:block" };
     case 3:
-      return { label: '4th', color: '', image: 'hidden' };
+      return { label: "4th", color: "", image: "hidden" };
     case 4:
-      return { label: '5th', color: '', image: 'hidden' };
+      return { label: "5th", color: "", image: "hidden" };
     default:
-      return { label: '', color: '', image: 'hidden' };
+      return { label: "", color: "", image: "hidden" };
   }
 }

@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import SideBar from './SideBar';
-import { seasonMockData } from '@/lib/mockData/seaseonMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import SideBar from "./SideBar";
+import { seasonMockData } from "@/lib/mockData/seaseonMockData";
 
 const meta = {
-  title: 'Organisms/SideBar',
+  title: "Organisms/SideBar",
   component: SideBar,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     currentSeason: seasonMockData,

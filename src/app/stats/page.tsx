@@ -10,7 +10,7 @@ const StatsPage = async () => {
     const currentSeason = (await axiosBase.get<Season>("/api/nba/season")).data;
     const response = await Promise.all([
       axiosBase.get(
-        `/api/nba/stats/final/player?season=${currentSeason.Season}`
+        `/api/nba/stats/final/player?season=${currentSeason.Season}`,
       ),
       axiosBase.get(`/api/nba/teams`),
     ]);

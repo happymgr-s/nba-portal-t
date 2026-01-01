@@ -1,45 +1,45 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
-import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from 'next/font/google';
+import "./globals.css";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import { Roboto_Condensed, Zen_Kaku_Gothic_Antique } from "next/font/google";
 
-import Header from '@/components/organisms/Header/Header';
-import Footer from '@/components/organisms/Footer/Footer';
-import SSRSideBar from '@/components/organisms/SideBar/server/SSRSideBar';
+import Header from "@/components/organisms/Header/Header";
+import Footer from "@/components/organisms/Footer/Footer";
+import SSRSideBar from "@/components/organisms/SideBar/server/SSRSideBar";
 
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import Head from 'next/head';
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Head from "next/head";
 
 const robotoCondensedFont = Roboto_Condensed({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-RobotoCondensed',
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-RobotoCondensed",
 });
 
 const zenKakuGothicFont = Zen_Kaku_Gothic_Antique({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-ZenKakuGothic',
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-ZenKakuGothic",
 });
 
 const actionNBALight = localFont({
-  src: '../../public/fonts/ActionNBACondWeb-Light.woff2',
-  variable: '--font-actionNBALight',
+  src: "../../public/fonts/ActionNBACondWeb-Light.woff2",
+  variable: "--font-actionNBALight",
 });
 const actionNBAMedium = localFont({
-  src: '../../public/fonts/ActionNBACondWeb-Medium.woff2',
-  variable: '--font-actionNBAMedium',
+  src: "../../public/fonts/ActionNBACondWeb-Medium.woff2",
+  variable: "--font-actionNBAMedium",
 });
 const actionNBABold = localFont({
-  src: '../../public/fonts/ActionNBACondWeb-Bold.woff2',
-  variable: '--font-actionNBABold',
+  src: "../../public/fonts/ActionNBACondWeb-Bold.woff2",
+  variable: "--font-actionNBABold",
 });
 
 export const metadata: Metadata = {
-  title: 'NBA PORTAL',
+  title: "NBA PORTAL",
   description:
-    'Discover in-depth team profiles, real-time scores, and breaking NBA updates in one place.',
+    "Discover in-depth team profiles, real-time scores, and breaking NBA updates in one place.",
 };
 
 export default function RootLayout({

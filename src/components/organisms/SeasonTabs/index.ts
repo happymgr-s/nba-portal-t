@@ -1,1 +1,1 @@
-export * from './SeasonTabs'
+export * from "./SeasonTabs";

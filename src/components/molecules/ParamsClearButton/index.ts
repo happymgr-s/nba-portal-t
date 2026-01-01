@@ -1,1 +1,1 @@
-export * from './ParamsClearButton'
+export * from "./ParamsClearButton";

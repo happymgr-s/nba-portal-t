@@ -1,1 +1,1 @@
-export * from './StatsTemplate'
+export * from "./StatsTemplate";

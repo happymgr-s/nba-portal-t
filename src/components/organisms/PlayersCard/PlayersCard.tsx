@@ -1,9 +1,9 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
-import Link, { LinkProps } from 'next/link';
-import { Player } from '@/types/player';
-import { usePathname } from 'next/navigation';
+"use client";
+import React from "react";
+import Image from "next/image";
+import Link, { LinkProps } from "next/link";
+import { Player } from "@/types/player";
+import { usePathname } from "next/navigation";
 
 type PlayersCardProps = LinkProps & {
   playerData: Player;
@@ -16,7 +16,7 @@ type PlayersCardProps = LinkProps & {
  * @param props
  */
 const PlayersCard: React.FC<PlayersCardProps> = (props) => {
-  const { playerData, teamLogoUrl, teamColor = '000000', ...linkProps } = props;
+  const { playerData, teamLogoUrl, teamColor = "000000", ...linkProps } = props;
 
   const pathName = usePathname();
 
@@ -33,7 +33,7 @@ const PlayersCard: React.FC<PlayersCardProps> = (props) => {
           >
             <Image
               className="absolute top-2 left-2 "
-              src={teamLogoUrl || ''}
+              src={teamLogoUrl || ""}
               alt="logo"
               width={30}
               height={30}
@@ -42,8 +42,8 @@ const PlayersCard: React.FC<PlayersCardProps> = (props) => {
               <Image
                 src={
                   playerData.PlayerID === 20000485
-                    ? '/curry_headshot_sample.png'
-                    : '/sample_headshot.png'
+                    ? "/curry_headshot_sample.png"
+                    : "/sample_headshot.png"
                 }
                 alt="logo"
                 width={playerData.PlayerID === 20000485 ? 100 : 70}
@@ -58,7 +58,7 @@ const PlayersCard: React.FC<PlayersCardProps> = (props) => {
               <h2 className="font-semibold text-nowrap ">
                 {playerData.FirstName} {playerData.LastName}
               </h2>
-              {pathName.includes('active') ? (
+              {pathName.includes("active") ? (
                 <p>
                   {playerData.Team} / {playerData.Position} #{playerData.Jersey}
                 </p>

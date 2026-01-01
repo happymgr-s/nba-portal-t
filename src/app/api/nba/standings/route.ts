@@ -1,15 +1,15 @@
-import axios from 'axios';
-import { NextRequest, NextResponse } from 'next/server';
-import { Standing } from '@/types/standing';
-import { closedSeasonStandingsMockData } from '@/lib/mockData/standingsMockData';
+import axios from "axios";
+import { NextRequest, NextResponse } from "next/server";
+import { Standing } from "@/types/standing";
+import { closedSeasonStandingsMockData } from "@/lib/mockData/standingsMockData";
 
 export type GetStandingsResponse = Standing[];
 
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
-  const season = searchParams.get('season');
+  const season = searchParams.get("season");
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== "production") {
     return NextResponse.json(closedSeasonStandingsMockData);
   }
 

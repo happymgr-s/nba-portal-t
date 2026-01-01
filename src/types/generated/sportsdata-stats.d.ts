@@ -4,2261 +4,2261 @@
  */
 
 export interface paths {
-    "/{format}/Players": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Details - by Active
-         * @description Full player bio and details, including injury notes, for all active players.
-         */
-        get: operations["PlayerDetailsByActive"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+  "/{format}/Players": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/teams": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Team Profiles - by Active
-         * @description Full team information: team name and city, conference and division, and colors. Also contains basic fantasy info such as IDs as well as full stadium data. This endpoint returns the teams currently active in the league.
-         */
-        get: operations["TeamProfilesByActive"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Details - by Active
+     * @description Full player bio and details, including injury notes, for all active players.
+     */
+    get: operations["PlayerDetailsByActive"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/teams": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/BoxScore/{gameid}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Box Score [Live & Final]
-         * @description Full statistical information for a specified game, down to the team and player stat level, delivered live during the game, called per individual game.
-         */
-        get: operations["BoxScore[LiveFinal]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Team Profiles - by Active
+     * @description Full team information: team name and city, conference and division, and colors. Also contains basic fantasy info such as IDs as well as full stadium data. This endpoint returns the teams currently active in the league.
+     */
+    get: operations["TeamProfilesByActive"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/BoxScore/{gameid}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/BoxScores/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Box Scores - by Date [Live & Final]
-         * @description Full statistical information for a specified game, down to the team and player stat level, delivered live during the games, called for all games on a given date.
-         */
-        get: operations["BoxScoresByDate[LiveFinal]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Box Score [Live & Final]
+     * @description Full statistical information for a specified game, down to the team and player stat level, delivered live during the game, called per individual game.
+     */
+    get: operations["BoxScore[LiveFinal]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/BoxScores/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/BoxScoresDelta/{date}/{minutes}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Box Scores Delta - by Date
-         * @description This method returns all box scores for a given date, but only returns player stats that have changed in the last X minutes as specified in your API call. By definition this is a live endpoint, not final.
-         */
-        get: operations["BoxScoresDeltaByDate"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Box Scores - by Date [Live & Final]
+     * @description Full statistical information for a specified game, down to the team and player stat level, delivered live during the games, called for all games on a given date.
+     */
+    get: operations["BoxScoresByDate[LiveFinal]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/BoxScoresDelta/{date}/{minutes}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/FreeAgents": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Details - by Free Agent
-         * @description Full player bio and details, including injury notes, for all available free agents unattached to a team.
-         */
-        get: operations["PlayerDetailsByFreeAgent"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Box Scores Delta - by Date
+     * @description This method returns all box scores for a given date, but only returns player stats that have changed in the last X minutes as specified in your API call. By definition this is a live endpoint, not final.
+     */
+    get: operations["BoxScoresDeltaByDate"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/FreeAgents": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/GamesByDate/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Games - by Date [Live & Final]
-         * @description This endpoint is a lightweight implementation of key game info such as scores and time on clock, delivered live.
-         */
-        get: operations["GamesByDate[LiveFinal]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Details - by Free Agent
+     * @description Full player bio and details, including injury notes, for all available free agents unattached to a team.
+     */
+    get: operations["PlayerDetailsByFreeAgent"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/GamesByDate/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/Games/{season}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Schedules
-         * @description Home and away teams, date and time, season type and week etc. are included. Also includes gameday information. This includes full stadium information (capacity, lat/long etc.), top-line betting information (spread, moneyline, total), weather conditions, and broadcast information.
-         */
-        get: operations["Schedules"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Games - by Date [Live & Final]
+     * @description This endpoint is a lightweight implementation of key game info such as scores and time on clock, delivered live.
+     */
+    get: operations["GamesByDate[LiveFinal]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/Games/{season}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/News": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * News
-         * @description Basic RotoBaller news feed, with limited stories available - usually 0-1 stories per day. Ideal for test purposes.
-         */
-        get: operations["News"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Schedules
+     * @description Home and away teams, date and time, season type and week etc. are included. Also includes gameday information. This includes full stadium information (capacity, lat/long etc.), top-line betting information (spread, moneyline, total), weather conditions, and broadcast information.
+     */
+    get: operations["Schedules"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/News": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/NewsByDate/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * News - by Date
-         * @description Basic RotoBaller news feed, with limited stories available - usually 0-1 stories per day. Ideal for test purposes.
-         */
-        get: operations["NewsByDate"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * News
+     * @description Basic RotoBaller news feed, with limited stories available - usually 0-1 stories per day. Ideal for test purposes.
+     */
+    get: operations["News"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/NewsByDate/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/NewsByPlayerID/{playerid}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * News - by Player
-         * @description Basic RotoBaller news feed, with limited stories available - usually 0-1 stories per day. Ideal for test purposes.
-         */
-        get: operations["NewsByPlayer"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * News - by Date
+     * @description Basic RotoBaller news feed, with limited stories available - usually 0-1 stories per day. Ideal for test purposes.
+     */
+    get: operations["NewsByDate"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/NewsByPlayerID/{playerid}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/PlayerGameStatsByDate/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Game Stats - by Date [Live & Final]
-         * @description Returns the box score statistical record for all involved players across a given date, updated live as the game takes place.
-         */
-        get: operations["PlayerGameStatsByDate[LiveFinal]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * News - by Player
+     * @description Basic RotoBaller news feed, with limited stories available - usually 0-1 stories per day. Ideal for test purposes.
+     */
+    get: operations["NewsByPlayer"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/PlayerGameStatsByDate/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/PlayerSeasonStats/{season}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Season Stats
-         * @description Returns all season-long stats (i.e. the season total, not each individual game record) for all players for a given season.
-         */
-        get: operations["PlayerSeasonStats"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Game Stats - by Date [Live & Final]
+     * @description Returns the box score statistical record for all involved players across a given date, updated live as the game takes place.
+     */
+    get: operations["PlayerGameStatsByDate[LiveFinal]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/PlayerSeasonStats/{season}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/PlayerSeasonStatsByTeam/{season}/{team}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Season Stats - by Team
-         * @description Returns all season-long stats (i.e. the season total, not each individual game record) for a given team's players in a given season.
-         */
-        get: operations["PlayerSeasonStatsByTeam"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Season Stats
+     * @description Returns all season-long stats (i.e. the season total, not each individual game record) for all players for a given season.
+     */
+    get: operations["PlayerSeasonStats"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/PlayerSeasonStatsByTeam/{season}/{team}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/Players/{team}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Details - by Team
-         * @description Full player bio and details, including injury notes, for all available players by team.
-         */
-        get: operations["PlayerDetailsByTeam"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Season Stats - by Team
+     * @description Returns all season-long stats (i.e. the season total, not each individual game record) for a given team's players in a given season.
+     */
+    get: operations["PlayerSeasonStatsByTeam"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/Players/{team}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/Stadiums": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Stadiums
-         * @description Returns all stadiums in the league with capacity, latitude/longitude, city and state (and where applicable country.)
-         */
-        get: operations["Stadiums"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Details - by Team
+     * @description Full player bio and details, including injury notes, for all available players by team.
+     */
+    get: operations["PlayerDetailsByTeam"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/Stadiums": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/TeamGameStatsByDate/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Team Game Stats - by Date [Live & Final]
-         * @description Returns the box score statistical record team-wide (aggregated from all players) for all games on a given date, both live and post-game.
-         */
-        get: operations["TeamGameStatsByDate[LiveFinal]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Stadiums
+     * @description Returns all stadiums in the league with capacity, latitude/longitude, city and state (and where applicable country.)
+     */
+    get: operations["Stadiums"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/TeamGameStatsByDate/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/TeamSeasonStats/{season}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Team Season Stats
-         * @description Returns all season-long stats (i.e. the season total, not each individual game record) for all teams (aggregated from all players) for a given season.
-         */
-        get: operations["TeamSeasonStats"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Team Game Stats - by Date [Live & Final]
+     * @description Returns the box score statistical record team-wide (aggregated from all players) for all games on a given date, both live and post-game.
+     */
+    get: operations["TeamGameStatsByDate[LiveFinal]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/TeamSeasonStats/{season}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/AreAnyGamesInProgress": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Are Games In Progress
-         * @description Returns <code>true</code> if there is at least one game being played at the time of the request or <code>false</code> if there are none.
-         */
-        get: operations["AreGamesInProgress"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Team Season Stats
+     * @description Returns all season-long stats (i.e. the season total, not each individual game record) for all teams (aggregated from all players) for a given season.
+     */
+    get: operations["TeamSeasonStats"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/AreAnyGamesInProgress": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/PlayerSeasonStatsByPlayer/{season}/{playerid}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Season Stats - by Player
-         * @description Player Season Stats - by Player
-         */
-        get: operations["PlayerSeasonStatsByPlayer"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Are Games In Progress
+     * @description Returns <code>true</code> if there is at least one game being played at the time of the request or <code>false</code> if there are none.
+     */
+    get: operations["AreGamesInProgress"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/PlayerSeasonStatsByPlayer/{season}/{playerid}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/Player/{playerid}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Details - by Player
-         * @description Player Details - by Player
-         */
-        get: operations["PlayerDetailsByPlayer"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Season Stats - by Player
+     * @description Player Season Stats - by Player
+     */
+    get: operations["PlayerSeasonStatsByPlayer"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/Player/{playerid}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/CurrentSeason": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Season - Current
-         * @description Year of the current season. This value changes at the start of the new league year. For leagues that run over two years, this is the year the season starts, not ends.
-         */
-        get: operations["SeasonCurrent"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Details - by Player
+     * @description Player Details - by Player
+     */
+    get: operations["PlayerDetailsByPlayer"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/CurrentSeason": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/PlayerGameStatsByPlayer/{date}/{playerid}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Game Stats - by Player [Live & Final]
-         * @description Player Game Stats - by Player [Live & Final]
-         */
-        get: operations["PlayerGameStatsByPlayer[LiveFinal]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Season - Current
+     * @description Year of the current season. This value changes at the start of the new league year. For leagues that run over two years, this is the year the season starts, not ends.
+     */
+    get: operations["SeasonCurrent"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/PlayerGameStatsByPlayer/{date}/{playerid}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/Standings/{season}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Standings
-         * @description Includes regular season standings in division and conference, from which postseason seeding can be derived.
-         */
-        get: operations["Standings"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Game Stats - by Player [Live & Final]
+     * @description Player Game Stats - by Player [Live & Final]
+     */
+    get: operations["PlayerGameStatsByPlayer[LiveFinal]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/Standings/{season}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/TeamStatsAllowedByPosition/{season}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Team Stats Allowed - by Position
-         * @description For each team, deliveres a season total of statistical records for their opponents' positions (e.g. all field goals made against this team by Centers.)
-         */
-        get: operations["TeamStatsAllowedByPosition"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Standings
+     * @description Includes regular season standings in division and conference, from which postseason seeding can be derived.
+     */
+    get: operations["Standings"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/TeamStatsAllowedByPosition/{season}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/AllTeams": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Team Profiles - All
-         * @description Full team information: team name and city, conference and division, and colors. Also contains basic fantasy info such as IDs as well as full stadium data. This endpoint returns all teams regardless of current active status.
-         */
-        get: operations["TeamProfilesAll"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Team Stats Allowed - by Position
+     * @description For each team, deliveres a season total of statistical records for their opponents' positions (e.g. all field goals made against this team by Centers.)
+     */
+    get: operations["TeamStatsAllowedByPosition"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/AllTeams": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/DfsSlatesByDate/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * DFS Slates - by Date
-         * @description DFS slates, salaries, positions etc. by date for the NBA.
-         */
-        get: operations["DfsSlatesByDate"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Team Profiles - All
+     * @description Full team information: team name and city, conference and division, and colors. Also contains basic fantasy info such as IDs as well as full stadium data. This endpoint returns all teams regardless of current active status.
+     */
+    get: operations["TeamProfilesAll"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/DfsSlatesByDate/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/AllStars/{season}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * All-Stars
-         * @description A list of players selected for the All-Star Game for a given season.
-         */
-        get: operations["AllStars"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * DFS Slates - by Date
+     * @description DFS slates, salaries, positions etc. by date for the NBA.
+     */
+    get: operations["DfsSlatesByDate"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/AllStars/{season}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/PlayerGameStatsBySeason/{season}/{playerid}/{numberofgames}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Game Logs - by Season
-         * @description Specify a season, a player, and number of games (either an integer or <code>all</code>) to see all of their box score logs. Refreshed after their most recent game is complete.
-         */
-        get: operations["PlayerGameLogsBySeason"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * All-Stars
+     * @description A list of players selected for the All-Star Game for a given season.
+     */
+    get: operations["AllStars"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/PlayerGameStatsBySeason/{season}/{playerid}/{numberofgames}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/TeamGameStatsBySeason/{season}/{teamid}/{numberofgames}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Team Game Logs - by Season
-         * @description Game-by-game log of total team statistics for a given season, split up by game (not aggregated into season totals.)
-         */
-        get: operations["TeamGameLogsBySeason"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Game Logs - by Season
+     * @description Specify a season, a player, and number of games (either an integer or <code>all</code>) to see all of their box score logs. Refreshed after their most recent game is complete.
+     */
+    get: operations["PlayerGameLogsBySeason"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/TeamGameStatsBySeason/{season}/{teamid}/{numberofgames}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/TeamGameStatsByDateFinal/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Team Game Stats - by Date [Final]
-         * @description Returns the box score statistical record team-wide (aggregated from all players) for a games on a given date, delivered as each game concludes.
-         */
-        get: operations["TeamGameStatsByDate[Final]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Team Game Logs - by Season
+     * @description Game-by-game log of total team statistics for a given season, split up by game (not aggregated into season totals.)
+     */
+    get: operations["TeamGameLogsBySeason"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/TeamGameStatsByDateFinal/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/PlayerGameStatsByDateFinal/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Player Game Stats - by Date [Final]
-         * @description Returns the box score statistical record for all involved players across all teams' games on a given date after each game has concluded.
-         */
-        get: operations["PlayerGameStatsByDate[Final]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Team Game Stats - by Date [Final]
+     * @description Returns the box score statistical record team-wide (aggregated from all players) for a games on a given date, delivered as each game concludes.
+     */
+    get: operations["TeamGameStatsByDate[Final]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/PlayerGameStatsByDateFinal/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/BoxScoreFinal/{gameid}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Box Score [Final]
-         * @description Full statistical information for a specified game, down to the team and player stat level, delivered after the game is complete.
-         */
-        get: operations["BoxScore[Final]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Player Game Stats - by Date [Final]
+     * @description Returns the box score statistical record for all involved players across all teams' games on a given date after each game has concluded.
+     */
+    get: operations["PlayerGameStatsByDate[Final]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/BoxScoreFinal/{gameid}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/BoxScoresFinal/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Box Scores - by Date [Final]
-         * @description Full statistical information for a specified date for each game that took place, down to the team and player stat level, delivered after the game is complete.
-         */
-        get: operations["BoxScoresByDate[Final]"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Box Score [Final]
+     * @description Full statistical information for a specified game, down to the team and player stat level, delivered after the game is complete.
+     */
+    get: operations["BoxScore[Final]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/BoxScoresFinal/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/{format}/FantasyGameStatsByDate/{date}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Fantasy Points - by Date
-         * @description A simple list of fantasy points scored for all players who took part in games on a given date.
-         */
-        get: operations["FantasyPointsByDate"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Box Scores - by Date [Final]
+     * @description Full statistical information for a specified date for each game that took place, down to the team and player stat level, delivered after the game is complete.
+     */
+    get: operations["BoxScoresByDate[Final]"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/{format}/FantasyGameStatsByDate/{date}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    /**
+     * Fantasy Points - by Date
+     * @description A simple list of fantasy points scored for all players who took part in games on a given date.
+     */
+    get: operations["FantasyPointsByDate"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
 }
 export type webhooks = Record<string, never>;
 export interface components {
-    schemas: {
-        Player: {
-            PlayerID?: number;
-            SportsDataID?: string | null;
-            Status?: string | null;
-            TeamID?: number | null;
-            Team?: string | null;
-            Jersey?: number | null;
-            PositionCategory?: string | null;
-            Position?: string | null;
-            FirstName?: string | null;
-            LastName?: string | null;
-            Height?: number | null;
-            Weight?: number | null;
-            BirthDate?: string | null;
-            BirthCity?: string | null;
-            BirthState?: string | null;
-            BirthCountry?: string | null;
-            HighSchool?: string | null;
-            College?: string | null;
-            Salary?: number | null;
-            PhotoUrl?: string | null;
-            Experience?: number | null;
-            SportRadarPlayerID?: string | null;
-            RotoworldPlayerID?: number | null;
-            RotoWirePlayerID?: number | null;
-            FantasyAlarmPlayerID?: number | null;
-            StatsPlayerID?: number | null;
-            SportsDirectPlayerID?: number | null;
-            XmlTeamPlayerID?: number | null;
-            InjuryStatus?: string | null;
-            InjuryBodyPart?: string | null;
-            InjuryStartDate?: string | null;
-            InjuryNotes?: string | null;
-            FanDuelPlayerID?: number | null;
-            DraftKingsPlayerID?: number | null;
-            YahooPlayerID?: number | null;
-            FanDuelName?: string | null;
-            DraftKingsName?: string | null;
-            YahooName?: string | null;
-            DepthChartPosition?: string | null;
-            DepthChartOrder?: number | null;
-            GlobalTeamID?: number | null;
-            FantasyDraftName?: string | null;
-            FantasyDraftPlayerID?: number | null;
-            UsaTodayPlayerID?: number | null;
-            UsaTodayHeadshotUrl?: string | null;
-            UsaTodayHeadshotNoBackgroundUrl?: string | null;
-            UsaTodayHeadshotUpdated?: string | null;
-            UsaTodayHeadshotNoBackgroundUpdated?: string | null;
-            NbaDotComPlayerID?: number | null;
-        };
-        Team: {
-            TeamID?: number;
-            Key?: string | null;
-            Active?: boolean;
-            City?: string | null;
-            Name?: string | null;
-            LeagueID?: number | null;
-            StadiumID?: number | null;
-            Conference?: string | null;
-            Division?: string | null;
-            PrimaryColor?: string | null;
-            SecondaryColor?: string | null;
-            TertiaryColor?: string | null;
-            QuaternaryColor?: string | null;
-            WikipediaLogoUrl?: string | null;
-            WikipediaWordMarkUrl?: string | null;
-            GlobalTeamID?: number;
-            NbaDotComTeamID?: number | null;
-            HeadCoach?: string | null;
-        };
-        BoxScore: {
-            Game?: components["schemas"]["Game"];
-            Quarters?: components["schemas"]["Quarter"][];
-            TeamGames?: components["schemas"]["TeamGame"][];
-            PlayerGames?: components["schemas"]["PlayerGame"][];
-        };
-        Game: {
-            GameID?: number;
-            Season?: number;
-            SeasonType?: number;
-            Status?: string | null;
-            Day?: string | null;
-            DateTime?: string | null;
-            AwayTeam?: string | null;
-            HomeTeam?: string | null;
-            AwayTeamID?: number;
-            HomeTeamID?: number;
-            StadiumID?: number | null;
-            Channel?: string | null;
-            Attendance?: number | null;
-            AwayTeamScore?: number | null;
-            HomeTeamScore?: number | null;
-            Updated?: string | null;
-            Quarter?: string | null;
-            TimeRemainingMinutes?: number | null;
-            TimeRemainingSeconds?: number | null;
-            PointSpread?: number | null;
-            OverUnder?: number | null;
-            AwayTeamMoneyLine?: number | null;
-            HomeTeamMoneyLine?: number | null;
-            GlobalGameID?: number;
-            GlobalAwayTeamID?: number;
-            GlobalHomeTeamID?: number;
-            PointSpreadAwayTeamMoneyLine?: number | null;
-            PointSpreadHomeTeamMoneyLine?: number | null;
-            LastPlay?: string | null;
-            IsClosed?: boolean;
-            Quarters?: components["schemas"]["Quarter"][];
-            GameEndDateTime?: string | null;
-            HomeRotationNumber?: number | null;
-            AwayRotationNumber?: number | null;
-            NeutralVenue?: boolean | null;
-            OverPayout?: number | null;
-            UnderPayout?: number | null;
-            CrewChiefID?: number | null;
-            UmpireID?: number | null;
-            RefereeID?: number | null;
-            AlternateID?: number | null;
-            DateTimeUTC?: string | null;
-            SeriesInfo?: components["schemas"]["Series"];
-            InseasonTournament?: boolean | null;
-        };
-        Quarter: {
-            QuarterID?: number;
-            GameID?: number;
-            Number?: number;
-            Name?: string | null;
-            AwayScore?: number | null;
-            HomeScore?: number | null;
-        };
-        Series: {
-            HomeTeamWins?: number;
-            AwayTeamWins?: number;
-            GameNumber?: number;
-            MaxLength?: number;
-        };
-        TeamGame: {
-            StatID?: number;
-            TeamID?: number | null;
-            SeasonType?: number | null;
-            Season?: number | null;
-            Name?: string | null;
-            Team?: string | null;
-            Wins?: number | null;
-            Losses?: number | null;
-            Possessions?: number | null;
-            GlobalTeamID?: number | null;
-            GameID?: number | null;
-            OpponentID?: number | null;
-            Opponent?: string | null;
-            Day?: string | null;
-            DateTime?: string | null;
-            HomeOrAway?: string | null;
-            IsGameOver?: boolean;
-            GlobalGameID?: number | null;
-            GlobalOpponentID?: number | null;
-            Updated?: string | null;
-            Games?: number | null;
-            FantasyPoints?: number | null;
-            Minutes?: number | null;
-            Seconds?: number | null;
-            FieldGoalsMade?: number | null;
-            FieldGoalsAttempted?: number | null;
-            FieldGoalsPercentage?: number | null;
-            EffectiveFieldGoalsPercentage?: number | null;
-            TwoPointersMade?: number | null;
-            TwoPointersAttempted?: number | null;
-            TwoPointersPercentage?: number | null;
-            ThreePointersMade?: number | null;
-            ThreePointersAttempted?: number | null;
-            ThreePointersPercentage?: number | null;
-            FreeThrowsMade?: number | null;
-            FreeThrowsAttempted?: number | null;
-            FreeThrowsPercentage?: number | null;
-            OffensiveRebounds?: number | null;
-            DefensiveRebounds?: number | null;
-            Rebounds?: number | null;
-            OffensiveReboundsPercentage?: number | null;
-            DefensiveReboundsPercentage?: number | null;
-            TotalReboundsPercentage?: number | null;
-            Assists?: number | null;
-            Steals?: number | null;
-            BlockedShots?: number | null;
-            Turnovers?: number | null;
-            PersonalFouls?: number | null;
-            Points?: number | null;
-            TrueShootingAttempts?: number | null;
-            TrueShootingPercentage?: number | null;
-            PlayerEfficiencyRating?: number | null;
-            AssistsPercentage?: number | null;
-            StealsPercentage?: number | null;
-            BlocksPercentage?: number | null;
-            TurnOversPercentage?: number | null;
-            UsageRatePercentage?: number | null;
-            FantasyPointsFanDuel?: number | null;
-            FantasyPointsDraftKings?: number | null;
-            FantasyPointsYahoo?: number | null;
-            PlusMinus?: number | null;
-            DoubleDoubles?: number | null;
-            TripleDoubles?: number | null;
-            FantasyPointsFantasyDraft?: number | null;
-            IsClosed?: boolean;
-            LineupConfirmed?: boolean | null;
-            LineupStatus?: string | null;
-        };
-        PlayerGame: {
-            StatID?: number;
-            TeamID?: number | null;
-            PlayerID?: number | null;
-            SeasonType?: number | null;
-            Season?: number | null;
-            Name?: string | null;
-            Team?: string | null;
-            Position?: string | null;
-            Started?: number | null;
-            FanDuelSalary?: number | null;
-            DraftKingsSalary?: number | null;
-            FantasyDataSalary?: number | null;
-            YahooSalary?: number | null;
-            InjuryStatus?: string | null;
-            InjuryBodyPart?: string | null;
-            InjuryStartDate?: string | null;
-            InjuryNotes?: string | null;
-            FanDuelPosition?: string | null;
-            DraftKingsPosition?: string | null;
-            YahooPosition?: string | null;
-            OpponentRank?: number | null;
-            OpponentPositionRank?: number | null;
-            GlobalTeamID?: number | null;
-            FantasyDraftSalary?: number | null;
-            FantasyDraftPosition?: string | null;
-            GameID?: number | null;
-            OpponentID?: number | null;
-            Opponent?: string | null;
-            Day?: string | null;
-            DateTime?: string | null;
-            HomeOrAway?: string | null;
-            IsGameOver?: boolean;
-            GlobalGameID?: number | null;
-            GlobalOpponentID?: number | null;
-            Updated?: string | null;
-            Games?: number | null;
-            FantasyPoints?: number | null;
-            Minutes?: number | null;
-            Seconds?: number | null;
-            FieldGoalsMade?: number | null;
-            FieldGoalsAttempted?: number | null;
-            FieldGoalsPercentage?: number | null;
-            EffectiveFieldGoalsPercentage?: number | null;
-            TwoPointersMade?: number | null;
-            TwoPointersAttempted?: number | null;
-            TwoPointersPercentage?: number | null;
-            ThreePointersMade?: number | null;
-            ThreePointersAttempted?: number | null;
-            ThreePointersPercentage?: number | null;
-            FreeThrowsMade?: number | null;
-            FreeThrowsAttempted?: number | null;
-            FreeThrowsPercentage?: number | null;
-            OffensiveRebounds?: number | null;
-            DefensiveRebounds?: number | null;
-            Rebounds?: number | null;
-            OffensiveReboundsPercentage?: number | null;
-            DefensiveReboundsPercentage?: number | null;
-            TotalReboundsPercentage?: number | null;
-            Assists?: number | null;
-            Steals?: number | null;
-            BlockedShots?: number | null;
-            Turnovers?: number | null;
-            PersonalFouls?: number | null;
-            Points?: number | null;
-            TrueShootingAttempts?: number | null;
-            TrueShootingPercentage?: number | null;
-            PlayerEfficiencyRating?: number | null;
-            AssistsPercentage?: number | null;
-            StealsPercentage?: number | null;
-            BlocksPercentage?: number | null;
-            TurnOversPercentage?: number | null;
-            UsageRatePercentage?: number | null;
-            FantasyPointsFanDuel?: number | null;
-            FantasyPointsDraftKings?: number | null;
-            FantasyPointsYahoo?: number | null;
-            PlusMinus?: number | null;
-            DoubleDoubles?: number | null;
-            TripleDoubles?: number | null;
-            FantasyPointsFantasyDraft?: number | null;
-            IsClosed?: boolean;
-            LineupConfirmed?: boolean | null;
-            LineupStatus?: string | null;
-        };
-        News: {
-            NewsID?: number;
-            Source?: string | null;
-            Updated?: string | null;
-            TimeAgo?: string | null;
-            Title?: string | null;
-            Content?: string | null;
-            Url?: string | null;
-            TermsOfUse?: string | null;
-            Author?: string | null;
-            Categories?: string | null;
-            PlayerID?: number | null;
-            TeamID?: number | null;
-            Team?: string | null;
-            PlayerID2?: number | null;
-            TeamID2?: number | null;
-            Team2?: string | null;
-            OriginalSource?: string | null;
-            OriginalSourceUrl?: string | null;
-        };
-        PlayerSeason: {
-            StatID?: number;
-            TeamID?: number | null;
-            PlayerID?: number | null;
-            SeasonType?: number | null;
-            Season?: number | null;
-            Name?: string | null;
-            Team?: string | null;
-            Position?: string | null;
-            Started?: number | null;
-            GlobalTeamID?: number | null;
-            Updated?: string | null;
-            Games?: number | null;
-            FantasyPoints?: number | null;
-            Minutes?: number | null;
-            Seconds?: number | null;
-            FieldGoalsMade?: number | null;
-            FieldGoalsAttempted?: number | null;
-            FieldGoalsPercentage?: number | null;
-            EffectiveFieldGoalsPercentage?: number | null;
-            TwoPointersMade?: number | null;
-            TwoPointersAttempted?: number | null;
-            TwoPointersPercentage?: number | null;
-            ThreePointersMade?: number | null;
-            ThreePointersAttempted?: number | null;
-            ThreePointersPercentage?: number | null;
-            FreeThrowsMade?: number | null;
-            FreeThrowsAttempted?: number | null;
-            FreeThrowsPercentage?: number | null;
-            OffensiveRebounds?: number | null;
-            DefensiveRebounds?: number | null;
-            Rebounds?: number | null;
-            OffensiveReboundsPercentage?: number | null;
-            DefensiveReboundsPercentage?: number | null;
-            TotalReboundsPercentage?: number | null;
-            Assists?: number | null;
-            Steals?: number | null;
-            BlockedShots?: number | null;
-            Turnovers?: number | null;
-            PersonalFouls?: number | null;
-            Points?: number | null;
-            TrueShootingAttempts?: number | null;
-            TrueShootingPercentage?: number | null;
-            PlayerEfficiencyRating?: number | null;
-            AssistsPercentage?: number | null;
-            StealsPercentage?: number | null;
-            BlocksPercentage?: number | null;
-            TurnOversPercentage?: number | null;
-            UsageRatePercentage?: number | null;
-            FantasyPointsFanDuel?: number | null;
-            FantasyPointsDraftKings?: number | null;
-            FantasyPointsYahoo?: number | null;
-            PlusMinus?: number | null;
-            DoubleDoubles?: number | null;
-            TripleDoubles?: number | null;
-            FantasyPointsFantasyDraft?: number | null;
-            IsClosed?: boolean;
-            LineupConfirmed?: boolean | null;
-            LineupStatus?: string | null;
-        };
-        Stadium: {
-            StadiumID?: number;
-            Active?: boolean;
-            Name?: string | null;
-            Address?: string | null;
-            City?: string | null;
-            State?: string | null;
-            Zip?: string | null;
-            Country?: string | null;
-            Capacity?: number | null;
-            GeoLat?: number | null;
-            GeoLong?: number | null;
-        };
-        TeamSeason: {
-            StatID?: number;
-            TeamID?: number | null;
-            SeasonType?: number | null;
-            Season?: number | null;
-            Name?: string | null;
-            Team?: string | null;
-            Wins?: number | null;
-            Losses?: number | null;
-            OpponentPosition?: string | null;
-            Possessions?: number | null;
-            GlobalTeamID?: number | null;
-            OpponentStat?: components["schemas"]["OpponentSeason"];
-            Updated?: string | null;
-            Games?: number | null;
-            FantasyPoints?: number | null;
-            Minutes?: number | null;
-            Seconds?: number | null;
-            FieldGoalsMade?: number | null;
-            FieldGoalsAttempted?: number | null;
-            FieldGoalsPercentage?: number | null;
-            EffectiveFieldGoalsPercentage?: number | null;
-            TwoPointersMade?: number | null;
-            TwoPointersAttempted?: number | null;
-            TwoPointersPercentage?: number | null;
-            ThreePointersMade?: number | null;
-            ThreePointersAttempted?: number | null;
-            ThreePointersPercentage?: number | null;
-            FreeThrowsMade?: number | null;
-            FreeThrowsAttempted?: number | null;
-            FreeThrowsPercentage?: number | null;
-            OffensiveRebounds?: number | null;
-            DefensiveRebounds?: number | null;
-            Rebounds?: number | null;
-            OffensiveReboundsPercentage?: number | null;
-            DefensiveReboundsPercentage?: number | null;
-            TotalReboundsPercentage?: number | null;
-            Assists?: number | null;
-            Steals?: number | null;
-            BlockedShots?: number | null;
-            Turnovers?: number | null;
-            PersonalFouls?: number | null;
-            Points?: number | null;
-            TrueShootingAttempts?: number | null;
-            TrueShootingPercentage?: number | null;
-            PlayerEfficiencyRating?: number | null;
-            AssistsPercentage?: number | null;
-            StealsPercentage?: number | null;
-            BlocksPercentage?: number | null;
-            TurnOversPercentage?: number | null;
-            UsageRatePercentage?: number | null;
-            FantasyPointsFanDuel?: number | null;
-            FantasyPointsDraftKings?: number | null;
-            FantasyPointsYahoo?: number | null;
-            PlusMinus?: number | null;
-            DoubleDoubles?: number | null;
-            TripleDoubles?: number | null;
-            FantasyPointsFantasyDraft?: number | null;
-            IsClosed?: boolean;
-            LineupConfirmed?: boolean | null;
-            LineupStatus?: string | null;
-        };
-        OpponentSeason: {
-            StatID?: number;
-            TeamID?: number | null;
-            SeasonType?: number | null;
-            Season?: number | null;
-            Name?: string | null;
-            Team?: string | null;
-            Wins?: number | null;
-            Losses?: number | null;
-            OpponentPosition?: string | null;
-            Possessions?: number | null;
-            GlobalTeamID?: number | null;
-            Updated?: string | null;
-            Games?: number | null;
-            FantasyPoints?: number | null;
-            Minutes?: number | null;
-            Seconds?: number | null;
-            FieldGoalsMade?: number | null;
-            FieldGoalsAttempted?: number | null;
-            FieldGoalsPercentage?: number | null;
-            EffectiveFieldGoalsPercentage?: number | null;
-            TwoPointersMade?: number | null;
-            TwoPointersAttempted?: number | null;
-            TwoPointersPercentage?: number | null;
-            ThreePointersMade?: number | null;
-            ThreePointersAttempted?: number | null;
-            ThreePointersPercentage?: number | null;
-            FreeThrowsMade?: number | null;
-            FreeThrowsAttempted?: number | null;
-            FreeThrowsPercentage?: number | null;
-            OffensiveRebounds?: number | null;
-            DefensiveRebounds?: number | null;
-            Rebounds?: number | null;
-            OffensiveReboundsPercentage?: number | null;
-            DefensiveReboundsPercentage?: number | null;
-            TotalReboundsPercentage?: number | null;
-            Assists?: number | null;
-            Steals?: number | null;
-            BlockedShots?: number | null;
-            Turnovers?: number | null;
-            PersonalFouls?: number | null;
-            Points?: number | null;
-            TrueShootingAttempts?: number | null;
-            TrueShootingPercentage?: number | null;
-            PlayerEfficiencyRating?: number | null;
-            AssistsPercentage?: number | null;
-            StealsPercentage?: number | null;
-            BlocksPercentage?: number | null;
-            TurnOversPercentage?: number | null;
-            UsageRatePercentage?: number | null;
-            FantasyPointsFanDuel?: number | null;
-            FantasyPointsDraftKings?: number | null;
-            FantasyPointsYahoo?: number | null;
-            PlusMinus?: number | null;
-            DoubleDoubles?: number | null;
-            TripleDoubles?: number | null;
-            FantasyPointsFantasyDraft?: number | null;
-            IsClosed?: boolean;
-            LineupConfirmed?: boolean | null;
-            LineupStatus?: string | null;
-        };
-        Season: {
-            Season?: number;
-            StartYear?: number;
-            EndYear?: number;
-            Description?: string | null;
-            RegularSeasonStartDate?: string | null;
-            PostSeasonStartDate?: string | null;
-            SeasonType?: string | null;
-            ApiSeason?: string | null;
-        };
-        Standing: {
-            Season?: number;
-            SeasonType?: number;
-            TeamID?: number;
-            Key?: string | null;
-            City?: string | null;
-            Name?: string | null;
-            Conference?: string | null;
-            Division?: string | null;
-            Wins?: number | null;
-            Losses?: number | null;
-            Percentage?: number | null;
-            ConferenceWins?: number | null;
-            ConferenceLosses?: number | null;
-            DivisionWins?: number | null;
-            DivisionLosses?: number | null;
-            HomeWins?: number | null;
-            HomeLosses?: number | null;
-            AwayWins?: number | null;
-            AwayLosses?: number | null;
-            LastTenWins?: number | null;
-            LastTenLosses?: number | null;
-            PointsPerGameFor?: number | null;
-            PointsPerGameAgainst?: number | null;
-            Streak?: number | null;
-            GamesBack?: number | null;
-            StreakDescription?: string | null;
-            GlobalTeamID?: number | null;
-            ConferenceRank?: number | null;
-            DivisionRank?: number | null;
-        };
-        DfsSlate: {
-            SlateID?: number;
-            Operator?: string | null;
-            OperatorSlateID?: number | null;
-            OperatorName?: string | null;
-            OperatorDay?: string | null;
-            OperatorStartTime?: string | null;
-            NumberOfGames?: number | null;
-            IsMultiDaySlate?: boolean | null;
-            RemovedByOperator?: boolean | null;
-            OperatorGameType?: string | null;
-            DfsSlateGames?: components["schemas"]["DfsSlateGame"][];
-            DfsSlatePlayers?: components["schemas"]["DfsSlatePlayer"][];
-            SlateRosterSlots?: (string | null)[];
-            SalaryCap?: number | null;
-        };
-        DfsSlateGame: {
-            SlateGameID?: number;
-            SlateID?: number;
-            GameID?: number | null;
-            Game?: components["schemas"]["Game"];
-            OperatorGameID?: number | null;
-            RemovedByOperator?: boolean | null;
-        };
-        DfsSlatePlayer: {
-            SlatePlayerID?: number;
-            SlateID?: number;
-            SlateGameID?: number | null;
-            PlayerID?: number | null;
-            PlayerGameProjectionStatID?: number | null;
-            OperatorPlayerID?: string | null;
-            OperatorSlatePlayerID?: string | null;
-            OperatorPlayerName?: string | null;
-            OperatorPosition?: string | null;
-            OperatorSalary?: number | null;
-            OperatorRosterSlots?: (string | null)[];
-            RemovedByOperator?: boolean | null;
-            Team?: string | null;
-            TeamID?: number | null;
-        };
-        PlayerInfo: {
-            PlayerID?: number;
-            Name?: string | null;
-            TeamID?: number | null;
-            Team?: string | null;
-            Position?: string | null;
-        };
-        FantasyGame: {
-            GameID?: number | null;
-            PlayerID?: number | null;
-            SeasonType?: number | null;
-            Season?: number | null;
-            Day?: string | null;
-            DateTime?: string | null;
-            Team?: string | null;
-            Opponent?: string | null;
-            HomeOrAway?: string | null;
-            Jersey?: number | null;
-            Name?: string | null;
-            Position?: string | null;
-            PositionCategory?: string | null;
-            Games?: number | null;
-            Started?: number | null;
-            FantasyPoints?: number | null;
-            IsGameOver?: boolean;
-            FantasyPointsFanDuel?: number | null;
-            FantasyPointsYahoo?: number | null;
-            FantasyPointsDraftKings?: number | null;
-            FandDuelPosition?: string | null;
-            DraftKingsPosition?: string | null;
-            YahooPosition?: string | null;
-            OpponentRank?: number | null;
-            OpponentPositionRank?: number | null;
-            GlobalGameID?: number | null;
-            Updated?: string | null;
-        };
+  schemas: {
+    Player: {
+      PlayerID?: number;
+      SportsDataID?: string | null;
+      Status?: string | null;
+      TeamID?: number | null;
+      Team?: string | null;
+      Jersey?: number | null;
+      PositionCategory?: string | null;
+      Position?: string | null;
+      FirstName?: string | null;
+      LastName?: string | null;
+      Height?: number | null;
+      Weight?: number | null;
+      BirthDate?: string | null;
+      BirthCity?: string | null;
+      BirthState?: string | null;
+      BirthCountry?: string | null;
+      HighSchool?: string | null;
+      College?: string | null;
+      Salary?: number | null;
+      PhotoUrl?: string | null;
+      Experience?: number | null;
+      SportRadarPlayerID?: string | null;
+      RotoworldPlayerID?: number | null;
+      RotoWirePlayerID?: number | null;
+      FantasyAlarmPlayerID?: number | null;
+      StatsPlayerID?: number | null;
+      SportsDirectPlayerID?: number | null;
+      XmlTeamPlayerID?: number | null;
+      InjuryStatus?: string | null;
+      InjuryBodyPart?: string | null;
+      InjuryStartDate?: string | null;
+      InjuryNotes?: string | null;
+      FanDuelPlayerID?: number | null;
+      DraftKingsPlayerID?: number | null;
+      YahooPlayerID?: number | null;
+      FanDuelName?: string | null;
+      DraftKingsName?: string | null;
+      YahooName?: string | null;
+      DepthChartPosition?: string | null;
+      DepthChartOrder?: number | null;
+      GlobalTeamID?: number | null;
+      FantasyDraftName?: string | null;
+      FantasyDraftPlayerID?: number | null;
+      UsaTodayPlayerID?: number | null;
+      UsaTodayHeadshotUrl?: string | null;
+      UsaTodayHeadshotNoBackgroundUrl?: string | null;
+      UsaTodayHeadshotUpdated?: string | null;
+      UsaTodayHeadshotNoBackgroundUpdated?: string | null;
+      NbaDotComPlayerID?: number | null;
     };
-    responses: never;
-    parameters: never;
-    requestBodies: never;
-    headers: never;
-    pathItems: never;
+    Team: {
+      TeamID?: number;
+      Key?: string | null;
+      Active?: boolean;
+      City?: string | null;
+      Name?: string | null;
+      LeagueID?: number | null;
+      StadiumID?: number | null;
+      Conference?: string | null;
+      Division?: string | null;
+      PrimaryColor?: string | null;
+      SecondaryColor?: string | null;
+      TertiaryColor?: string | null;
+      QuaternaryColor?: string | null;
+      WikipediaLogoUrl?: string | null;
+      WikipediaWordMarkUrl?: string | null;
+      GlobalTeamID?: number;
+      NbaDotComTeamID?: number | null;
+      HeadCoach?: string | null;
+    };
+    BoxScore: {
+      Game?: components["schemas"]["Game"];
+      Quarters?: components["schemas"]["Quarter"][];
+      TeamGames?: components["schemas"]["TeamGame"][];
+      PlayerGames?: components["schemas"]["PlayerGame"][];
+    };
+    Game: {
+      GameID?: number;
+      Season?: number;
+      SeasonType?: number;
+      Status?: string | null;
+      Day?: string | null;
+      DateTime?: string | null;
+      AwayTeam?: string | null;
+      HomeTeam?: string | null;
+      AwayTeamID?: number;
+      HomeTeamID?: number;
+      StadiumID?: number | null;
+      Channel?: string | null;
+      Attendance?: number | null;
+      AwayTeamScore?: number | null;
+      HomeTeamScore?: number | null;
+      Updated?: string | null;
+      Quarter?: string | null;
+      TimeRemainingMinutes?: number | null;
+      TimeRemainingSeconds?: number | null;
+      PointSpread?: number | null;
+      OverUnder?: number | null;
+      AwayTeamMoneyLine?: number | null;
+      HomeTeamMoneyLine?: number | null;
+      GlobalGameID?: number;
+      GlobalAwayTeamID?: number;
+      GlobalHomeTeamID?: number;
+      PointSpreadAwayTeamMoneyLine?: number | null;
+      PointSpreadHomeTeamMoneyLine?: number | null;
+      LastPlay?: string | null;
+      IsClosed?: boolean;
+      Quarters?: components["schemas"]["Quarter"][];
+      GameEndDateTime?: string | null;
+      HomeRotationNumber?: number | null;
+      AwayRotationNumber?: number | null;
+      NeutralVenue?: boolean | null;
+      OverPayout?: number | null;
+      UnderPayout?: number | null;
+      CrewChiefID?: number | null;
+      UmpireID?: number | null;
+      RefereeID?: number | null;
+      AlternateID?: number | null;
+      DateTimeUTC?: string | null;
+      SeriesInfo?: components["schemas"]["Series"];
+      InseasonTournament?: boolean | null;
+    };
+    Quarter: {
+      QuarterID?: number;
+      GameID?: number;
+      Number?: number;
+      Name?: string | null;
+      AwayScore?: number | null;
+      HomeScore?: number | null;
+    };
+    Series: {
+      HomeTeamWins?: number;
+      AwayTeamWins?: number;
+      GameNumber?: number;
+      MaxLength?: number;
+    };
+    TeamGame: {
+      StatID?: number;
+      TeamID?: number | null;
+      SeasonType?: number | null;
+      Season?: number | null;
+      Name?: string | null;
+      Team?: string | null;
+      Wins?: number | null;
+      Losses?: number | null;
+      Possessions?: number | null;
+      GlobalTeamID?: number | null;
+      GameID?: number | null;
+      OpponentID?: number | null;
+      Opponent?: string | null;
+      Day?: string | null;
+      DateTime?: string | null;
+      HomeOrAway?: string | null;
+      IsGameOver?: boolean;
+      GlobalGameID?: number | null;
+      GlobalOpponentID?: number | null;
+      Updated?: string | null;
+      Games?: number | null;
+      FantasyPoints?: number | null;
+      Minutes?: number | null;
+      Seconds?: number | null;
+      FieldGoalsMade?: number | null;
+      FieldGoalsAttempted?: number | null;
+      FieldGoalsPercentage?: number | null;
+      EffectiveFieldGoalsPercentage?: number | null;
+      TwoPointersMade?: number | null;
+      TwoPointersAttempted?: number | null;
+      TwoPointersPercentage?: number | null;
+      ThreePointersMade?: number | null;
+      ThreePointersAttempted?: number | null;
+      ThreePointersPercentage?: number | null;
+      FreeThrowsMade?: number | null;
+      FreeThrowsAttempted?: number | null;
+      FreeThrowsPercentage?: number | null;
+      OffensiveRebounds?: number | null;
+      DefensiveRebounds?: number | null;
+      Rebounds?: number | null;
+      OffensiveReboundsPercentage?: number | null;
+      DefensiveReboundsPercentage?: number | null;
+      TotalReboundsPercentage?: number | null;
+      Assists?: number | null;
+      Steals?: number | null;
+      BlockedShots?: number | null;
+      Turnovers?: number | null;
+      PersonalFouls?: number | null;
+      Points?: number | null;
+      TrueShootingAttempts?: number | null;
+      TrueShootingPercentage?: number | null;
+      PlayerEfficiencyRating?: number | null;
+      AssistsPercentage?: number | null;
+      StealsPercentage?: number | null;
+      BlocksPercentage?: number | null;
+      TurnOversPercentage?: number | null;
+      UsageRatePercentage?: number | null;
+      FantasyPointsFanDuel?: number | null;
+      FantasyPointsDraftKings?: number | null;
+      FantasyPointsYahoo?: number | null;
+      PlusMinus?: number | null;
+      DoubleDoubles?: number | null;
+      TripleDoubles?: number | null;
+      FantasyPointsFantasyDraft?: number | null;
+      IsClosed?: boolean;
+      LineupConfirmed?: boolean | null;
+      LineupStatus?: string | null;
+    };
+    PlayerGame: {
+      StatID?: number;
+      TeamID?: number | null;
+      PlayerID?: number | null;
+      SeasonType?: number | null;
+      Season?: number | null;
+      Name?: string | null;
+      Team?: string | null;
+      Position?: string | null;
+      Started?: number | null;
+      FanDuelSalary?: number | null;
+      DraftKingsSalary?: number | null;
+      FantasyDataSalary?: number | null;
+      YahooSalary?: number | null;
+      InjuryStatus?: string | null;
+      InjuryBodyPart?: string | null;
+      InjuryStartDate?: string | null;
+      InjuryNotes?: string | null;
+      FanDuelPosition?: string | null;
+      DraftKingsPosition?: string | null;
+      YahooPosition?: string | null;
+      OpponentRank?: number | null;
+      OpponentPositionRank?: number | null;
+      GlobalTeamID?: number | null;
+      FantasyDraftSalary?: number | null;
+      FantasyDraftPosition?: string | null;
+      GameID?: number | null;
+      OpponentID?: number | null;
+      Opponent?: string | null;
+      Day?: string | null;
+      DateTime?: string | null;
+      HomeOrAway?: string | null;
+      IsGameOver?: boolean;
+      GlobalGameID?: number | null;
+      GlobalOpponentID?: number | null;
+      Updated?: string | null;
+      Games?: number | null;
+      FantasyPoints?: number | null;
+      Minutes?: number | null;
+      Seconds?: number | null;
+      FieldGoalsMade?: number | null;
+      FieldGoalsAttempted?: number | null;
+      FieldGoalsPercentage?: number | null;
+      EffectiveFieldGoalsPercentage?: number | null;
+      TwoPointersMade?: number | null;
+      TwoPointersAttempted?: number | null;
+      TwoPointersPercentage?: number | null;
+      ThreePointersMade?: number | null;
+      ThreePointersAttempted?: number | null;
+      ThreePointersPercentage?: number | null;
+      FreeThrowsMade?: number | null;
+      FreeThrowsAttempted?: number | null;
+      FreeThrowsPercentage?: number | null;
+      OffensiveRebounds?: number | null;
+      DefensiveRebounds?: number | null;
+      Rebounds?: number | null;
+      OffensiveReboundsPercentage?: number | null;
+      DefensiveReboundsPercentage?: number | null;
+      TotalReboundsPercentage?: number | null;
+      Assists?: number | null;
+      Steals?: number | null;
+      BlockedShots?: number | null;
+      Turnovers?: number | null;
+      PersonalFouls?: number | null;
+      Points?: number | null;
+      TrueShootingAttempts?: number | null;
+      TrueShootingPercentage?: number | null;
+      PlayerEfficiencyRating?: number | null;
+      AssistsPercentage?: number | null;
+      StealsPercentage?: number | null;
+      BlocksPercentage?: number | null;
+      TurnOversPercentage?: number | null;
+      UsageRatePercentage?: number | null;
+      FantasyPointsFanDuel?: number | null;
+      FantasyPointsDraftKings?: number | null;
+      FantasyPointsYahoo?: number | null;
+      PlusMinus?: number | null;
+      DoubleDoubles?: number | null;
+      TripleDoubles?: number | null;
+      FantasyPointsFantasyDraft?: number | null;
+      IsClosed?: boolean;
+      LineupConfirmed?: boolean | null;
+      LineupStatus?: string | null;
+    };
+    News: {
+      NewsID?: number;
+      Source?: string | null;
+      Updated?: string | null;
+      TimeAgo?: string | null;
+      Title?: string | null;
+      Content?: string | null;
+      Url?: string | null;
+      TermsOfUse?: string | null;
+      Author?: string | null;
+      Categories?: string | null;
+      PlayerID?: number | null;
+      TeamID?: number | null;
+      Team?: string | null;
+      PlayerID2?: number | null;
+      TeamID2?: number | null;
+      Team2?: string | null;
+      OriginalSource?: string | null;
+      OriginalSourceUrl?: string | null;
+    };
+    PlayerSeason: {
+      StatID?: number;
+      TeamID?: number | null;
+      PlayerID?: number | null;
+      SeasonType?: number | null;
+      Season?: number | null;
+      Name?: string | null;
+      Team?: string | null;
+      Position?: string | null;
+      Started?: number | null;
+      GlobalTeamID?: number | null;
+      Updated?: string | null;
+      Games?: number | null;
+      FantasyPoints?: number | null;
+      Minutes?: number | null;
+      Seconds?: number | null;
+      FieldGoalsMade?: number | null;
+      FieldGoalsAttempted?: number | null;
+      FieldGoalsPercentage?: number | null;
+      EffectiveFieldGoalsPercentage?: number | null;
+      TwoPointersMade?: number | null;
+      TwoPointersAttempted?: number | null;
+      TwoPointersPercentage?: number | null;
+      ThreePointersMade?: number | null;
+      ThreePointersAttempted?: number | null;
+      ThreePointersPercentage?: number | null;
+      FreeThrowsMade?: number | null;
+      FreeThrowsAttempted?: number | null;
+      FreeThrowsPercentage?: number | null;
+      OffensiveRebounds?: number | null;
+      DefensiveRebounds?: number | null;
+      Rebounds?: number | null;
+      OffensiveReboundsPercentage?: number | null;
+      DefensiveReboundsPercentage?: number | null;
+      TotalReboundsPercentage?: number | null;
+      Assists?: number | null;
+      Steals?: number | null;
+      BlockedShots?: number | null;
+      Turnovers?: number | null;
+      PersonalFouls?: number | null;
+      Points?: number | null;
+      TrueShootingAttempts?: number | null;
+      TrueShootingPercentage?: number | null;
+      PlayerEfficiencyRating?: number | null;
+      AssistsPercentage?: number | null;
+      StealsPercentage?: number | null;
+      BlocksPercentage?: number | null;
+      TurnOversPercentage?: number | null;
+      UsageRatePercentage?: number | null;
+      FantasyPointsFanDuel?: number | null;
+      FantasyPointsDraftKings?: number | null;
+      FantasyPointsYahoo?: number | null;
+      PlusMinus?: number | null;
+      DoubleDoubles?: number | null;
+      TripleDoubles?: number | null;
+      FantasyPointsFantasyDraft?: number | null;
+      IsClosed?: boolean;
+      LineupConfirmed?: boolean | null;
+      LineupStatus?: string | null;
+    };
+    Stadium: {
+      StadiumID?: number;
+      Active?: boolean;
+      Name?: string | null;
+      Address?: string | null;
+      City?: string | null;
+      State?: string | null;
+      Zip?: string | null;
+      Country?: string | null;
+      Capacity?: number | null;
+      GeoLat?: number | null;
+      GeoLong?: number | null;
+    };
+    TeamSeason: {
+      StatID?: number;
+      TeamID?: number | null;
+      SeasonType?: number | null;
+      Season?: number | null;
+      Name?: string | null;
+      Team?: string | null;
+      Wins?: number | null;
+      Losses?: number | null;
+      OpponentPosition?: string | null;
+      Possessions?: number | null;
+      GlobalTeamID?: number | null;
+      OpponentStat?: components["schemas"]["OpponentSeason"];
+      Updated?: string | null;
+      Games?: number | null;
+      FantasyPoints?: number | null;
+      Minutes?: number | null;
+      Seconds?: number | null;
+      FieldGoalsMade?: number | null;
+      FieldGoalsAttempted?: number | null;
+      FieldGoalsPercentage?: number | null;
+      EffectiveFieldGoalsPercentage?: number | null;
+      TwoPointersMade?: number | null;
+      TwoPointersAttempted?: number | null;
+      TwoPointersPercentage?: number | null;
+      ThreePointersMade?: number | null;
+      ThreePointersAttempted?: number | null;
+      ThreePointersPercentage?: number | null;
+      FreeThrowsMade?: number | null;
+      FreeThrowsAttempted?: number | null;
+      FreeThrowsPercentage?: number | null;
+      OffensiveRebounds?: number | null;
+      DefensiveRebounds?: number | null;
+      Rebounds?: number | null;
+      OffensiveReboundsPercentage?: number | null;
+      DefensiveReboundsPercentage?: number | null;
+      TotalReboundsPercentage?: number | null;
+      Assists?: number | null;
+      Steals?: number | null;
+      BlockedShots?: number | null;
+      Turnovers?: number | null;
+      PersonalFouls?: number | null;
+      Points?: number | null;
+      TrueShootingAttempts?: number | null;
+      TrueShootingPercentage?: number | null;
+      PlayerEfficiencyRating?: number | null;
+      AssistsPercentage?: number | null;
+      StealsPercentage?: number | null;
+      BlocksPercentage?: number | null;
+      TurnOversPercentage?: number | null;
+      UsageRatePercentage?: number | null;
+      FantasyPointsFanDuel?: number | null;
+      FantasyPointsDraftKings?: number | null;
+      FantasyPointsYahoo?: number | null;
+      PlusMinus?: number | null;
+      DoubleDoubles?: number | null;
+      TripleDoubles?: number | null;
+      FantasyPointsFantasyDraft?: number | null;
+      IsClosed?: boolean;
+      LineupConfirmed?: boolean | null;
+      LineupStatus?: string | null;
+    };
+    OpponentSeason: {
+      StatID?: number;
+      TeamID?: number | null;
+      SeasonType?: number | null;
+      Season?: number | null;
+      Name?: string | null;
+      Team?: string | null;
+      Wins?: number | null;
+      Losses?: number | null;
+      OpponentPosition?: string | null;
+      Possessions?: number | null;
+      GlobalTeamID?: number | null;
+      Updated?: string | null;
+      Games?: number | null;
+      FantasyPoints?: number | null;
+      Minutes?: number | null;
+      Seconds?: number | null;
+      FieldGoalsMade?: number | null;
+      FieldGoalsAttempted?: number | null;
+      FieldGoalsPercentage?: number | null;
+      EffectiveFieldGoalsPercentage?: number | null;
+      TwoPointersMade?: number | null;
+      TwoPointersAttempted?: number | null;
+      TwoPointersPercentage?: number | null;
+      ThreePointersMade?: number | null;
+      ThreePointersAttempted?: number | null;
+      ThreePointersPercentage?: number | null;
+      FreeThrowsMade?: number | null;
+      FreeThrowsAttempted?: number | null;
+      FreeThrowsPercentage?: number | null;
+      OffensiveRebounds?: number | null;
+      DefensiveRebounds?: number | null;
+      Rebounds?: number | null;
+      OffensiveReboundsPercentage?: number | null;
+      DefensiveReboundsPercentage?: number | null;
+      TotalReboundsPercentage?: number | null;
+      Assists?: number | null;
+      Steals?: number | null;
+      BlockedShots?: number | null;
+      Turnovers?: number | null;
+      PersonalFouls?: number | null;
+      Points?: number | null;
+      TrueShootingAttempts?: number | null;
+      TrueShootingPercentage?: number | null;
+      PlayerEfficiencyRating?: number | null;
+      AssistsPercentage?: number | null;
+      StealsPercentage?: number | null;
+      BlocksPercentage?: number | null;
+      TurnOversPercentage?: number | null;
+      UsageRatePercentage?: number | null;
+      FantasyPointsFanDuel?: number | null;
+      FantasyPointsDraftKings?: number | null;
+      FantasyPointsYahoo?: number | null;
+      PlusMinus?: number | null;
+      DoubleDoubles?: number | null;
+      TripleDoubles?: number | null;
+      FantasyPointsFantasyDraft?: number | null;
+      IsClosed?: boolean;
+      LineupConfirmed?: boolean | null;
+      LineupStatus?: string | null;
+    };
+    Season: {
+      Season?: number;
+      StartYear?: number;
+      EndYear?: number;
+      Description?: string | null;
+      RegularSeasonStartDate?: string | null;
+      PostSeasonStartDate?: string | null;
+      SeasonType?: string | null;
+      ApiSeason?: string | null;
+    };
+    Standing: {
+      Season?: number;
+      SeasonType?: number;
+      TeamID?: number;
+      Key?: string | null;
+      City?: string | null;
+      Name?: string | null;
+      Conference?: string | null;
+      Division?: string | null;
+      Wins?: number | null;
+      Losses?: number | null;
+      Percentage?: number | null;
+      ConferenceWins?: number | null;
+      ConferenceLosses?: number | null;
+      DivisionWins?: number | null;
+      DivisionLosses?: number | null;
+      HomeWins?: number | null;
+      HomeLosses?: number | null;
+      AwayWins?: number | null;
+      AwayLosses?: number | null;
+      LastTenWins?: number | null;
+      LastTenLosses?: number | null;
+      PointsPerGameFor?: number | null;
+      PointsPerGameAgainst?: number | null;
+      Streak?: number | null;
+      GamesBack?: number | null;
+      StreakDescription?: string | null;
+      GlobalTeamID?: number | null;
+      ConferenceRank?: number | null;
+      DivisionRank?: number | null;
+    };
+    DfsSlate: {
+      SlateID?: number;
+      Operator?: string | null;
+      OperatorSlateID?: number | null;
+      OperatorName?: string | null;
+      OperatorDay?: string | null;
+      OperatorStartTime?: string | null;
+      NumberOfGames?: number | null;
+      IsMultiDaySlate?: boolean | null;
+      RemovedByOperator?: boolean | null;
+      OperatorGameType?: string | null;
+      DfsSlateGames?: components["schemas"]["DfsSlateGame"][];
+      DfsSlatePlayers?: components["schemas"]["DfsSlatePlayer"][];
+      SlateRosterSlots?: (string | null)[];
+      SalaryCap?: number | null;
+    };
+    DfsSlateGame: {
+      SlateGameID?: number;
+      SlateID?: number;
+      GameID?: number | null;
+      Game?: components["schemas"]["Game"];
+      OperatorGameID?: number | null;
+      RemovedByOperator?: boolean | null;
+    };
+    DfsSlatePlayer: {
+      SlatePlayerID?: number;
+      SlateID?: number;
+      SlateGameID?: number | null;
+      PlayerID?: number | null;
+      PlayerGameProjectionStatID?: number | null;
+      OperatorPlayerID?: string | null;
+      OperatorSlatePlayerID?: string | null;
+      OperatorPlayerName?: string | null;
+      OperatorPosition?: string | null;
+      OperatorSalary?: number | null;
+      OperatorRosterSlots?: (string | null)[];
+      RemovedByOperator?: boolean | null;
+      Team?: string | null;
+      TeamID?: number | null;
+    };
+    PlayerInfo: {
+      PlayerID?: number;
+      Name?: string | null;
+      TeamID?: number | null;
+      Team?: string | null;
+      Position?: string | null;
+    };
+    FantasyGame: {
+      GameID?: number | null;
+      PlayerID?: number | null;
+      SeasonType?: number | null;
+      Season?: number | null;
+      Day?: string | null;
+      DateTime?: string | null;
+      Team?: string | null;
+      Opponent?: string | null;
+      HomeOrAway?: string | null;
+      Jersey?: number | null;
+      Name?: string | null;
+      Position?: string | null;
+      PositionCategory?: string | null;
+      Games?: number | null;
+      Started?: number | null;
+      FantasyPoints?: number | null;
+      IsGameOver?: boolean;
+      FantasyPointsFanDuel?: number | null;
+      FantasyPointsYahoo?: number | null;
+      FantasyPointsDraftKings?: number | null;
+      FandDuelPosition?: string | null;
+      DraftKingsPosition?: string | null;
+      YahooPosition?: string | null;
+      OpponentRank?: number | null;
+      OpponentPositionRank?: number | null;
+      GlobalGameID?: number | null;
+      Updated?: string | null;
+    };
+  };
+  responses: never;
+  parameters: never;
+  requestBodies: never;
+  headers: never;
+  pathItems: never;
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    PlayerDetailsByActive: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Player"][];
-                };
-            };
-        };
+  PlayerDetailsByActive: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+      };
+      cookie?: never;
     };
-    TeamProfilesByActive: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Team"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["Player"][];
         };
+      };
     };
-    "BoxScore[LiveFinal]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /** @description The GameID of an NBA game.  GameIDs can be found in the Games API.  Valid entries are <code>14620</code>, <code>16905</code>, etc. */
-                gameid: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["BoxScore"];
-                };
-            };
-        };
+  };
+  TeamProfilesByActive: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+      };
+      cookie?: never;
     };
-    "BoxScoresByDate[LiveFinal]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["BoxScore"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["Team"][];
         };
+      };
     };
-    BoxScoresDeltaByDate: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-                /**
-                 * @description Only returns player statistics that have changed in the last X minutes.  You specify how many minutes in time to go back.  Valid entries are:
-                 *     <code>1</code> or <code>2</code>.
-                 */
-                minutes: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["BoxScore"][];
-                };
-            };
-        };
+  };
+  "BoxScore[LiveFinal]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /** @description The GameID of an NBA game.  GameIDs can be found in the Games API.  Valid entries are <code>14620</code>, <code>16905</code>, etc. */
+        gameid: string;
+      };
+      cookie?: never;
     };
-    PlayerDetailsByFreeAgent: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Player"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["BoxScore"];
         };
+      };
     };
-    "GamesByDate[LiveFinal]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Game"][];
-                };
-            };
-        };
+  };
+  "BoxScoresByDate[LiveFinal]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
     };
-    Schedules: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /** @description Year of the season (with optional season type).<br>Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc. */
-                season: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Game"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["BoxScore"][];
         };
+      };
     };
-    News: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["News"][];
-                };
-            };
-        };
+  };
+  BoxScoresDeltaByDate: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+        /**
+         * @description Only returns player statistics that have changed in the last X minutes.  You specify how many minutes in time to go back.  Valid entries are:
+         *     <code>1</code> or <code>2</code>.
+         */
+        minutes: string;
+      };
+      cookie?: never;
     };
-    NewsByDate: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the news.
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["News"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["BoxScore"][];
         };
+      };
     };
-    NewsByPlayer: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description Unique FantasyData Player ID.
-                 *     Example:<code>10000507</code>.
-                 */
-                playerid: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["News"][];
-                };
-            };
-        };
+  };
+  PlayerDetailsByFreeAgent: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+      };
+      cookie?: never;
     };
-    "PlayerGameStatsByDate[LiveFinal]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PlayerGame"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["Player"][];
         };
+      };
     };
-    PlayerSeasonStats: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description Year of the season.
-                 *     <br>Examples: <code>2015</code>, <code>2016</code>.
-                 */
-                season: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PlayerSeason"][];
-                };
-            };
-        };
+  };
+  "GamesByDate[LiveFinal]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
     };
-    PlayerSeasonStatsByTeam: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description Year of the season.
-                 *     <br>Examples: <code>2015</code>, <code>2016</code>.
-                 */
-                season: string;
-                /**
-                 * @description The abbreviation of the requested team.
-                 *     <br>Examples: <code>MIA</code>, <code>PHI</code>.
-                 */
-                team: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PlayerSeason"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["Game"][];
         };
+      };
     };
-    PlayerDetailsByTeam: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The abbreviation of the requested team.
-                 *     <br>Examples: <code>PHI</code>, <code>BKN</code>.
-                 */
-                team: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Player"][];
-                };
-            };
-        };
+  };
+  Schedules: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /** @description Year of the season (with optional season type).<br>Examples: <code>2018</code>, <code>2018PRE</code>, <code>2018POST</code>, <code>2018STAR</code>, <code>2019</code>, etc. */
+        season: string;
+      };
+      cookie?: never;
     };
-    Stadiums: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "xml" | "json";
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Stadium"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["Game"][];
         };
+      };
     };
-    "TeamGameStatsByDate[LiveFinal]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["TeamGame"][];
-                };
-            };
-        };
+  };
+  News: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+      };
+      cookie?: never;
     };
-    TeamSeasonStats: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description Year of the season.
-                 *     <br>Examples: <code>2015</code>, <code>2016</code>.
-                 */
-                season: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["TeamSeason"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["News"][];
         };
+      };
     };
-    AreGamesInProgress: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": boolean;
-                };
-            };
-        };
+  };
+  NewsByDate: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the news.
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
     };
-    PlayerSeasonStatsByPlayer: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description Year of the season.
-                 *     <br>Examples: <code>2015</code>, <code>2016</code>.
-                 */
-                season: string;
-                /**
-                 * @description Unique FantasyData Player ID.
-                 *     Example:<code>20000571</code>.
-                 */
-                playerid: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PlayerSeason"];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["News"][];
         };
+      };
     };
-    PlayerDetailsByPlayer: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description Unique FantasyData Player ID.
-                 *     Example:<code>20000571</code>.
-                 */
-                playerid: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Player"];
-                };
-            };
-        };
+  };
+  NewsByPlayer: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description Unique FantasyData Player ID.
+         *     Example:<code>10000507</code>.
+         */
+        playerid: string;
+      };
+      cookie?: never;
     };
-    SeasonCurrent: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Season"];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["News"][];
         };
+      };
     };
-    "PlayerGameStatsByPlayer[LiveFinal]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-                /**
-                 * @description Unique FantasyData Player ID.
-                 *     Example:<code>20000571</code>.
-                 */
-                playerid: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PlayerGame"];
-                };
-            };
-        };
+  };
+  "PlayerGameStatsByDate[LiveFinal]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
     };
-    Standings: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description Year of the season.
-                 *     <br>Examples: <code>2015</code>, <code>2016</code>.
-                 */
-                season: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Standing"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["PlayerGame"][];
         };
+      };
     };
-    TeamStatsAllowedByPosition: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description Year of the season.
-                 *     <br>Examples: <code>2015</code>, <code>2016</code>.
-                 */
-                season: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["TeamSeason"][];
-                };
-            };
-        };
+  };
+  PlayerSeasonStats: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description Year of the season.
+         *     <br>Examples: <code>2015</code>, <code>2016</code>.
+         */
+        season: string;
+      };
+      cookie?: never;
     };
-    TeamProfilesAll: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Team"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["PlayerSeason"][];
         };
+      };
     };
-    DfsSlatesByDate: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2017-DEC-01</code>, <code>2018-FEB-15</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["DfsSlate"][];
-                };
-            };
-        };
+  };
+  PlayerSeasonStatsByTeam: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description Year of the season.
+         *     <br>Examples: <code>2015</code>, <code>2016</code>.
+         */
+        season: string;
+        /**
+         * @description The abbreviation of the requested team.
+         *     <br>Examples: <code>MIA</code>, <code>PHI</code>.
+         */
+        team: string;
+      };
+      cookie?: never;
     };
-    AllStars: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description Year of the season.
-                 *     <br>Examples: <code>2015</code>, <code>2016</code>.
-                 */
-                season: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PlayerInfo"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["PlayerSeason"][];
         };
+      };
     };
-    PlayerGameLogsBySeason: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /** @description Season to get games from. Example <code>2019POST</code>, <code>2020</code> */
-                season: string;
-                /**
-                 * @description Unique FantasyData Player ID.
-                 *     Example:<code>20000571</code>.
-                 */
-                playerid: string;
-                /** @description How many games to return. Example <code>all</code>, <code>10</code>, <code>25</code> */
-                numberofgames: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PlayerGame"][];
-                };
-            };
-        };
+  };
+  PlayerDetailsByTeam: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The abbreviation of the requested team.
+         *     <br>Examples: <code>PHI</code>, <code>BKN</code>.
+         */
+        team: string;
+      };
+      cookie?: never;
     };
-    TeamGameLogsBySeason: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /** @description Season to get games from. Example <code>2019POST</code>, <code>2020</code> */
-                season: string;
-                /** @description Unique ID of team.  Example <code> 8 </code> */
-                teamid: string;
-                /** @description How many games to return. Example <code>all</code>, <code>10</code>, <code>25</code> */
-                numberofgames: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["TeamGame"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["Player"][];
         };
+      };
     };
-    "TeamGameStatsByDate[Final]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["TeamGame"][];
-                };
-            };
-        };
+  };
+  Stadiums: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "xml" | "json";
+      };
+      cookie?: never;
     };
-    "PlayerGameStatsByDate[Final]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["PlayerGame"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["Stadium"][];
         };
+      };
     };
-    "BoxScore[Final]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /** @description The GameID of an NBA game.  GameIDs can be found in the Games API.  Valid entries are <code>14620</code>, <code>16905</code>, etc. */
-                gameid: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["BoxScore"];
-                };
-            };
-        };
+  };
+  "TeamGameStatsByDate[LiveFinal]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
     };
-    "BoxScoresByDate[Final]": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["BoxScore"][];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["TeamGame"][];
         };
+      };
     };
-    FantasyPointsByDate: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
-                format: "XML" | "JSON";
-                /**
-                 * @description The date of the game(s).
-                 *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-                 */
-                date: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["FantasyGame"][];
-                };
-            };
-        };
+  };
+  TeamSeasonStats: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description Year of the season.
+         *     <br>Examples: <code>2015</code>, <code>2016</code>.
+         */
+        season: string;
+      };
+      cookie?: never;
     };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["TeamSeason"][];
+        };
+      };
+    };
+  };
+  AreGamesInProgress: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": boolean;
+        };
+      };
+    };
+  };
+  PlayerSeasonStatsByPlayer: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description Year of the season.
+         *     <br>Examples: <code>2015</code>, <code>2016</code>.
+         */
+        season: string;
+        /**
+         * @description Unique FantasyData Player ID.
+         *     Example:<code>20000571</code>.
+         */
+        playerid: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["PlayerSeason"];
+        };
+      };
+    };
+  };
+  PlayerDetailsByPlayer: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description Unique FantasyData Player ID.
+         *     Example:<code>20000571</code>.
+         */
+        playerid: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Player"];
+        };
+      };
+    };
+  };
+  SeasonCurrent: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Season"];
+        };
+      };
+    };
+  };
+  "PlayerGameStatsByPlayer[LiveFinal]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+        /**
+         * @description Unique FantasyData Player ID.
+         *     Example:<code>20000571</code>.
+         */
+        playerid: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["PlayerGame"];
+        };
+      };
+    };
+  };
+  Standings: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description Year of the season.
+         *     <br>Examples: <code>2015</code>, <code>2016</code>.
+         */
+        season: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Standing"][];
+        };
+      };
+    };
+  };
+  TeamStatsAllowedByPosition: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description Year of the season.
+         *     <br>Examples: <code>2015</code>, <code>2016</code>.
+         */
+        season: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["TeamSeason"][];
+        };
+      };
+    };
+  };
+  TeamProfilesAll: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Team"][];
+        };
+      };
+    };
+  };
+  DfsSlatesByDate: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2017-DEC-01</code>, <code>2018-FEB-15</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["DfsSlate"][];
+        };
+      };
+    };
+  };
+  AllStars: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description Year of the season.
+         *     <br>Examples: <code>2015</code>, <code>2016</code>.
+         */
+        season: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["PlayerInfo"][];
+        };
+      };
+    };
+  };
+  PlayerGameLogsBySeason: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /** @description Season to get games from. Example <code>2019POST</code>, <code>2020</code> */
+        season: string;
+        /**
+         * @description Unique FantasyData Player ID.
+         *     Example:<code>20000571</code>.
+         */
+        playerid: string;
+        /** @description How many games to return. Example <code>all</code>, <code>10</code>, <code>25</code> */
+        numberofgames: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["PlayerGame"][];
+        };
+      };
+    };
+  };
+  TeamGameLogsBySeason: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /** @description Season to get games from. Example <code>2019POST</code>, <code>2020</code> */
+        season: string;
+        /** @description Unique ID of team.  Example <code> 8 </code> */
+        teamid: string;
+        /** @description How many games to return. Example <code>all</code>, <code>10</code>, <code>25</code> */
+        numberofgames: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["TeamGame"][];
+        };
+      };
+    };
+  };
+  "TeamGameStatsByDate[Final]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["TeamGame"][];
+        };
+      };
+    };
+  };
+  "PlayerGameStatsByDate[Final]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["PlayerGame"][];
+        };
+      };
+    };
+  };
+  "BoxScore[Final]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /** @description The GameID of an NBA game.  GameIDs can be found in the Games API.  Valid entries are <code>14620</code>, <code>16905</code>, etc. */
+        gameid: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["BoxScore"];
+        };
+      };
+    };
+  };
+  "BoxScoresByDate[Final]": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["BoxScore"][];
+        };
+      };
+    };
+  };
+  FantasyPointsByDate: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        /** @description Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>. */
+        format: "XML" | "JSON";
+        /**
+         * @description The date of the game(s).
+         *     <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
+         */
+        date: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["FantasyGame"][];
+        };
+      };
+    };
+  };
 }

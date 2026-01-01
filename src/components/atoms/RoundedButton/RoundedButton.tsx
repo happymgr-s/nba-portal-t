@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 type RoundedButtonProps = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,

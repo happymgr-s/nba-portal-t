@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 /**
  * 指定したシーズンにおける特定の選手のシーズン成績を取得
@@ -11,16 +11,19 @@ export async function GET(req: NextRequest) {
   //     return;
   //   }
   const searchParams = req.nextUrl.searchParams;
-  const season = searchParams.get('season');
-  const id = searchParams.get('id');
+  const season = searchParams.get("season");
+  const id = searchParams.get("id");
 
   if (!season || !id)
-    return NextResponse.json({ status: 400, message: 'required [season],[id] search params' });
+    return NextResponse.json({
+      status: 400,
+      message: "required [season],[id] search params",
+    });
 
   const GET_PLAYER_STATS_URL = `https://api.sportsdata.io/v3/nba/stats/json/PlayerSeasonStatsByPlayer/${season}/${id}?key=${process.env.NBA_API_KEY}
 `;
   try {
-    const response = await fetch(GET_PLAYER_STATS_URL, { cache: 'no-store' });
+    const response = await fetch(GET_PLAYER_STATS_URL, { cache: "no-store" });
     const json = await response.json();
 
     return NextResponse.json(json);

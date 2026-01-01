@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import StandingsTable from './StandingsTable';
-import { closedSeasonStandingsMockData } from '@/lib/mockData/standingsMockData';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import StandingsTable from "./StandingsTable";
+import { closedSeasonStandingsMockData } from "@/lib/mockData/standingsMockData";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
 
 const meta = {
-  title: 'Organisms/StandingsTable',
+  title: "Organisms/StandingsTable",
   component: StandingsTable,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     standings: closedSeasonStandingsMockData,

@@ -1,15 +1,20 @@
-import axios from 'axios';
-import { NextRequest, NextResponse } from 'next/server';
-import { Player } from '@/types/player';
-import { freeAgentPlayersMockData } from '@/lib/mockData/playersMockData';
+import axios from "axios";
+import { NextRequest, NextResponse } from "next/server";
+import { Player } from "@/types/player";
+import { freeAgentPlayersMockData } from "@/lib/mockData/playersMockData";
 
 export type GetPlayerProfileById = Player;
 
-export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+export async function GET(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
   const { id } = await params;
 
-  if (process.env.NODE_ENV !== 'production') {
-    const playerProfile = freeAgentPlayersMockData.find((player) => player.PlayerID === Number(id));
+  if (process.env.NODE_ENV !== "production") {
+    const playerProfile = freeAgentPlayersMockData.find(
+      (player) => player.PlayerID === Number(id),
+    );
     return NextResponse.json(playerProfile);
   }
 
@@ -17,7 +22,9 @@ export async function GET(req: NextRequest, { params }: { params: Promise<{ id: 
 
   try {
     const result = await axios.get<Player[]>(url);
-    const playerProfile = result.data.find((player) => player.PlayerID === Number(id));
+    const playerProfile = result.data.find(
+      (player) => player.PlayerID === Number(id),
+    );
 
     return NextResponse.json(playerProfile);
   } catch (error) {

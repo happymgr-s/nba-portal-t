@@ -3,16 +3,16 @@ export type Schedule = {
   Season: number; // The NBA season of the game
   SeasonType: number; // The type of season (1=Regular, 2=Preseason, 3=Playoffs)
   Status:
-    | 'Scheduled'
-    | 'InProgress'
-    | 'Final'
-    | 'F/OT'
-    | 'Suspended'
-    | 'Postponed'
-    | 'Delayed'
-    | 'Canceled'
-    | 'Forfeit'
-    | 'NotNecessary'
+    | "Scheduled"
+    | "InProgress"
+    | "Final"
+    | "F/OT"
+    | "Suspended"
+    | "Postponed"
+    | "Delayed"
+    | "Canceled"
+    | "Forfeit"
+    | "NotNecessary"
     | null; // Game status (Scheduled, InProgress, Final, etc.)
   Day?: string | null; // The date of the game
   DateTime?: string | null; // The date and time of the game
@@ -37,16 +37,16 @@ export type Game = {
   Season: number;
   SeasonType: 1 | 2 | 3; // 1=Regular Season, 2=Preseason, 3=Playoffs
   Status:
-    | 'Scheduled'
-    | 'InProgress'
-    | 'Final'
-    | 'F/OT'
-    | 'Suspended'
-    | 'Postponed'
-    | 'Delayed'
-    | 'Canceled'
-    | 'Forfeit'
-    | 'NotNecessary'
+    | "Scheduled"
+    | "InProgress"
+    | "Final"
+    | "F/OT"
+    | "Suspended"
+    | "Postponed"
+    | "Delayed"
+    | "Canceled"
+    | "Forfeit"
+    | "NotNecessary"
     | null;
   Day: string | null; // ISO date string (YYYY-MM-DD)
   DateTime: string | null; // ISO datetime string (YYYY-MM-DDTHH:mm:ss)
@@ -60,7 +60,7 @@ export type Game = {
   AwayTeamScore: number | null;
   HomeTeamScore: number | null;
   Updated: string | null; // ISO datetime string
-  Quarter: '1' | '2' | '3' | '4' | 'Half' | 'OT' | null;
+  Quarter: "1" | "2" | "3" | "4" | "Half" | "OT" | null;
   TimeRemainingMinutes: number | null;
   TimeRemainingSeconds: number | null;
   PointSpread: number | null;

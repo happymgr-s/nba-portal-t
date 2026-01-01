@@ -31,7 +31,7 @@ const StatsTemplate: React.FC<StatsTemplateProps> = (props) => {
 
   const personalFoulLeaders = getTopAverageLeaders(
     playerStats,
-    "PersonalFouls"
+    "PersonalFouls",
   );
 
   return (

@@ -1,1 +1,1 @@
-export * from './DisplayTypeSwitch'
+export * from "./DisplayTypeSwitch";

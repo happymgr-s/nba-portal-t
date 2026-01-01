@@ -1,9 +1,9 @@
-'use client';
-import { Button } from '@/components/ui/button';
-import { addYears, subYears } from 'date-fns';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import React, { useState } from 'react';
+"use client";
+import { Button } from "@/components/ui/button";
+import { addYears, subYears } from "date-fns";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import React, { useState } from "react";
 
 type MonthCalendarProps = {};
 
@@ -21,22 +21,24 @@ const MonthCalendar: React.FC<MonthCalendarProps> = (props) => {
   const searchParams = useSearchParams();
 
   const months = [
-    '1月',
-    '2月',
-    '3月',
-    '4月',
-    '5月',
-    '6月',
-    '7月',
-    '8月',
-    '9月',
-    '10月',
-    '11月',
-    '12月',
+    "1月",
+    "2月",
+    "3月",
+    "4月",
+    "5月",
+    "6月",
+    "7月",
+    "8月",
+    "9月",
+    "10月",
+    "11月",
+    "12月",
   ];
 
   const handleYearChange = (increment: number) => {
-    setDate((prevDate) => (increment > 0 ? addYears(prevDate, 1) : subYears(prevDate, 1)));
+    setDate((prevDate) =>
+      increment > 0 ? addYears(prevDate, 1) : subYears(prevDate, 1),
+    );
   };
 
   const handleMonthSelect = (monthIndex: number) => {
@@ -45,10 +47,10 @@ const MonthCalendar: React.FC<MonthCalendarProps> = (props) => {
     setDate(newDate);
 
     newSearchParams.set(
-      'month',
-      newDate.toLocaleDateString().split('/')[0] +
-        '-' +
-        newDate.toLocaleDateString().split('/')[1].padStart(2, '0')
+      "month",
+      newDate.toLocaleDateString().split("/")[0] +
+        "-" +
+        newDate.toLocaleDateString().split("/")[1].padStart(2, "0"),
     );
     router.replace(`${pathName}?${newSearchParams.toString()}`);
   };
@@ -77,7 +79,7 @@ const MonthCalendar: React.FC<MonthCalendarProps> = (props) => {
               key={month}
               onClick={() => handleMonthSelect(index)}
               className={`p-2 rounded ${
-                date.getMonth() === index ? 'bg-zinc-700' : 'hover:bg-zinc-800'
+                date.getMonth() === index ? "bg-zinc-700" : "hover:bg-zinc-800"
               }`}
             >
               {month}

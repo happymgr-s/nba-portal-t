@@ -1,12 +1,12 @@
-import React from 'react';
-import { Schedule } from '@/types/schedule';
-import { Standing } from '@/types/standing';
-import { Team } from '@/types/team';
+import React from "react";
+import { Schedule } from "@/types/schedule";
+import { Standing } from "@/types/standing";
+import { Team } from "@/types/team";
 
-import ConferenceTitle from '@/components/atoms/ConferenceTitle/ConferenceTitle';
-import ScheduleCard from '@/components/organisms/ScheduleCard/ScheduleCard';
-import StandingsTable from '@/components/organisms/StandingsTable/StandingsTable';
-import { NewsListSlider } from '../news-list-slider';
+import ConferenceTitle from "@/components/atoms/ConferenceTitle/ConferenceTitle";
+import ScheduleCard from "@/components/organisms/ScheduleCard/ScheduleCard";
+import StandingsTable from "@/components/organisms/StandingsTable/StandingsTable";
+import { NewsListSlider } from "../news-list-slider";
 
 type HomeTemplateProps = {
   schedules: Schedule[];
@@ -24,16 +24,20 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
   const today = new Date();
   const formattedDate = `${today.getFullYear()}/${(today.getMonth() + 1)
     .toString()
-    .padStart(2, '0')}/${today.getDate().toString().padStart(2, '0')}`;
+    .padStart(2, "0")}/${today.getDate().toString().padStart(2, "0")}`;
 
-  const easternStandings = standings.filter((standing) => standing.Conference === 'Eastern');
-  const westernStandings = standings.filter((standing) => standing.Conference === 'Western');
+  const easternStandings = standings.filter(
+    (standing) => standing.Conference === "Eastern",
+  );
+  const westernStandings = standings.filter(
+    (standing) => standing.Conference === "Western",
+  );
 
   const sortedEasternStandings = [...easternStandings].sort(
-    (a, b) => (a.ConferenceRank || 0) - (b.ConferenceRank || 0)
+    (a, b) => (a.ConferenceRank || 0) - (b.ConferenceRank || 0),
   );
   const sortedWesternStandings = [...westernStandings].sort(
-    (a, b) => (a.ConferenceRank || 0) - (b.ConferenceRank || 0)
+    (a, b) => (a.ConferenceRank || 0) - (b.ConferenceRank || 0),
   );
 
   return (
@@ -50,12 +54,20 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
             </p>
             {schedules.length !== 0 ? (
               schedules.map((schedule) => {
-                const homeTeam = teams.find((team) => team.TeamID === schedule.HomeTeamID);
-                const awayTeam = teams.find((team) => team.TeamID === schedule.AwayTeamID);
+                const homeTeam = teams.find(
+                  (team) => team.TeamID === schedule.HomeTeamID,
+                );
+                const awayTeam = teams.find(
+                  (team) => team.TeamID === schedule.AwayTeamID,
+                );
 
                 return (
                   <div className="mb-2" key={schedule.GameID}>
-                    <ScheduleCard schedule={schedule} homeTeam={homeTeam} awayTeam={awayTeam} />
+                    <ScheduleCard
+                      schedule={schedule}
+                      homeTeam={homeTeam}
+                      awayTeam={awayTeam}
+                    />
                   </div>
                 );
               })
@@ -66,15 +78,23 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
 
           {/* 順位 */}
           <div className="mt-4">
-            <p className="border-b border-b-gray-400 font-semibold text-lg mb-2">順位</p>
+            <p className="border-b border-b-gray-400 font-semibold text-lg mb-2">
+              順位
+            </p>
             <div className="md:grid md:grid-cols-2 md:gap-2">
               <div className="flex flex-col items-center">
                 <ConferenceTitle conference="Eastern" />
-                <StandingsTable standings={sortedEasternStandings} teams={teams} />
+                <StandingsTable
+                  standings={sortedEasternStandings}
+                  teams={teams}
+                />
               </div>
               <div className="flex flex-col items-center">
                 <ConferenceTitle conference="Western" />
-                <StandingsTable standings={sortedWesternStandings} teams={teams} />
+                <StandingsTable
+                  standings={sortedWesternStandings}
+                  teams={teams}
+                />
               </div>
             </div>
           </div>
@@ -85,4 +105,3 @@ export const HomeTemplate: React.FC<HomeTemplateProps> = (props) => {
     </>
   );
 };
-

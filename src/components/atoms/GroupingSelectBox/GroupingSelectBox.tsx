@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import {
   Select,
@@ -8,8 +8,8 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { SelectProps } from '@radix-ui/react-select';
+} from "@/components/ui/select";
+import { SelectProps } from "@radix-ui/react-select";
 
 type SelectOption = {
   label: string;
@@ -39,7 +39,9 @@ const GroupingSelectBox: React.FC<GroupingSelectBoxProps> = (props) => {
 
         <SelectContent>
           {groups.map((group) => {
-            const filteredOptions = selectOptions.filter((option) => option.group === group);
+            const filteredOptions = selectOptions.filter(
+              (option) => option.group === group,
+            );
 
             return (
               <SelectGroup key={group}>

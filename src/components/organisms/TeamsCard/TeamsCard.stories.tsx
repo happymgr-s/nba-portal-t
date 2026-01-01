@@ -1,35 +1,37 @@
-import localFont from 'next/font/local';
-import type { Meta, StoryObj } from '@storybook/react';
-import TeamsCard from './TeamsCard';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
+import localFont from "next/font/local";
+import type { Meta, StoryObj } from "@storybook/react";
+import TeamsCard from "./TeamsCard";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
 
 const actionNBALight = localFont({
-  src: '../public/fonts/ActionNBACondWeb-Light.woff2',
-  variable: '--font-actionNBALight',
+  src: "../public/fonts/ActionNBACondWeb-Light.woff2",
+  variable: "--font-actionNBALight",
 });
 const actionNBAMedium = localFont({
-  src: '../public/fonts/ActionNBACondWeb-Medium.woff2',
-  variable: '--font-actionNBAMedium',
+  src: "../public/fonts/ActionNBACondWeb-Medium.woff2",
+  variable: "--font-actionNBAMedium",
 });
 const actionNBABold = localFont({
-  src: '../public/fonts/ActionNBACondWeb-Bold.woff2',
-  variable: '--font-actionNBABold',
+  src: "../public/fonts/ActionNBACondWeb-Bold.woff2",
+  variable: "--font-actionNBABold",
 });
 
 const meta = {
-  title: 'Organisms/TeamsCard',
+  title: "Organisms/TeamsCard",
   component: TeamsCard,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     team: teamsMockData[8],
   },
   decorators: [
     (Story) => (
-      <div className={`${actionNBALight.variable} ${actionNBAMedium.variable} ${actionNBABold}`}>
+      <div
+        className={`${actionNBALight.variable} ${actionNBAMedium.variable} ${actionNBABold}`}
+      >
         <Story />
       </div>
     ),

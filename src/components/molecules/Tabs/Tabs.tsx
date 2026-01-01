@@ -1,6 +1,10 @@
-import React from 'react';
-import { Tabs as ShadcnTabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import Link from 'next/link';
+import React from "react";
+import {
+  Tabs as ShadcnTabs,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
+import Link from "next/link";
 
 type TabItem = {
   label: string;

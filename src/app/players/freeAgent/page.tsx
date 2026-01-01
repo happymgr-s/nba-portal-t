@@ -18,7 +18,7 @@ const PlayersPage = async ({ searchParams }: PlayersProps) => {
 
   const players = (
     await axiosBase.get<GetFreeAgentPlayersProfile>(
-      `/api/nba/players/freeAgent?team=${team}&position=${position}`
+      `/api/nba/players/freeAgent?team=${team}&position=${position}`,
     )
   ).data;
 

@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import ParamsClearButton from './ParamsClearButton';
+import type { Meta, StoryObj } from "@storybook/react";
+import ParamsClearButton from "./ParamsClearButton";
 
 const meta = {
-  title: 'Molecules/ParamsClearButton',
+  title: "Molecules/ParamsClearButton",
   component: ParamsClearButton,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     handleClickReset: () => {},

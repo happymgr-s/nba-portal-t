@@ -1,30 +1,30 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import Tabs from './Tabs';
+import type { Meta, StoryObj } from "@storybook/react";
+import Tabs from "./Tabs";
 
 const tabList = [
   {
-    label: 'ACTIVE',
-    value: 'active',
-    href: '/',
+    label: "ACTIVE",
+    value: "active",
+    href: "/",
   },
   {
-    label: 'FA',
-    value: 'freeAgent',
-    href: '/',
+    label: "FA",
+    value: "freeAgent",
+    href: "/",
   },
 ];
 
 const meta = {
-  title: 'Molecules/Tabs',
+  title: "Molecules/Tabs",
   component: Tabs,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     tabList,
-    defaultSelected: 'active',
+    defaultSelected: "active",
   },
 } satisfies Meta<typeof Tabs>;
 

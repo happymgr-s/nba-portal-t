@@ -1,8 +1,8 @@
-import { Standing } from '@/types/standing';
-import { Team } from '@/types/team';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { Standing } from "@/types/standing";
+import { Team } from "@/types/team";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 type StandingsTableProps = {
   standings: Standing[];
@@ -29,11 +29,21 @@ const StandingsTable: React.FC<StandingsTableProps> = (props) => {
               <th className="text-white text-xs md:text-sm p-2 min-w-28 sm:min-w-32 md:min-w-40 sticky left-12 z-10 bg-black">
                 チーム名
               </th>
-              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">勝</th>
-              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">敗</th>
-              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">勝率</th>
-              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">ホーム</th>
-              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">アウェイ</th>
+              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">
+                勝
+              </th>
+              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">
+                敗
+              </th>
+              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">
+                勝率
+              </th>
+              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">
+                ホーム
+              </th>
+              <th className="text-white text-xs md:text-sm p-2 min-w-16 md:min-w-32">
+                アウェイ
+              </th>
               <th className="text-white text-xs md:text-sm text-nowrap p-2 min-w-16 md:min-w-32">
                 過去10戦
               </th>
@@ -45,16 +55,21 @@ const StandingsTable: React.FC<StandingsTableProps> = (props) => {
 
           <tbody className="border-collapse">
             {standings.map((standing) => {
-              const teamProfile = teams.find((team) => team.Key === standing.Key);
+              const teamProfile = teams.find(
+                (team) => team.Key === standing.Key,
+              );
               return (
                 <tr key={standing.TeamID} className="border-2">
                   <td className="px-2 py-1 border-1 text-center sticky left-0 z-10 bg-gray-200">
-                    {standing.ConferenceRank?.toString().padStart(2, '0')}
+                    {standing.ConferenceRank?.toString().padStart(2, "0")}
                   </td>
                   <td className="sticky left-12 z-10 bg-gray-200">
-                    <Link href={`/teams/${teamProfile?.Key}`} className="flex items-center gap-2">
+                    <Link
+                      href={`/teams/${teamProfile?.Key}`}
+                      className="flex items-center gap-2"
+                    >
                       <Image
-                        src={teamProfile?.WikipediaLogoUrl || ''}
+                        src={teamProfile?.WikipediaLogoUrl || ""}
                         alt={`${standing.Key}_logo`}
                         width={20}
                         height={20}

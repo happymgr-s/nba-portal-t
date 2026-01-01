@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
 const TeamsPage = async () => {
   try {
     const res = await axiosBase.get<GetActiveTeamProfileListResponse>(
-      "/api/nba/teams/active"
+      "/api/nba/teams/active",
     );
 
     if (res.data.length === 0) {

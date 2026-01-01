@@ -16,7 +16,7 @@ const NewsesTemplate: React.FC<NewsesTemplateProps> = (props) => {
 
   return (
     <>
-      <div className='flex flex-col gap-4'>
+      <div className="flex flex-col gap-4">
         {newses.map((news) => (
           <NewsesCard key={news.NewsID} news={news} />
         ))}

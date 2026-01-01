@@ -36,7 +36,7 @@ const SchedulePage = async ({ searchParams }: ScheduleProps) => {
   try {
     const response = await Promise.all([
       axiosBase.get<GetScheduleBasicResponse>(
-        `/api/nba/schedule/basic?season=${season}&date=${date}&month=${month}&month_display=${month_display}&team=${team}&closed_display=${closed_display}`
+        `/api/nba/schedule/basic?season=${season}&date=${date}&month=${month}&month_display=${month_display}&team=${team}&closed_display=${closed_display}`,
       ),
       axiosBase.get<GetActiveTeamProfileListResponse>("/api/nba/teams/active"),
     ]);

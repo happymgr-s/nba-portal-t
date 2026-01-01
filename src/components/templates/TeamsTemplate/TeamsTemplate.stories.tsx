@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import TeamsTemplate from './TeamsTemplate';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import TeamsTemplate from "./TeamsTemplate";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
 
 const meta = {
-  title: 'Templates/TeamsTemplate',
+  title: "Templates/TeamsTemplate",
   component: TeamsTemplate,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     teams: teamsMockData,

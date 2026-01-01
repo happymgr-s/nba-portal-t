@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import SideBarLink from './SideBarLink';
-import { Home } from 'lucide-react';
+import type { Meta, StoryObj } from "@storybook/react";
+import SideBarLink from "./SideBarLink";
+import { Home } from "lucide-react";
 
 const meta = {
-  title: 'Molecules/SideBarLink',
+  title: "Molecules/SideBarLink",
   component: SideBarLink,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
-    href: '/',
-    children: 'ホーム',
+    href: "/",
+    children: "ホーム",
     icon: <Home className="w-4 h-4" />,
     sidebarOpen: true,
     handleClickLink: () => {},

@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import ScheduleCard from './ScheduleCard';
-import { scheduleBasicMockData } from '@/lib/mockData/scheduleMockData';
-import { teamsMockData } from '@/lib/mockData/teamsMockData';
+import type { Meta, StoryObj } from "@storybook/react";
+import ScheduleCard from "./ScheduleCard";
+import { scheduleBasicMockData } from "@/lib/mockData/scheduleMockData";
+import { teamsMockData } from "@/lib/mockData/teamsMockData";
 
 const meta = {
-  title: 'Organisms/ScheduleCard',
+  title: "Organisms/ScheduleCard",
   component: ScheduleCard,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     schedule: scheduleBasicMockData[0],
@@ -27,12 +27,12 @@ export const Upcoming: Story = {
 
 export const Live: Story = {
   args: {
-    schedule: { ...scheduleBasicMockData[0], Status: 'InProgress' },
+    schedule: { ...scheduleBasicMockData[0], Status: "InProgress" },
   },
 };
 
 export const Closed: Story = {
   args: {
-    schedule: { ...scheduleBasicMockData[0], Status: 'Final' },
+    schedule: { ...scheduleBasicMockData[0], Status: "Final" },
   },
 };

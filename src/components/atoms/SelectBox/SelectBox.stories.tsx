@@ -1,28 +1,28 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import SelectBox from './SelectBox';
+import type { Meta, StoryObj } from "@storybook/react";
+import SelectBox from "./SelectBox";
 
 const mockSelectOptions = [
   {
-    label: 'select1',
-    value: 'select1',
+    label: "select1",
+    value: "select1",
   },
   {
-    label: 'select2',
-    value: 'select2',
+    label: "select2",
+    value: "select2",
   },
   {
-    label: 'select3',
-    value: 'select3',
+    label: "select3",
+    value: "select3",
   },
 ];
 
 const meta = {
-  title: 'Atoms/SelectBox',
+  title: "Atoms/SelectBox",
   component: SelectBox,
   parameters: {
-    layout: '',
+    layout: "",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {},
   args: {
     selectOptions: mockSelectOptions,
