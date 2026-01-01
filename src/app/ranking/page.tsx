@@ -5,13 +5,13 @@ import { axiosBase } from "@/lib/axiosBase";
 export const dynamic = "force-dynamic";
 
 type RankingPageSearchParams = {
-  searchParams: {
+  searchParams: Promise<{
     season: string;
-  };
+  }>;
 };
 
 const RankingPage = async ({ searchParams }: RankingPageSearchParams) => {
-  const { season } = searchParams;
+  const { season } = await searchParams;
   try {
     const response = await Promise.all([
       axiosBase.get(`/api/nba/standings?season=${season}`),
