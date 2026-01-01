@@ -1,4 +1,4 @@
-import StatsTemplate from "@/components/templates/StatsTemplate/StatsTemplate";
+import { StatsTemplate } from "./_components/stats-template";
 import { axiosBase } from "@/lib/axiosBase";
 import { Season } from "@/types/season";
 
