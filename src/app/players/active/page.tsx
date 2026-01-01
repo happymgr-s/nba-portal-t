@@ -1,7 +1,7 @@
 import React from "react";
 import { axiosBase } from "@/lib/axiosBase";
 import { GetActivePlayersProfile } from "@/app/api/nba/players/active/route";
-import PlayersTemplate from "@/components/templates/PlayersTemplate/PlayersTemplate";
+import { PlayersTemplate } from "../_components/players-template";
 import { GetTeamDataListResponse } from "@/app/api/nba/teams/route";
 
 // ビルド時のスタティック生成を無効化
