@@ -1,4 +1,4 @@
-import RankingTemplate from "@/components/templates/RankingTemplate/RankingTemplate";
+import { RankingTemplate } from "./_components/ranking-template";
 import { axiosBase } from "@/lib/axiosBase";
 
 // ビルド時のスタティック生成を無効化
